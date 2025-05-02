@@ -1,10 +1,23 @@
 import './App.css'
-import DefaultLayout from "./layouts/DefaultLayout.tsx";
+import DefaultLayout from "@/layouts/DefaultLayout";
+import Home from "@/pages/Home.tsx";
+import About from "@/pages/About.tsx";
+import Project from "@/pages/Project.tsx";
+import Contact from "@/pages/Contact.tsx";
+import Skills from "@/pages/Skills.tsx";
 
 
 function App() {
     return (
-        <DefaultLayout/>
+        <DefaultLayout>
+            <main className={"px-8"}>
+                <Home/>
+                <About/>
+                <Skills/>
+                <Project/>
+                <Contact/>
+            </main>
+        </DefaultLayout>
     )
 }
 

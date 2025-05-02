@@ -16,7 +16,7 @@ import profileDark from '@/assets/images/png/profile-dark.png'
 import profileLight from '@/assets/images/png/profile-light.png'
 import profile from '@/assets/images/png/profile.png';
 import actionFigure from '@/assets/images/png/action-figure.png';
-
+import data from '@/data/profile-data.json'
 
 
 const images = {
@@ -40,4 +40,7 @@ const images = {
     actionFigure
 }
 
-export default images;
+export {
+    images,
+    data
+}

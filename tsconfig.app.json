@@ -23,7 +23,7 @@
     "noUncheckedSideEffectImports": true,
 
    /* Add path alias */
-    "baseUrl": "./src",
+    "baseUrl": "src",
     "paths": {
       "@/*": ["*"]
     }

@@ -1,6 +1,6 @@
-import images from "@/constants/image-data";
 import {useEffect, useState, useRef} from "react";
-import data from "@/data/profile-data.json";
+import {images, data} from "@/constants/data-constants";
+
 
 
 export default function MobileMenu() {
@@ -19,19 +19,19 @@ export default function MobileMenu() {
     return (
         <>
             {/* Toggle button */}
-                <div className={"flex md:hidden z-60"}>
-                    <button onClick={toggleMenu}>
+                <div className={"flex justify-center items-center md:hidden"}>
+                    <button onClick={toggleMenu} className={"z-60"}>
                         <img src={!isOpen ? images.menuOpenDarkMode : images.menuCloseDarkMode} alt="menuOpenLight"/>
                     </button>
                 </div>
 
             {/* Drop down menu */}
                 {!initialLoad.current && (
-                    <ul className={`fixed top-0 left-0 w-screen h-svh z-50 flex flex-col items-center justify-center gap-16 bg-dark-navy-blue text-3xl ${isOpen ? "animate-dropDownIn pointer-events-auto" : "animate-dropDownOut pointer-events-none"}`}>
+                    <ul className={`drop-down-menu ${isOpen ? "animate-dropDownIn pointer-events-auto" : "animate-dropDownOut pointer-events-none"}`}>
                         {data.navItems.map((item, i) => (
-                            <li key={i} className={" py-2 "}>
+                            <li key={i} className={"py-2"}>
                                 <a href={`#${item.toLowerCase()}`} onClick={toggleMenu}
-                                   className={" text-beige uppercase font-bold tracking-wider active:text-white"}>{item}</a>
+                                   className={"nav-item-text"}>{item}</a>
                             </li>
                         ))}
                     </ul>
