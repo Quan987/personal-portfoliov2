@@ -1,5 +1,9 @@
 export default function Skills() {
     return (
-        <div></div>
+        <section>
+            <div>
+                Skill
+            </div>
+        </section>
     );
 }

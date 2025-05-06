@@ -1,10 +1,10 @@
-import {images} from "@/constants/data-constants";
+import {logo} from "@/data/data-constants.ts";
 
 export default function Logo() {
     return (
-        <div className={"logo-size border-2 border-solid border-beige rounded-full overflow-hidden"}>
-            <img src={images.profile} alt="profile-logo"
-                 className={"logo-size object-cover pointer-events-none"}/>
+        <div className={"logo border-2 border-solid border-beige rounded-full overflow-hidden"}>
+            <img src={logo.profile} alt="profile-logo"
+                 className={"logo object-cover pointer-events-none"}/>
         </div>
     )
 }

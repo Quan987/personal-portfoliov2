@@ -1,14 +1,15 @@
-import {data} from '@/constants/data-constants'
+import {data} from '@/data/data-constants.ts'
 
 export default function Home() {
     return (
-        <section id="home" className="text-pretty mt-36 tracking-wide">
-            <h1 className="text-3xl uppercase font-bold bg-gradient-to-r from-midnight-navy via-sky-glow to-blue-flare text-transparent bg-clip-text">Hey,
-                I'm {data.name}</h1>
-            <h2 className="text-lg mt-3 uppercase font-bold opacity-70">{data.heroTitle}</h2>
-            <p className="text-base leading-7 mt-6 opacity-70">{data.heroHeadline}</p>
-            <div className="mt-20 w-fit h-fit cursor-pointer">
-                <a className="py-4 px-12 opacity-90 text-beige uppercase font-bold tracking-widest border-solid border-midnight-navy border-2 rounded-md bg-midnight-navy">Resume</a>
+        <section id="./" className="home text-pretty">
+            <h1 className="home-name uppercase font-bold bg-gradient-to-r from-midnight-navy via-sky-glow to-blue-flare text-transparent bg-clip-text">
+                Hey, I'm {data.name}
+            </h1>
+            <h2 className="home-title font-bold opacity-60">{data.heroTitle}</h2>
+            <p className="home-head-line opacity-70">{data.heroHeadline}</p>
+            <div className="mt-20 w-fit cursor-pointer">
+                <a href={"#"} target="_blank" className="home-button interactive-text button-animation opacity-90 tracking-widest border-solid border-midnight-navy border-2 rounded-md bg-midnight-navy">Resume</a>
             </div>
         </section>
     )

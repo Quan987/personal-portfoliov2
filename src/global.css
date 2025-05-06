@@ -15,10 +15,58 @@
     --color-midnight-navy: #0c2646;
     --color-sky-glow: #7baeec;
     --color-blue-flare: #4094fa;
+}
 
-    --animate-dropDownIn: dropDownIn 200ms ease-in forwards;
-    --animate-dropDownOut: dropDownOut 200ms ease-out forwards;
+@layer base {
+    html {
+        @apply scroll-smooth font-display;
 
+    }
+    body {
+        @apply bg-silver-white min-h-full;
+    }
+    button {
+        @apply cursor-pointer;
+    }
+    section {
+        /*@apply scroll-m-30;*/
+    }
+}
+
+@layer components {
+    .navbar {
+        @apply px-8 py-4;
+    }
+    .logo {
+        @apply w-12 h-12;
+    }
+    .drop-down-menu {
+        @apply fixed top-0 left-0 w-screen h-svh z-40 bg-midnight-navy text-2xl flex flex-col items-center justify-center gap-16 md:hidden;
+    }
+    .home {
+        @apply my-52;
+    }
+    .home-name {
+        @apply text-3xl;
+    }
+    .home-title {
+        @apply text-3xl mt-4;
+    }
+    .home-head-line {
+        @apply leading-7 mt-8;
+    }
+    .home-button {
+        @apply inline-block py-4 px-12;
+    }
+    .about {
+        @apply pt-12 pb-30 scroll-m-12
+    }
+}
+
+@layer utilities {
+    .custom-border {
+        @apply border-solid border-1 border-black;
+    }
     @keyframes dropDownIn {
         0% {
             opacity: 0;
@@ -40,41 +88,27 @@
             transform: translateY(-1rem);
         }
     }
-}
 
-@layer base {
-    html {
-        @apply scroll-smooth font-display;
-    }
-    body {
-        @apply bg-silver-white min-h-full;
-    }
-    button {
-        @apply cursor-pointer;
-    }
-}
-
-@layer components {
-    .logo-size {
-        @apply w-12 h-12;
-    }
-    .navbar-size {
-        @apply px-6 py-3;
-    }
-    .drop-down-menu {
-        @apply fixed top-0 left-0 w-screen h-svh z-50 bg-midnight-navy text-2xl flex flex-col items-center justify-center gap-16 md:hidden;
-    }
-}
-
-@layer utilities {
-    .nav-item-text {
-        @apply text-beige uppercase font-bold tracking-wider hover:text-white active:text-white;
-    }
-    .custom-border {
-        @apply border-solid border-1 border-black
-    }
-    .gradient-color {
-        @apply bg-gradient-to-r from-beige via-beige-sand to-beige-bronze
+    .animate-dropDownIn {
+        animation: dropDownIn 200ms ease-in forwards;
     }
 
+    .animate-dropDownOut {
+        animation: dropDownOut 200ms ease-out forwards;
+    }
+    .interactive-text {
+        @apply text-beige uppercase font-bold hover:text-white active:text-white;
+    }
+    .gradient-beige-to-bronze {
+        @apply bg-gradient-to-r from-beige via-beige-sand to-beige-bronze;
+    }
+    .button-animation {
+        @apply active:bg-black-custom hover:bg-black-custom hover:-translate-y-0.5 hover:translate-x-0.5 transform transition-all duration-200;
+    }
+    .horizontal-line {
+        @apply grow border-1 rounded-2xl border-midnight-navy;
+    }
+    .scale-animation {
+        @apply transform transition duration-200 hover:scale-110;
+    }
 }

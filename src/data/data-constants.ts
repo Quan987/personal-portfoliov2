@@ -1,0 +1,136 @@
+import profile from '@/assets/images/png/profile.png';
+import actionFigure from '@/assets/images/png/action-figure.png';
+import menuOpen from '@/assets/images/svg/logo/menu-open.svg';
+import menuClose from '@/assets/images/svg/logo/menu-close.svg';
+import emailLight from '@/assets/images/svg/logo/email-light.svg';
+import emailDark from '@/assets/images/svg/logo/email-dark.svg';
+import githubLight from '@/assets/images/svg/logo/github-light.svg';
+import githubDark from '@/assets/images/svg/logo/github-dark.svg';
+import instagramLight from '@/assets/images/svg/logo/instagram-light.svg';
+import instagramDark from '@/assets/images/svg/logo/instagram-dark.svg';
+import linkedinLight from '@/assets/images/svg/logo/linkedin-light.svg';
+import linkedinDark from '@/assets/images/svg/logo/linkedin-dark.svg';
+import twitterLight from '@/assets/images/svg/logo/twitter-light.svg';
+import twitterDark from '@/assets/images/svg/logo/twitter-dark.svg';
+import htmlIcon from '@/assets/images/svg/icon/html5-icon.svg';
+import cssIcon from '@/assets/images/svg/icon/css-icon.svg';
+import javascriptIcon from '@/assets/images/svg/icon/javascript-icon.svg';
+import typescriptIcon from '@/assets/images/svg/icon/typescript-icon.svg';
+import phpIcon from '@/assets/images/svg/icon/php-icon.svg';
+import nodejsIcon from '@/assets/images/svg/icon/nodejs-icon.svg';
+import expressjsIcon from '@/assets/images/svg/icon/expressjs-icon.svg';
+import reactjsIcon from '@/assets/images/svg/icon/reactjs-icon.svg';
+import reduxjsIcon from '@/assets/images/svg/icon/redux-icon.svg';
+import tailwindcssIcon from '@/assets/images/svg/icon/tailwindcss-icon.svg';
+import sqliteIcon from '@/assets/images/svg/icon/sqlite-icon.svg';
+import mysqlIcon from '@/assets/images/svg/icon/mysql-icon.svg';
+import firebaseIcon from '@/assets/images/svg/icon/firebase-icon.svg';
+import dartIcon from '@/assets/images/svg/icon/dart-icon.svg';
+import flutterIcon from '@/assets/images/svg/icon/flutter-icon.svg';
+import javaIcon from '@/assets/images/svg/icon/java-icon.svg';
+import pythonIcon from '@/assets/images/svg/icon/python-icon.svg';
+import viteIcon from '@/assets/images/svg/icon/vite-icon.svg';
+
+
+const logo = {
+    actionFigure,
+    profile,
+    menuOpen,
+    menuClose,
+    emailLight,
+    emailDark,
+    githubLight,
+    githubDark,
+    instagramLight,
+    instagramDark,
+    linkedinLight,
+    linkedinDark,
+    twitterLight,
+    twitterDark,
+}
+
+const data = {
+    name: "Quan Tran.",
+    heroTitle: "I build what you imagine — right in the browser.",
+    heroHeadline: "I’m a software developer focused on building accessible, user-centered web applications. Currently learning Express.js and passionate about crafting impactful digital experiences.",
+    aboutP1: "Hi! My name is Quan, and I'm a Computer Science graduate from Georgia State University. As an aspiring Full-Stack Developer, I’m driven by the challenge of building scalable, impactful applications that solve real-world problems. I enjoy continuously learning new technologies, and striving to write clean, efficient code.",
+    aboutP2: "Beyond the screen, I dedicate time to weightlifting in the gym, which keeps me focused, energized, and mentally sharp. Photography is another creative outlet for me—I enjoy capturing scenic landscapes that inspire reflection and appreciation for the world around me.",
+    aboutP3: "I'm seeking opportunities to grow as a developer and help build meaningful products.",
+    email: "qtrann1379@gmail.com",
+    gitHub: "https://github.com/Quan987",
+    linkedin: "https://www.linkedin.com/in/qtrann1379",
+    instagram: "https://www.instagram.com/tquan_13",
+    twitter: "https://x.com/qtrann1379",
+    skills: [
+        {name: "HTML", icon: htmlIcon},
+        {name: "CSS", icon: cssIcon},
+        {name: "JavaScript", icon: javascriptIcon},
+        {name: "TypeScript", icon: typescriptIcon},
+        {name: "PHP", icon: phpIcon},
+        {name: "Node.js", icon: nodejsIcon},
+        {name: "Express.js", icon: expressjsIcon},
+        {name: "React.js", icon: reactjsIcon},
+        {name: "Redux.js", icon: reduxjsIcon},
+        {name: "TailwindCSS", icon: tailwindcssIcon},
+        {name: "SQLite", icon: sqliteIcon},
+        {name: "MySQL", icon: mysqlIcon},
+        {name: "Firebase", icon: firebaseIcon},
+        {name: "Dart", icon: dartIcon},
+        {name: "Flutter", icon: flutterIcon},
+        {name: "Java", icon: javaIcon},
+        {name: "Python", icon: pythonIcon},
+        {name: "Vite", icon: viteIcon},
+    ],
+    projects: [
+        {
+            title: "Password Generator App",
+            description: "A secure web application that generates strong, unique passwords and features a personal vault for safely storing and managing them.",
+            stack: [
+                "JavaScript",
+                "PHP",
+                "SQL"
+            ],
+            link: "https://github.com/Quan987/password-generator"
+        },
+        {
+            title: "Food Delivery App",
+            description: "A Flutter-based cross-platform mobile app that lets users browse restaurants, place orders, and track deliveries in real-time, with Firebase integration for authentication and live data updates.",
+            stack: [
+                "Dart",
+                "Flutter",
+                "Firebase"
+            ],
+            link: "https://github.com/Quan987/restaurant-flutter-app"
+        },
+        {
+            title: "OS System Monitor Project",
+            description: "A Java-based system resource monitor that uses the OSHI library to provide real-time insights into CPU, memory, disk, and network usage by interfacing directly with system hardware and the OS.",
+            stack: [
+                "Java",
+                "JavaFX/Swing",
+                "OSHI",
+                "JFreeChart"
+            ],
+            link: "https://github.com/Quan987/os_project"
+        },
+        {
+            title: "Real Estate Web",
+            description: "A real estate web platform that streamlines property search and engagement through advanced filtering and optimized database performance for reliable, efficient CRUD operations.",
+            stack: [
+                "HTML/CSS",
+                "JavaScript",
+                "PHP",
+                "MySQL"
+            ],
+            image: "assets/images/logo.png",
+            link: "https://github.com/Quan987/real-estate-web"
+        }
+    ],
+    navItems: ["Home", "About", "Projects", "Contact"]
+}
+
+
+export {
+    logo,
+    data
+}
