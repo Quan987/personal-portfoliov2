@@ -15,12 +15,47 @@
     --color-midnight-navy: #0c2646;
     --color-sky-glow: #7baeec;
     --color-blue-flare: #4094fa;
+
+    @keyframes dropDownIn {
+        0% {
+            opacity: 0;
+            transform: translateY(-1rem);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    @keyframes dropDownOut {
+        0% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        100% {
+            opacity: 0;
+            transform: translateY(-1rem);
+        }
+    }
+    @keyframes infinite-scroll {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(-50%);
+        }
+    }
+
+    --animate-dropDownIn: dropDownIn 200ms ease-in forwards;
+
+    --animate-dropDownOut: dropDownOut 200ms ease-out forwards;
+
+    --animate-infinite-scroll: infinite-scroll 0s linear infinite;
+
 }
 
 @layer base {
     html {
         @apply scroll-smooth font-display;
-
     }
     body {
         @apply bg-silver-white min-h-full;
@@ -40,11 +75,8 @@
     .logo {
         @apply w-12 h-12;
     }
-    .drop-down-menu {
-        @apply fixed top-0 left-0 w-screen h-svh z-40 bg-midnight-navy text-2xl flex flex-col items-center justify-center gap-16 md:hidden;
-    }
     .home {
-        @apply my-52;
+        @apply my-60;
     }
     .home-name {
         @apply text-3xl;
@@ -59,42 +91,18 @@
         @apply inline-block py-4 px-12;
     }
     .about {
-        @apply pt-12 pb-30 scroll-m-12
+        @apply py-20 scroll-m-12;
     }
+    .skills {
+        @apply py-40;
+    }
+
+
 }
 
 @layer utilities {
     .custom-border {
         @apply border-solid border-1 border-black;
-    }
-    @keyframes dropDownIn {
-        0% {
-            opacity: 0;
-            transform: translateY(-1rem);
-        }
-        100% {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-
-    @keyframes dropDownOut {
-        0% {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        100% {
-            opacity: 0;
-            transform: translateY(-1rem);
-        }
-    }
-
-    .animate-dropDownIn {
-        animation: dropDownIn 200ms ease-in forwards;
-    }
-
-    .animate-dropDownOut {
-        animation: dropDownOut 200ms ease-out forwards;
     }
     .interactive-text {
         @apply text-beige uppercase font-bold hover:text-white active:text-white;
@@ -106,9 +114,9 @@
         @apply active:bg-black-custom hover:bg-black-custom hover:-translate-y-0.5 hover:translate-x-0.5 transform transition-all duration-200;
     }
     .horizontal-line {
-        @apply grow border-1 rounded-2xl border-midnight-navy;
+        @apply w-full border-1 rounded-3xl border-midnight-navy opacity-70 pointer-events-none select-none;
     }
     .scale-animation {
-        @apply transform transition duration-200 hover:scale-110;
+        @apply transform transition-all duration-200 hover:scale-110;
     }
 }

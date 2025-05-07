@@ -10,7 +10,7 @@ import Skills from "@/pages/Skills.tsx";
 function App() {
     return (
         <DefaultLayout>
-            <main className={"px-8"}>
+            <main className={"px-6"}>
                 <Home/>
                 <About/>
                 <Skills/>

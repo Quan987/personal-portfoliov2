@@ -3,9 +3,9 @@ import {logo, data} from '@/data/data-constants.ts'
 export default function About() {
     return (
         <section id="about" className="about">
-            <div className="flex items-center justify-center font-bold text-2xl pb-4">
+            <div className="flex items-center justify-center font-bold text-2xl pb-4 gap-4">
                 <hr className="horizontal-line"/>
-                <h2 className="flex-shrink mx-4 text-midnight-navy">
+                <h2 className="text-midnight-navy shrink-0">
                     About Me
                 </h2>
                 <hr className="horizontal-line"/>
@@ -19,15 +19,11 @@ export default function About() {
                     </p>
                 </div>
 
-                <div className="w-11/12 py-12 scale-animation cursor-pointer">
-                    <img src={logo.actionFigure} alt="actionFigure" className="rounded-[2.5rem] shadow-[1.875rem_1.875rem_2rem_-0.625rem_rgba(0,0,0,0.2)] pointer-events-none"/>
+                <div className="px-8 py-12 scale-animation cursor-pointer select-none">
+                    <img src={logo.actionFigure} alt="actionFigure" className="rounded-[2.5rem] shadow-[1.875rem_1.875rem_1.875rem_-0.625rem_rgba(0,0,0,0.2)] pointer-events-none"/>
                 </div>
             </div>
-
-
         </section>
     )
 }
 
-// Feel free to follow me on LinkedIn or Instagram to stay in touch and see what I’m working on"
-// Let’s connect—follow me on LinkedIn or Instagram to stay in touch!

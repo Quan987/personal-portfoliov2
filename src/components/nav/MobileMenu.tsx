@@ -31,7 +31,7 @@ export default function MobileMenu() {
 
             {/* Drop down menu */}
             {!initialLoad.current && (
-                <ul className={`drop-down-menu ${isOpen ? "animate-dropDownIn pointer-events-auto" : "animate-dropDownOut pointer-events-none"}`}>
+                <ul className={`${isOpen ? "animate-dropDownIn pointer-events-auto" : "animate-dropDownOut pointer-events-none"} fixed top-0 left-0 w-screen h-svh z-40 bg-midnight-navy text-2xl flex flex-col items-center justify-center gap-16 md:hidden`}>
                     {data.navItems.map((item, i) => (
                         <li key={i} className={"py-2"}>
                             <a href={item.toLowerCase() === "home" ? "./" : "#" + item.toLowerCase()}
