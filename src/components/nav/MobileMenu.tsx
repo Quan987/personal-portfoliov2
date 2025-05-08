@@ -1,7 +1,7 @@
 import {useEffect, useState, useRef} from "react";
-import {data} from "@/data/data-constants.ts";
+import {data} from "@/data/data-constants";
 import MenuCloseIcon from "@/components/icons/MenuCloseIcon";
-import MenuOpenIcon from "@/components/icons/MenuOpenIcon.tsx";
+import MenuOpenIcon from "@/components/icons/MenuOpenIcon";
 
 
 export default function MobileMenu() {

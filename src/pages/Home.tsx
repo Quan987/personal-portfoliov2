@@ -10,7 +10,7 @@ export default function Home() {
                 <h2 className="my-6 text-black/60">I build what you imagine — right in the browser.</h2>
                 <ParagraphText text={data.heroHeadline} className={"text-base text-black/60 leading-7 font-normal"}/>
             </div>
-            <a href={"#"} target="_blank" rel="noopener noreferrer" className="interactive-text-beige hover-tilt flex justify-center gap-2 w-fit my-24 px-10 py-4 opacity-90 rounded-md bg-midnight-navy tracking-widest active:bg-black/80 hover:bg-black/80">
+            <a href={"#"} target="_blank" rel="noopener noreferrer" className="interactive-text-beige uppercase hover-tilt flex justify-center gap-2 w-fit my-24 px-10 py-4 opacity-90 rounded-md bg-midnight-navy tracking-widest active:bg-black/80 hover:bg-black/80">
                 <span className="font-normal">Resume</span>
                 <DownloadIcon/>
             </a>
