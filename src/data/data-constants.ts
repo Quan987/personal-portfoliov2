@@ -46,8 +46,6 @@ const logo = {
 }
 
 const data = {
-    name: "Quan Tran.",
-    heroTitle: "I build what you imagine — right in the browser.",
     heroHeadline: "I’m a software developer focused on building accessible, user-centered web applications. Currently learning Express.js and passionate about crafting impactful digital experiences.",
     aboutP1: "Hi! My name is Quan, and I'm a Computer Science graduate from Georgia State University. As an aspiring Full-Stack Developer, I’m driven by the challenge of building scalable, impactful applications that solve real-world problems. I enjoy continuously learning new technologies, and striving to write clean, efficient code.",
     aboutP2: "Beyond the screen, I dedicate time to weightlifting in the gym, which keeps me focused, energized, and mentally sharp. Photography is another creative outlet for me—I enjoy capturing scenic landscapes that inspire reflection and appreciation for the world around me.",

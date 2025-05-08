@@ -1,5 +1,6 @@
 import StackIcon from "@/components/icons/StackIcon";
 import LinkIcon from "@/components/icons/LinkIcon";
+import ParagraphText from "@/components/ui/ParagraphText.tsx";
 
 interface ProjectCardProps {
     data: {
@@ -12,10 +13,10 @@ interface ProjectCardProps {
 
 export default function ProjectCard({data}: ProjectCardProps) {
     return (
-        <div className="scale-animation p-6 my-3 bg-midnight-navy text-beige rounded-lg shadow-md text-wrap">
+        <div className="hover-scale m-3 p-6 bg-midnight-navy text-beige rounded-lg shadow-md text-wrap">
             <StackIcon/>
             <h5 className="text-xl my-2">{data.title}</h5>
-            <p className="text-sm my-3 opacity-80">{data.description}</p>
+            <ParagraphText text={data.description} className={"text-sm my-3 opacity-80"} />
             <ul className="text-xs flex items-center gap-x-4 my-4 flex-wrap opacity-60">
                 {data.stack.map((item, index) => (
                     <li key={`${item.trim()}-${index}`}>{item}</li>

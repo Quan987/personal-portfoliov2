@@ -4,8 +4,8 @@ import {data} from "@/data/data-constants"
 
 export default function Project() {
     return (
-        <section id="projects" className="scroll-m-30">
-            <div className="my-4">
+        <section id="projects" className="scroll-m-25">
+            <div className="py-4">
                 <h2 className="text-2xl text-midnight-navy font-bold tracking-wider">Projects</h2>
                 <HorizontalLine lineWidth={"w-full"}/>
             </div>

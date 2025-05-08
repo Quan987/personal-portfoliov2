@@ -4,7 +4,7 @@ import HorizontalLine from "@/components/ui/HorizontalLine";
 
 export default function Skills() {
     return (
-        <section id="skills" className="pb-30">
+        <section id="skills" className="pb-60">
             <div className="flex justify-center items-center gap-3">
                 <HorizontalLine lineWidth={"w-3/12"} />
                 <h2 className="text-2xl text-midnight-navy font-bold tracking-wider shrink-0">Tech Stacks</h2>
@@ -12,10 +12,10 @@ export default function Skills() {
             </div>
 
             <div className="group w-screen relative left-1/2 -translate-x-1/2 flex overflow-hidden">
-                <ul className="my-6 flex animate-infinite-scroll group-hover:[animation-play-state:paused]">
+                <ul className="my-5 flex animate-infinite-scroll group-hover:[animation-play-state:paused]">
                     {[...data.skills, ...data.skills].map((item, index) => (
                         <li key={`${index}-${item.name}`}
-                            className="mx-4 bg-midnight-navy rounded-md scale-animation">
+                            className="hover-scale h-32 w-28 mx-4 bg-midnight-navy rounded-md ">
                             <TechStackCard title={item.name} icon={item.icon}/>
                         </li>
                     ))}

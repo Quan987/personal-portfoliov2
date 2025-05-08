@@ -2,9 +2,6 @@
 @import "tailwindcss";
 
 
-
-/*@custom-variant dark (&:where(.dark, .dark *));*/
-
 @theme {
     --font-display: "Roboto", sans-serif;
     --color-black-custom: #090d11;
@@ -70,19 +67,14 @@
 }
 
 @layer utilities {
-    .custom-border {
-        @apply border-solid border-1 border-black;
+    .interactive-text-beige {
+        @apply text-beige hover:text-white active:text-white;
     }
-    .interactive-text {
-        @apply text-beige uppercase font-bold hover:text-white active:text-white;
+    .hover-scale {
+        @apply hover:scale-105 duration-300;
     }
-    .gradient-beige-to-bronze {
-        @apply bg-gradient-to-r from-beige via-beige-sand to-beige-bronze;
+    .hover-tilt {
+        @apply transform transition-all duration-200 hover:-translate-y-0.5 hover:translate-x-0.5;
     }
-    .button-animation {
-        @apply active:bg-black-custom hover:bg-black-custom hover:-translate-y-0.5 hover:translate-x-0.5 transform transition-all duration-200;
-    }
-    .scale-animation {
-        @apply hover:scale-105 transition-transform duration-300;
-    }
+
 }

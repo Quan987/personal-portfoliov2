@@ -23,11 +23,10 @@ export default function MobileMenu() {
     }
 
     return (
-        <div className="lg:hidden">
+        <nav className="lg:hidden">
             <button type="button" onClick={toggleMenu} className={"relative flex items-center z-60 text-beige"}>
                 {!isOpen ? <MenuOpenIcon/> : <MenuCloseIcon/>}
             </button>
-
 
             {/* Drop down menu */}
             {!initialLoad.current && (
@@ -36,11 +35,11 @@ export default function MobileMenu() {
                         <li key={`${item}-${i}`}>
                             <a href={item.toLowerCase() === "home" ? "./" : "#" + item.toLowerCase()}
                                onClick={toggleMenu}
-                               className={"interactive-text tracking-wider"}>{item}</a>
+                               className={"interactive-text-beige uppercase font-bold tracking-wide"}>{item}</a>
                         </li>
                     ))}
                 </ul>
             )}
-        </div>
+        </nav>
     )
 }
