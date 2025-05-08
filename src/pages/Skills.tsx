@@ -1,35 +1,36 @@
 import {data} from '@/data/data-constants'
-import Card from "@/components/Card.tsx";
+import TechStackCard from "@/components/TechStackCard.tsx";
+import HorizontalLine from "@/components/ui/HorizontalLine";
 
 export default function Skills() {
     return (
-        <section id="skills" className="skills">
-            <div className="flex flex-row justify-center items-center gap-4">
-                <hr className="w-3/12 border-1 rounded-2xl border-midnight-navy opacity-70"/>
-                <h1 className="text-2xl text-midnight-navy tracking-wider font-bold">Technologies</h1>
-                <hr className="horizontal-line"/>
+        <section id="skills" className="pb-30">
+            <div className="flex justify-center items-center gap-3">
+                <HorizontalLine lineWidth={"w-3/12"} />
+                <h2 className="text-2xl text-midnight-navy font-bold tracking-wider shrink-0">Tech Stacks</h2>
+                <HorizontalLine lineWidth={"w-full"} />
             </div>
 
-            <div className="w-screen relative left-1/2 -translate-x-1/2 flex overflow-hidden">
-                <ul className="flex py-8 animate-infinite-scroll">
+            <div className="group w-screen relative left-1/2 -translate-x-1/2 flex overflow-hidden">
+                <ul className="my-6 flex animate-infinite-scroll group-hover:[animation-play-state:paused]">
                     {[...data.skills, ...data.skills].map((item, index) => (
-                        <li key={`${index}${item.name}`}
-                            className={`mx-4 bg-midnight-navy rounded-md scale-animation`}>
-
-                            <Card title={item.name} icon={item.icon}/>
+                        <li key={`${index}-${item.name}`}
+                            className="mx-4 bg-midnight-navy rounded-md scale-animation">
+                            <TechStackCard title={item.name} icon={item.icon}/>
                         </li>
                     ))}
                 </ul>
             </div>
 
-            <div className="flex flex-row justify-center items-center gap-4">
-                <hr className="horizontal-line" />
-                <div className="h-4 w-4 border border-midnight-navy rounded-full shrink-0"></div>
-                <hr className="horizontal-line"/>
-            </div>
+            {/*<div className="flex flex-row justify-center items-center gap-4">*/}
+            {/*    <HorizontalLine lineWidth={"w-full"} />*/}
+            {/*    <hr className="h-5 w-5 border border-midnight-navy rounded-full shrink-0" />*/}
+            {/*    <HorizontalLine lineWidth={"w-full"} />*/}
+            {/*</div>*/}
         </section>
     );
 }
+
 
 // scale-animation select-none
 // ${index % 2 === 0 ? 'translate-y-12 card-down' : '-translate-y-12 card-up'}`

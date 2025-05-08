@@ -1,5 +1,7 @@
 import {useEffect, useState, useRef} from "react";
-import {logo, data} from "@/data/data-constants.ts";
+import {data} from "@/data/data-constants.ts";
+import MenuCloseIcon from "@/components/icons/MenuCloseIcon";
+import MenuOpenIcon from "@/components/icons/MenuOpenIcon.tsx";
 
 
 export default function MobileMenu() {
@@ -21,26 +23,24 @@ export default function MobileMenu() {
     }
 
     return (
-        <>
-            {/* Toggle button */}
-            <div className={"flex justify-center items-center md:hidden"}>
-                <button onClick={toggleMenu} className={"z-60"}>
-                    <img src={!isOpen ? logo.menuOpen : logo.menuClose} alt="menuOpenLight"/>
-                </button>
-            </div>
+        <div className="lg:hidden">
+            <button type="button" onClick={toggleMenu} className={"relative flex items-center z-60 text-beige"}>
+                {!isOpen ? <MenuOpenIcon/> : <MenuCloseIcon/>}
+            </button>
+
 
             {/* Drop down menu */}
             {!initialLoad.current && (
-                <ul className={`${isOpen ? "animate-dropDownIn pointer-events-auto" : "animate-dropDownOut pointer-events-none"} fixed top-0 left-0 w-screen h-svh z-40 bg-midnight-navy text-2xl flex flex-col items-center justify-center gap-16 md:hidden`}>
+                <ul className={`${isOpen ? "animate-slide-down-in" : "animate-slide-up-out pointer-events-none"} fixed inset-0 size-full z-50 bg-midnight-navy flex flex-col items-center justify-center gap-20 text-2xl`}>
                     {data.navItems.map((item, i) => (
-                        <li key={i} className={"py-2"}>
+                        <li key={`${item}-${i}`}>
                             <a href={item.toLowerCase() === "home" ? "./" : "#" + item.toLowerCase()}
                                onClick={toggleMenu}
-                               className={"interactive-text tracking-widest"}>{item}</a>
+                               className={"interactive-text tracking-wider"}>{item}</a>
                         </li>
                     ))}
                 </ul>
             )}
-        </>
+        </div>
     )
 }

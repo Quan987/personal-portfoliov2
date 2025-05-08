@@ -1,7 +1,5 @@
 import profile from '@/assets/images/png/profile.png';
 import actionFigure from '@/assets/images/png/action-figure.png';
-import menuOpen from '@/assets/images/svg/logo/menu-open.svg';
-import menuClose from '@/assets/images/svg/logo/menu-close.svg';
 import emailLight from '@/assets/images/svg/logo/email-light.svg';
 import emailDark from '@/assets/images/svg/logo/email-dark.svg';
 import githubLight from '@/assets/images/svg/logo/github-light.svg';
@@ -35,8 +33,6 @@ import viteIcon from '@/assets/images/svg/icon/vite-icon.svg';
 const logo = {
     actionFigure,
     profile,
-    menuOpen,
-    menuClose,
     emailLight,
     emailDark,
     githubLight,
@@ -86,7 +82,7 @@ const data = {
             title: "Password Generator App",
             description: "A secure web application that generates strong, unique passwords and features a personal vault for safely storing and managing them.",
             stack: [
-                "JavaScript",
+                "JavaScripts",
                 "PHP",
                 "SQL"
             ],
@@ -109,7 +105,7 @@ const data = {
                 "Java",
                 "JavaFX/Swing",
                 "OSHI",
-                "JFreeChart"
+                "JFreeChart",
             ],
             link: "https://github.com/Quan987/os_project"
         },

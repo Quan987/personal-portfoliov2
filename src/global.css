@@ -16,7 +16,7 @@
     --color-sky-glow: #7baeec;
     --color-blue-flare: #4094fa;
 
-    @keyframes dropDownIn {
+    @keyframes slide-in {
         0% {
             opacity: 0;
             transform: translateY(-1rem);
@@ -26,7 +26,7 @@
             transform: translateY(0);
         }
     }
-    @keyframes dropDownOut {
+    @keyframes slide-out {
         0% {
             opacity: 1;
             transform: translateY(0);
@@ -45,11 +45,12 @@
         }
     }
 
-    --animate-dropDownIn: dropDownIn 200ms ease-in forwards;
+    --animate-slide-down-in: slide-in 200ms ease-in forwards;
 
-    --animate-dropDownOut: dropDownOut 200ms ease-out forwards;
+    --animate-slide-up-out: slide-out 200ms ease-out forwards;
 
     --animate-infinite-scroll: infinite-scroll 0s linear infinite;
+
 
 }
 
@@ -63,41 +64,9 @@
     button {
         @apply cursor-pointer;
     }
-    section {
-        /*@apply scroll-m-30;*/
-    }
 }
 
 @layer components {
-    .navbar {
-        @apply px-8 py-4;
-    }
-    .logo {
-        @apply w-12 h-12;
-    }
-    .home {
-        @apply my-60;
-    }
-    .home-name {
-        @apply text-3xl;
-    }
-    .home-title {
-        @apply text-3xl mt-4;
-    }
-    .home-head-line {
-        @apply leading-7 mt-8;
-    }
-    .home-button {
-        @apply inline-block py-4 px-12;
-    }
-    .about {
-        @apply py-20 scroll-m-12;
-    }
-    .skills {
-        @apply py-40;
-    }
-
-
 }
 
 @layer utilities {
@@ -113,10 +82,7 @@
     .button-animation {
         @apply active:bg-black-custom hover:bg-black-custom hover:-translate-y-0.5 hover:translate-x-0.5 transform transition-all duration-200;
     }
-    .horizontal-line {
-        @apply w-full border-1 rounded-3xl border-midnight-navy opacity-70 pointer-events-none select-none;
-    }
     .scale-animation {
-        @apply transform transition-all duration-200 hover:scale-110;
+        @apply hover:scale-105 transition-transform duration-300;
     }
 }

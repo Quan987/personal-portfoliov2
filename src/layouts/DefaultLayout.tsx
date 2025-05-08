@@ -1,5 +1,4 @@
 import Navbar from "@/components/Navbar.tsx"
-import Footer from "@/components/Footer.tsx"
 import {ReactNode} from "react";
 
 
