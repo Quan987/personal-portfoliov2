@@ -1,22 +1,22 @@
 import './App.css'
 import DefaultLayout from "@/layouts/DefaultLayout";
-import Home from "@/pages/Home.tsx";
-import About from "@/pages/About.tsx";
-import Project from "@/pages/Project.tsx";
-import Contact from "@/pages/Contact.tsx";
-import Skills from "@/pages/Skills.tsx";
+import Home from "@/sections/Home.tsx";
+import About from "@/sections/About.tsx";
+import Project from "@/sections/Project.tsx";
+import Contact from "@/sections/Contact.tsx";
+import Skills from "@/sections/Skills.tsx";
 
 
 function App() {
     return (
         <DefaultLayout>
-            <main className={"px-6"}>
-                <Home/>
-                <About/>
-                <Skills/>
-                <Project/>
-                <Contact/>
-            </main>
+
+            <Home/>
+            <About/>
+            <Skills/>
+            <Project/>
+            <Contact/>
+
         </DefaultLayout>
     )
 }

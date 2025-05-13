@@ -4,7 +4,7 @@ import HorizontalLine from "@/components/ui/HorizontalLine";
 
 export default function Skills() {
     return (
-        <section id="skills" className="pb-60">
+        <section id="skills" className="">
             <div className="flex justify-center items-center gap-3">
                 <HorizontalLine lineWidth={"w-3/12"} />
                 <h2 className="text-2xl text-midnight-navy font-bold tracking-wider shrink-0">Tech Stacks</h2>
@@ -21,12 +21,6 @@ export default function Skills() {
                     ))}
                 </ul>
             </div>
-
-            {/*<div className="flex flex-row justify-center items-center gap-4">*/}
-            {/*    <HorizontalLine lineWidth={"w-full"} />*/}
-            {/*    <hr className="h-5 w-5 border border-midnight-navy rounded-full shrink-0" />*/}
-            {/*    <HorizontalLine lineWidth={"w-full"} />*/}
-            {/*</div>*/}
         </section>
     );
 }

@@ -97,7 +97,7 @@ const data = {
             link: "https://github.com/Quan987/restaurant-flutter-app"
         },
         {
-            title: "OS System Monitor Project",
+            title: "OS System Monitor",
             description: "A Java-based system resource monitor that uses the OSHI library to provide real-time insights into CPU, memory, disk, and network usage by interfacing directly with system hardware and the OS.",
             stack: [
                 "Java",
