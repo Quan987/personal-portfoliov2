@@ -64,9 +64,7 @@
 }
 
 @layer components {
-    .mobile-menu {
-        @apply fixed inset-0 size-full z-50 bg-midnight-navy flex flex-col items-center justify-center gap-20 text-2xl;
-    }
+
 }
 
 @layer utilities {

@@ -120,7 +120,8 @@ const data = {
             link: "https://github.com/Quan987/real-estate-web"
         }
     ],
-    navItems: ["Home", "About", "Projects", "Contact"]
+    navItems: ["Home", "About", "Projects", "Contact"],
+
 }
 
 
