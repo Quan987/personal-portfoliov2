@@ -44,7 +44,7 @@
 
     --animate-slide-down-in: slide-in 200ms ease-in forwards;
 
-    --animate-slide-up-out: slide-out 200ms ease-out forwards;
+    --animate-slide-up-out: slide-out 150ms ease-out forwards;
 
     --animate-infinite-scroll: infinite-scroll 0s linear infinite;
 
@@ -64,6 +64,9 @@
 }
 
 @layer components {
+    .mobile-menu {
+        @apply fixed inset-0 size-full z-50 bg-midnight-navy flex flex-col items-center justify-center gap-20 text-2xl;
+    }
 }
 
 @layer utilities {
