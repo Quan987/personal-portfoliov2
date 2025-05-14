@@ -28,7 +28,7 @@ export default function MobileMenu() {
 
             {/* Drop down menu */}
             {!initialLoad && (
-                <Menu data={data.navItems} onToggleMenu={toggleMenu} className={`mobile-menu ${isOpen ? "animate-slide-down-in" : "animate-slide-up-out pointer-events-none"}`} />
+                <Menu data={data.navItems} onToggleMenu={toggleMenu} className={`${isOpen ? "animate-slide-down-in" : "animate-slide-up-out pointer-events-none"}`} />
             )}
         </div>
     )

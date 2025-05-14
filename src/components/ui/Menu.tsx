@@ -11,7 +11,7 @@ export default function Menu({className, data, onToggleMenu}: MenuProps) {
                 <li key={`${item}-${i}`}>
                     <a href={item.toLowerCase() === "home" ? "./" : "#" + item.toLowerCase()}
                        onClick={onToggleMenu}
-                       className={"interactive-text-beige uppercase font-bold tracking-wide"}>{item}</a>
+                       className={"hover-underline interactive-text-beige uppercase font-bold tracking-wide"}>{item}</a>
                 </li>
             ))}
         </ul>)
