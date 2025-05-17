@@ -1,38 +1,37 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 @import "tailwindcss";
-
 
 @theme {
     --font-roboto: "Roboto", "Verdana";
-    --color-beige: rgba(241, 216, 183, 1);
-    --color-silver: rgba(242, 245, 251, 1);
-    --color-midnight: rgba(12, 38, 70, 1);
-    --color-sky-glow: rgba(123, 174, 236, 1);
-    --color-blue-flare: rgba(64, 148, 250, 1);
+    --color-beige: #f1d8b7ff;
+    --color-silver: #f2f5fbff;
+    --color-navy-blue: #000c66;
+    --color-navy-dark-blue: #0e0e55;
+    --color-sky-glow: #7baeecff;
+    --color-blue-flare: #4094faff;
 
-
-    --animate-slide-in: slide-in 200ms ease-in forwards;
-    --animate-slide-out: slide-out 150ms ease-out forwards;
+    --animate-slide-in: slide-in 300ms ease-in forwards;
+    --animate-slide-out: slide-out 250ms ease-out forwards;
     --animate-scroll: infinite-scroll 0s linear infinite;
 
     @keyframes slide-in {
         0% {
             opacity: 0;
-            transform: translateX(-1rem);
+            transform: translateY(-100%);
         }
         100% {
             opacity: 1;
-            transform: translateX(0);
+            transform: translateY(0);
         }
     }
     @keyframes slide-out {
         0% {
             opacity: 1;
-            transform: translateX(0);
+            transform: translateY(0);
         }
         100% {
             opacity: 0;
-            transform: translateX(-1rem);
+            transform: translateY(-100%);
         }
     }
     @keyframes infinite-scroll {
@@ -49,41 +48,34 @@
     html {
         scroll-behavior: smooth;
     }
+
     header {
         font-family: var(--font-roboto), serif;
     }
+
     body {
-        background-color: var(--color-silver) !important;
-        font-family: var(--font-roboto), sans-serif;
+        @apply bg-silver;
     }
+
     button {
         cursor: pointer;
-    }
-    h1 {
-
     }
 }
 
 @layer components {
-    .hamburger-menu {
-        @apply flex-col justify-center items-center gap-1 w-max h-5 flex;
-    }
     .hamburger-line {
-        @apply w-7 h-1 bg-black rounded-2xl transition-all ease-in-out duration-300 origin-center;
+        @apply w-7 md:w-8 h-1 bg-black rounded-2xl transition-all ease-in-out duration-300 origin-center;
     }
-    .sidebar {
-
+    .aside-media-lg {
+        @apply lg:mt-0 lg:w-full lg:h-fit lg:static lg:translate-x-0 lg:animate-none lg:flex
     }
-
-
-
 }
 
 @layer utilities {
     .hover-underline {
         @apply inline-block relative cursor-pointer;
 
-        &::after{
+        &::after {
             @apply absolute bottom-0 left-0 w-full h-0.5 bg-black/80 rounded-xl;
             content: "";
             transform: scaleX(0);
@@ -91,36 +83,17 @@
             transition: transform 0.25s ease-out;
         }
 
-       &:hover::after{
-           transform: scaleX(1);
-           transform-origin: bottom left;
-       }
-
+        &:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
     }
 
-
-    .interactive-text-beige {
-        @apply text-beige hover:text-white active:text-white;
-    }
     .hover-scale {
         @apply hover:scale-105 duration-300;
     }
+
     .hover-tilt {
         @apply transform transition-all duration-200 hover:-translate-y-0.5 hover:translate-x-0.5;
     }
 }
-
-/*.hamburger-menu {*/
-/*    @apply flex flex-col gap-1.5;*/
-/*}*/
-
-/*.hamburger-menu {*/
-
-/*}*/
-
-/*.hamburger-menu::before,*/
-/*.hamburger-menu::after,*/
-/*.hamburger-menu input {*/
-/*    @apply w-16 h-2 bg-black rounded-2xl;*/
-/*    content: "";*/
-/*}*/

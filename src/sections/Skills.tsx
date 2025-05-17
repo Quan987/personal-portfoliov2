@@ -1,4 +1,4 @@
-import {data} from '@/data/data-constants'
+import data from '@/data/data-constants'
 import TechStackCard from "@/components/TechStackCard.tsx";
 import HorizontalLine from "@/components/ui/HorizontalLine";
 

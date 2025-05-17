@@ -1,5 +1,4 @@
-import HorizontalLine from "@/components/ui/HorizontalLine.tsx";
-import ParagraphText from "@/components/ui/ParagraphText.tsx";
+
 
 export default function Contact() {
     return (

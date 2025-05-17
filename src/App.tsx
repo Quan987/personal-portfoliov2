@@ -10,13 +10,11 @@ import Skills from "@/sections/Skills.tsx";
 function App() {
     return (
         <DefaultLayout>
-
             <Home/>
             <About/>
             <Skills/>
             <Project/>
             <Contact/>
-
         </DefaultLayout>
     )
 }

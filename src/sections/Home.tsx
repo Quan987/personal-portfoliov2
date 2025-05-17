@@ -1,19 +1,34 @@
-import {data} from '@/data/data-constants'
-import DownloadIcon from "@/components/icons/DownloadIcon";
-import ParagraphText from "@/components/ui/ParagraphText";
+import data from "@/data/data-constants";
+
 
 export default function Home() {
     return (
-        <section id="./" className="my-64 text-pretty">
-            <div className="text-3xl font-bold">
-                <h1 className="uppercase bg-gradient-to-r from-midnight-navy via-sky-glow to-blue-flare text-transparent bg-clip-text">Hey, I'm Quan Tran.</h1>
-                <h2 className="my-6 text-black/60">I build what you imagine — right in the browser.</h2>
-                <ParagraphText text={data.heroHeadline} className={"text-base text-black/60 leading-7 font-normal"}/>
+        <section id="home" className="grid grid-cols-2 my-35">
+            <div className="text-pretty pl-30">
+                <div className="">
+                    <h2 className="font-bold text-[2.8rem] leading-13">
+                        I Build What You Imagine — <span className={"text-orange-600"}>Right in the Browser.</span>
+                    </h2>
+                    <p className={"py-5 opacity-60 leading-7"}>{data.heroHeadline}</p>
+                </div>
+
+                <a
+                    href={"#"}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    draggable={false}
+                    className="hover-tilt inline-block uppercase bg-orange-600 text-white border-orange-600 hover:bg-white hover:text-orange-600  text-sm px-7 py-3 my-12 rounded-md border-1"
+                >Get In Touch</a>
             </div>
-            <a href={"#"} target="_blank" rel="noopener noreferrer" className="interactive-text-beige uppercase hover-tilt flex justify-center gap-2 w-fit my-24 px-10 py-4 opacity-90 rounded-md bg-midnight-navy tracking-widest active:bg-black/80 hover:bg-black/80">
-                <span className="font-normal">Resume</span>
-                <DownloadIcon/>
-            </a>
+
+            <figure className="justify-items-center">
+                <img loading="lazy" src={data.actionFigure} alt="actionFigure" draggable={false}
+                     className="hover-scale cursor-pointer block w-xs rounded-[3rem] shadow-2xl"/>
+
+            </figure>
         </section>
     );
 }
+
+// bg-[url('./assets/images/background/polygon.svg')]
+// shadow-[1.3rem_1.3rem_1.3rem_-0.625rem_rgba(0,0,0,0.2)]

@@ -1,6 +1,6 @@
 import HorizontalLine from "@/components/ui/HorizontalLine.tsx";
 import ProjectCard from "@/components/ProjectCard";
-import {data} from "@/data/data-constants"
+import data from "@/data/data-constants"
 
 export default function Project() {
     return (

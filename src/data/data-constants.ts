@@ -1,15 +1,3 @@
-import profile from '@/assets/images/png/profile.png';
-import actionFigure from '@/assets/images/png/action-figure.png';
-import emailLight from '@/assets/images/svg/logo/email-light.svg';
-import emailDark from '@/assets/images/svg/logo/email-dark.svg';
-import githubLight from '@/assets/images/svg/logo/github-light.svg';
-import githubDark from '@/assets/images/svg/logo/github-dark.svg';
-import instagramLight from '@/assets/images/svg/logo/instagram-light.svg';
-import instagramDark from '@/assets/images/svg/logo/instagram-dark.svg';
-import linkedinLight from '@/assets/images/svg/logo/linkedin-light.svg';
-import linkedinDark from '@/assets/images/svg/logo/linkedin-dark.svg';
-import twitterLight from '@/assets/images/svg/logo/twitter-light.svg';
-import twitterDark from '@/assets/images/svg/logo/twitter-dark.svg';
 import htmlIcon from '@/assets/images/svg/icon/html5-icon.svg';
 import cssIcon from '@/assets/images/svg/icon/css-icon.svg';
 import javascriptIcon from '@/assets/images/svg/icon/javascript-icon.svg';
@@ -28,33 +16,28 @@ import flutterIcon from '@/assets/images/svg/icon/flutter-icon.svg';
 import javaIcon from '@/assets/images/svg/icon/java-icon.svg';
 import pythonIcon from '@/assets/images/svg/icon/python-icon.svg';
 import viteIcon from '@/assets/images/svg/icon/vite-icon.svg';
+import actionFigure from '@/assets/images/png/action-figure.png';
+import githubLogo from '@/assets/images/svg/logo/github-logo.svg';
+import instagramLogo from '@/assets/images/svg/logo/instagram-logo.svg';
+import linkedinLogo from '@/assets/images/svg/logo/linkedin-logo.svg';
+import twitterLogo from '@/assets/images/svg/logo/twitter-logo.svg';
+import pinterestLogo from '@/assets/images/svg/logo/pinterest-logo.svg';
 
-
-const logo = {
-    actionFigure,
-    profile,
-    emailLight,
-    emailDark,
-    githubLight,
-    githubDark,
-    instagramLight,
-    instagramDark,
-    linkedinLight,
-    linkedinDark,
-    twitterLight,
-    twitterDark,
-}
 
 const data = {
-    heroHeadline: "I’m a software developer focused on building accessible, user-centered web applications. Currently learning Express.js and passionate about crafting impactful digital experiences.",
-    aboutP1: "Hi! My name is Quan, and I'm a Computer Science graduate from Georgia State University. As an aspiring Full-Stack Developer, I’m driven by the challenge of building scalable, impactful applications that solve real-world problems. I enjoy continuously learning new technologies, and striving to write clean, efficient code.",
+    heroHeadline: "Welcome to my portfolio, I'm Quan Tran, a software developer focused on building accessible, user-centered web applications. Got a project in mind or just want to chat? I’d love to hear from you.",
+    aboutP1: "Hi! My name is Quan, and I'm a Computer Science graduate from Georgia State University. As an aspiring Full-Stack Developer, I'm driven by the challenge of building scalable, impactful applications that solve real-world problems. I enjoy continuously learning new technologies, and striving to write clean, efficient code.",
     aboutP2: "Beyond the screen, I dedicate time to weightlifting in the gym, which keeps me focused, energized, and mentally sharp. Photography is another creative outlet for me—I enjoy capturing scenic landscapes that inspire reflection and appreciation for the world around me.",
     aboutP3: "I'm seeking opportunities to grow as a developer and help build meaningful products.",
-    email: "qtrann1379@gmail.com",
-    gitHub: "https://github.com/Quan987",
-    linkedin: "https://www.linkedin.com/in/qtrann1379",
-    instagram: "https://www.instagram.com/tquan_13",
-    twitter: "https://x.com/qtrann1379",
+
+    socialMedia: [
+        {name: "Github", link: "https://github.com/Quan987", logo: githubLogo},
+        {name: "Linkedin", link: "https://www.linkedin.com/in/qtrann1379", logo: linkedinLogo},
+        {name: "Twitter", link: "https://x.com/qtrann1379", logo: twitterLogo},
+        {name: "Pinterest", link: "https://www.pinterest.com/qtrann1379/", logo: pinterestLogo},
+        {name: "Instagram", link: "https://www.instagram.com/tquan_13", logo: instagramLogo},
+    ],
+
     skills: [
         {name: "HTML", icon: htmlIcon},
         {name: "CSS", icon: cssIcon},
@@ -120,12 +103,8 @@ const data = {
             link: "https://github.com/Quan987/real-estate-web"
         }
     ],
-    navItems: ["Home", "About", "Projects", "Contact"],
-
+    actionFigure: actionFigure,
 }
 
 
-export {
-    logo,
-    data
-}
+export default data;
