@@ -11,7 +11,7 @@ export default function NonMobileMenu({data}: MenuProps) {
                             <a href={media.link} target="_blank" rel="noopener noreferrer" draggable={false}
                                className={"flex items-center justify-center gap-0 active:text-orange-600"}>
                                 <img src={media.logo} alt={`${media.name.toLowerCase()}-logo`} draggable={false}
-                                     className={"w-6 xl:w-7"}/>
+                                     className={"w-6"}/>
                             </a>
                         </li>
                     ))}

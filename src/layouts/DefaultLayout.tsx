@@ -1,16 +1,16 @@
 import Navbar from "@/components/Navbar.tsx";
-import { ReactNode } from "react";
+import {ReactNode} from "react";
 
 interface LayoutProps {
-  children: ReactNode;
+    children: ReactNode;
 }
 
-export default function DefaultLayout({ children }: LayoutProps) {
-  return (
-    <>
-      <Navbar />
-      <main className={""}>{children}</main>
-      {/*<Footer/>*/}
-    </>
-  );
+export default function DefaultLayout({children}: LayoutProps) {
+    return (
+        <>
+            <Navbar/>
+            <main className={"px-45"}>{children}</main>
+            {/*<Footer/>*/}
+        </>
+    );
 }

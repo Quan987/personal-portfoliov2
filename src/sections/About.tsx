@@ -5,10 +5,10 @@ import ParagraphText from "@/components/ui/ParagraphText.tsx";
 
 export default function About() {
     return (
-        <section id="about" className="py-12 scroll-m-12] bg-cover bg-no-repeat bg-center ">
+        <section id="about" className="py-22 scroll-m-12] bg-cover bg-no-repeat bg-center ">
             <div className="flex items-center justify-center gap-3">
                 <HorizontalLine lineWidth = {"w-full"}/>
-                <h2 className="text-2xl font-bold text-midnight-navy tracking-wider shrink-0">About Me</h2>
+                <h2 className="text-3xl font-bold text-midnight-navy tracking-wider shrink-0">About Me</h2>
                 <HorizontalLine lineWidth = {"w-full"}/>
             </div>
 

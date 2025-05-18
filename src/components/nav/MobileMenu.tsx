@@ -52,7 +52,7 @@ export default function MobileMenu({data}: MenuProps) {
                         <li key={`${index}-${media.name}`}
                             className={"w-2/3 flex justify-end"}>
                             <a href={media.link} onClick={handleClick} target="_blank" rel="noopener noreferrer"
-                               className={"flex items-center justify-center gap-2 active:text-orange-600"}>
+                               className={"flex items-center justify-center gap-2 active:text-navy-blue"}>
                                 <p className={"font-bold text-2xl md:text-3xl"}>{media.name}</p>
                                 <img src={media.logo} alt={`${media.name.toLowerCase()}-logo`}
                                      className={"w-8 md:w-10 pointer-events-none select-none"}/>
