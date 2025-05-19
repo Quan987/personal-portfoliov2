@@ -33,9 +33,6 @@ export default function Home() {
 
                 <MarqueeRightScroll skills={data.skills} />
             </div>
-
-
-
         </section>
     );
 }

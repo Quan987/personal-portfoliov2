@@ -76,11 +76,11 @@
     .hamburger-line {
         @apply w-7 md:w-8 h-1 bg-black rounded-2xl transition-all ease-in-out duration-300 origin-center;
     }
-    .marquee {
-
+    .marquee-track {
+        @apply relative border-1 border-blue-600 h-(--marquee-items-h);
     }
-    .marquee-items {
-
+    .marquee-item {
+        @apply absolute bg-orange-600 rounded-md w-(--marquee-items-w) h-(--marquee-items-h);
     }
 }
 
