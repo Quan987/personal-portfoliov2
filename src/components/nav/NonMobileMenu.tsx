@@ -1,7 +1,7 @@
-import {MenuProps} from "@/types/navigation";
+import {DataSocialMedia} from "@/types/data.ts";
 
 
-export default function NonMobileMenu({data}: MenuProps) {
+export default function NonMobileMenu({data}: DataSocialMedia) {
     return (
             <aside className={`hidden lg:block`}>
                 <ul className="flex justify-center gap-6 xl:gap-7 w-full h-screen lg:h-fit ">

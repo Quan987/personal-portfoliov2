@@ -22,9 +22,13 @@ dist-ssr
 !.vscode/extensions.json
 .idea
 .DS_Store
-*.txt
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
+
+
+# Notes directories
+notes/
+*.txt

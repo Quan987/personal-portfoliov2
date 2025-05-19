@@ -1,9 +1,9 @@
 import {useEffect, useRef, useState} from "react";
-import {MenuProps} from "@/types/navigation";
+import {DataSocialMedia} from "@/types/data.ts";
 
 
 
-export default function MobileMenu({data}: MenuProps) {
+export default function MobileMenu({data}: DataSocialMedia) {
     const [isChecked, setIsChecked] = useState(false);
     const initialRender = useRef(true);
 

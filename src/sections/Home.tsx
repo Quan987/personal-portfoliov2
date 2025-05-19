@@ -1,6 +1,6 @@
 import data from "@/data/data-constants";
-import TechStackCard from "@/components/TechStackCard.tsx";
-import {CSSProperties} from "react";
+import Marquee from "@/components/Marquee.tsx";
+
 
 export default function Home() {
 
@@ -26,23 +26,7 @@ export default function Home() {
                 </div>
             </div>
 
-
-            <ul className={"border-1  border-black relative overflow-hidden"}>
-                {data.skills.map((item, index) => {
-                    return (
-                        <li key={`${index}-${item.name}`}
-                            className={`animate-marquee size-(--marquee-items-w) bg-orange-600 rounded-md absolute`}
-                            style={{
-                                left: `max(calc((var(--marquee-items-w) + 1rem) * ${data.skills.length}), 100%)`,
-                                animationDelay: `calc(var(--marquee-speed) / ${data.skills.length} * ${data.skills.length - (index + 1)} * -1)`
-                            }}
-                        >
-                            <img src={item.icon} alt={item.name} className={""}/>
-                            <h3>{item.name}</h3>
-                        </li>
-                    );
-                })}
-            </ul>
+            <Marquee skills={data.skills}/>
 
 
         </section>

@@ -11,7 +11,8 @@
     --color-blue-flare: #4094faff;
 
     --marquee-speed: 20s;
-    --marquee-items-w: 6rem;
+    --marquee-items-w: 7rem;
+    --marquee-items-gap: 2rem;
 
     --animate-slide-in: slide-in 300ms ease-in forwards;
     --animate-slide-out: slide-out 250ms ease-out forwards;
@@ -67,9 +68,6 @@
         @apply w-7 md:w-8 h-1 bg-black rounded-2xl transition-all ease-in-out duration-300 origin-center;
     }
 
-    .aside-media-lg {
-        @apply lg:mt-0 lg:w-full lg:h-fit lg:static lg:translate-x-0 lg:animate-none lg:flex;
-    }
 }
 
 @layer utilities {
