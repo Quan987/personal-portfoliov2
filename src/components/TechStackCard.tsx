@@ -1,16 +1,21 @@
+import data from "@/data/data-constants.ts";
 
-interface CardProps {
-    title: string;
-    icon: string;
-}
 
-export default function TechStackCard({title, icon}: CardProps) {
+export default function TechStackCard() {
+    const skills = [...data.skills, ...data.skills]
+
     return (
-        <div className="size-full flex flex-col items-center justify-center gap-2 rounded-md shadow-[0_3px_10px_rgb(0,0,0,0.2)]">
-            <div className="size-14 p-4 rounded-full bg-silver-white pointer-events-none">
-                <img loading="lazy" src={icon} alt={title}/>
-            </div>
-            <h5 className="text-sm text-center text-silver-white">{title}</h5>
-        </div>
-    )
+       <div className={"flex"}>
+           <ul className="flex flex-col gap-5 animate-scroll-vertical">
+               {skills.map((item, index) => (
+                   <li key={`${index}-${item.name}`} className="size-28 flex flex-col items-center justify-center gap-2 rounded-md shadow-[0_3px_10px_rgb(0,0,0,0.2)] bg-white">
+                       <div className="rounded-full bg-silver-white pointer-events-none size-12 p-3">
+                           <img loading="lazy" src={item.icon} alt={item.name}/>
+                       </div>
+                       <h5 className="text-center text-silver-white">{item.name}</h5>
+                   </li>
+               ))}
+           </ul>
+       </div>
+    );
 }

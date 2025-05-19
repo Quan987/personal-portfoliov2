@@ -11,16 +11,16 @@ export default function Skills() {
                 <HorizontalLine lineWidth={"w-full"} />
             </div>
 
-            <div className="group w-screen relative left-1/2 -translate-x-1/2 flex overflow-hidden">
-                <ul className="my-5 flex animate-infinite-scroll group-hover:[animation-play-state:paused]">
-                    {[...data.skills, ...data.skills].map((item, index) => (
-                        <li key={`${index}-${item.name}`}
-                            className="hover-scale h-32 w-28 mx-4 bg-midnight-navy rounded-md ">
-                            <TechStackCard title={item.name} icon={item.icon}/>
-                        </li>
-                    ))}
-                </ul>
-            </div>
+            {/*<div className="group w-screen relative left-1/2 -translate-x-1/2 flex overflow-hidden">*/}
+            {/*    <ul className="my-5 flex animate-infinite-scroll group-hover:[animation-play-state:paused]">*/}
+            {/*        {[...data.skills, ...data.skills].map((item, index) => (*/}
+            {/*            <li key={`${index}-${item.name}`}*/}
+            {/*                className="hover-scale h-32 w-28 mx-4 bg-midnight-navy rounded-md ">*/}
+            {/*                <TechStackCard title={item.name} icon={item.icon}/>*/}
+            {/*            </li>*/}
+            {/*        ))}*/}
+            {/*    </ul>*/}
+            {/*</div>*/}
         </section>
     );
 }
