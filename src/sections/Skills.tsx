@@ -1,5 +1,5 @@
 import data from '@/data/data-constants'
-import Marquee from "@/components/Marquee.tsx";
+import MarqueeLeftScroll from "@/components/MarqueeLeftScroll.tsx";
 import HorizontalLine from "@/components/ui/HorizontalLine";
 
 export default function Skills() {
@@ -16,7 +16,7 @@ export default function Skills() {
             {/*        {[...data.skills, ...data.skills].map((item, index) => (*/}
             {/*            <li key={`${index}-${item.name}`}*/}
             {/*                className="hover-scale h-32 w-28 mx-4 bg-midnight-navy rounded-md ">*/}
-            {/*                <Marquee title={item.name} icon={item.icon}/>*/}
+            {/*                <MarqueeLeftScroll title={item.name} icon={item.icon}/>*/}
             {/*            </li>*/}
             {/*        ))}*/}
             {/*    </ul>*/}

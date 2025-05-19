@@ -10,13 +10,16 @@
     --color-sky-glow: #7baeecff;
     --color-blue-flare: #4094faff;
 
-    --marquee-speed: 20s;
+    --marquee-speed-left-scroll: 20s;
+    --marquee-speed-right-scroll: 40s;
     --marquee-items-w: 7rem;
+    --marquee-items-h: 7rem;
     --marquee-items-gap: 2rem;
 
     --animate-slide-in: slide-in 300ms ease-in forwards;
     --animate-slide-out: slide-out 250ms ease-out forwards;
-    --animate-marquee: scroll-left var(--marquee-speed) linear infinite;
+    --animate-marquee-left-scroll: horizontal-scroll-left var(--marquee-speed-left-scroll) linear infinite;
+    --animate-marquee-right-scroll: horizontal-scroll-right var(--marquee-speed-right-scroll) linear infinite;
 
     @keyframes slide-in {
         0% {
@@ -38,9 +41,15 @@
             transform: translateY(-100%);
         }
     }
-    @keyframes scroll-left {
+    @keyframes horizontal-scroll-left {
         to {
             left: calc(-1 * var(--marquee-items-w));
+        }
+    }
+
+    @keyframes horizontal-scroll-right {
+        to {
+            right: calc(-1 * var(--marquee-items-w));
         }
     }
 }
@@ -67,7 +76,12 @@
     .hamburger-line {
         @apply w-7 md:w-8 h-1 bg-black rounded-2xl transition-all ease-in-out duration-300 origin-center;
     }
+    .marquee {
 
+    }
+    .marquee-items {
+
+    }
 }
 
 @layer utilities {

@@ -1,5 +1,6 @@
 import data from "@/data/data-constants";
-import Marquee from "@/components/Marquee.tsx";
+import MarqueeLeftScroll from "@/components/MarqueeLeftScroll";
+import MarqueeRightScroll from "@/components/MarqueeRightScroll";
 
 
 export default function Home() {
@@ -26,7 +27,13 @@ export default function Home() {
                 </div>
             </div>
 
-            <Marquee skills={data.skills}/>
+
+            <div className={"border-1 border-black h-full overflow-hidden"}>
+                <MarqueeLeftScroll skills={data.skills}/>
+
+                <MarqueeRightScroll skills={data.skills} />
+            </div>
+
 
 
         </section>
