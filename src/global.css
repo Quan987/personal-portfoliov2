@@ -2,7 +2,7 @@
 @import "tailwindcss";
 
 @theme {
-    --font-roboto: "Roboto", "Verdana";
+    --font-roboto: "Roboto", "Verdana", sans-serif;
     --color-beige: #f1d8b7ff;
     --color-silver: #f2f5fbff;
     --color-navy-blue: #0a294c;
@@ -10,16 +10,10 @@
     --color-sky-glow: #7baeecff;
     --color-blue-flare: #4094faff;
 
-    --marquee-speed-left-scroll: 20s;
-    --marquee-speed-right-scroll: 40s;
-    --marquee-items-w: 7rem;
-    --marquee-items-h: 7rem;
-    --marquee-items-gap: 2rem;
-
     --animate-slide-in: slide-in 300ms ease-in forwards;
     --animate-slide-out: slide-out 250ms ease-out forwards;
-    --animate-marquee-left-scroll: horizontal-scroll-left var(--marquee-speed-left-scroll) linear infinite;
-    --animate-marquee-right-scroll: horizontal-scroll-right var(--marquee-speed-right-scroll) linear infinite;
+    --animate-marquee-left-scroll: horizontal-scroll-left var(--marquee-speed) linear infinite;
+    --animate-marquee-right-scroll: horizontal-scroll-right var(--marquee-speed) linear infinite;
 
     @keyframes slide-in {
         0% {
@@ -43,30 +37,30 @@
     }
     @keyframes horizontal-scroll-left {
         to {
-            left: calc(-1 * var(--marquee-items-w));
+            left: calc(-1 * var(--marquee-items-size));
         }
     }
 
     @keyframes horizontal-scroll-right {
         to {
-            right: calc(-1 * var(--marquee-items-w));
+            right: calc(-1 * var(--marquee-items-size));
         }
     }
 }
 
 @layer base {
+    :root {
+        --marquee-speed: 30s;
+        --marquee-items-size: 9rem;
+        --marquee-items-gap: 0.4rem;
+    }
     html {
+        font-family: var(--font-roboto), serif;
         scroll-behavior: smooth;
     }
-
-    header {
-        font-family: var(--font-roboto), serif;
-    }
-
     body {
         background-color: var(--color-silver);
     }
-
     button {
         cursor: pointer;
     }
@@ -76,11 +70,18 @@
     .hamburger-line {
         @apply w-7 md:w-8 h-1 bg-black rounded-2xl transition-all ease-in-out duration-300 origin-center;
     }
+    /*py doesnt work, use mx instead */
     .marquee-track {
-        @apply relative border-1 border-blue-600 h-(--marquee-items-h);
+        @apply relative h-(--marquee-items-size)  mask-x-from-90% mask-x-to-100% my-1.5;
     }
     .marquee-item {
-        @apply absolute bg-orange-600 rounded-md w-(--marquee-items-w) h-(--marquee-items-h);
+        @apply absolute bg-white  rounded-lg shadow-xs  flex flex-col justify-center items-center gap-3 size-(--marquee-items-size);
+    }
+    .marquee-item-img {
+        @apply inline-block bg-white p-3 size-6/12;
+    }
+    .marquee-item-text {
+        @apply text-black;
     }
 }
 

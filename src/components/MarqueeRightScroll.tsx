@@ -1,7 +1,8 @@
-import {DataSkillIcon} from "@/types/data";
+import {DataSkillsList} from "@/types/data";
 
 
-export default function MarqueeLeftScroll({skills}: DataSkillIcon) {
+
+export default function MarqueeLeftScroll({skills}: DataSkillsList) {
 
     const skillsLength = skills.length;
 
@@ -11,14 +12,16 @@ export default function MarqueeLeftScroll({skills}: DataSkillIcon) {
             {skills.map((item, index) => {
                 return (
                     <li key={`${index}-${item.name}`}
-                        className={`marquee-item animate-marquee-right-scroll`}
                         style={{
-                            right: `max(calc((var(--marquee-items-w) + var(--marquee-items-gap)) * ${skillsLength}), calc(100% + var(--marquee-items-w) + var(--marquee-items-gap)))`,
-                            animationDelay: `calc(var(--marquee-speed-right-scroll) / ${skillsLength} * ${skillsLength - (index + 1)} * -1)`
+                            right: `max(calc((var(--marquee-items-size) + var(--marquee-items-gap)) * ${skillsLength}), calc(100% + var(--marquee-items-size) + var(--marquee-items-gap)))`,
+                            animationDelay: `calc(var(--marquee-speed) / ${skillsLength} * ${skillsLength - (index + 1)} * -1)`
                         }}
+                        className={`marquee-item animate-marquee-right-scroll`}
                     >
-                        <img src={item.icon} alt={item.name} className={""}/>
-                        <h5>{item.name}</h5>
+                        <div className={"marquee-item-img"}>
+                            <img src={item.icon} alt={item.name} className={""}/>
+                        </div>
+                        <h5 className={"marquee-item-text"}>{item.name}</h5>
                     </li>
                 );
             })}

@@ -1,26 +1,29 @@
 import data from "@/data/data-constants";
+import useShuffleSkills from "@/hooks/useShuffleSkills";
 import MarqueeLeftScroll from "@/components/MarqueeLeftScroll";
 import MarqueeRightScroll from "@/components/MarqueeRightScroll";
+import {DataSkill} from "@/types/data.ts";
 
 
 export default function Home() {
-
+    const skillSet: DataSkill[][] = useShuffleSkills(data.skills, 3)
+    
     return (
-        <section id="home" className="grid grid-cols-2 py-22">
+        <section id="home" className="grid grid-cols-2 gap-20 py-35">
             <div className={"justify-items-start"}>
-                <div className=" text-pretty w-xs xl:w-lg ">
+                <div className="text-pretty h-full">
                     <h2 className="font-bold text-[2.6rem] xl:text-[4rem] leading-13 xl:leading-18">
                         I Build What You Imagine —{" "}
                         <span className={"text-orange-500"}>Right in the Browser.</span>
                     </h2>
-                    <p className={"py-5 xl:py-7 opacity-60 leading-7"}>{data.heroHeadline}</p>
+                    <p className={"py-5 xl:py-7 text-black/60 leading-7"}>{data.heroHeadline}</p>
 
                     <a
                         href={"#"}
                         target="_blank"
                         rel="noopener noreferrer"
                         draggable={false}
-                        className="hover-tilt inline-block uppercase bg-orange-500 text-white border-orange-500 hover:bg-white hover:text-orange-500   text-sm px-10 py-3.5 rounded-md border-1"
+                        className="hover-tilt inline-block uppercase bg-orange-500 text-white border-orange-500 hover:bg-white hover:text-orange-500 text-sm px-10 py-3.5 rounded-md border-1"
                     >
                         Get In Touch
                     </a>
@@ -28,10 +31,19 @@ export default function Home() {
             </div>
 
 
-            <div className={"border-1 border-black h-full overflow-hidden"}>
-                <MarqueeLeftScroll skills={data.skills}/>
+            <div className={"relative"}>
+                <div className={"h-full overflow-hidden flex flex-col "}>
+                    {skillSet.map((skills, index) =>
+                        index % 2 === 0 ? (
+                            <MarqueeLeftScroll key={index} skills={skills} />
+                        ) : (
+                            <MarqueeRightScroll key={index} skills={skills} />
+                        )
+                    )}
+                </div>
 
-                <MarqueeRightScroll skills={data.skills} />
+                <p className={"absolute -bottom-7 right-0 uppercase font-bold tracking-widest text-black/60 text-sm"}>Technic<span
+                    className="relative bottom-[1px]">@</span>l Skills</p>
             </div>
         </section>
     );
