@@ -5,6 +5,6 @@ interface HorizontalLineProps {
 
 export default function HorizontalLine({lineWidth}: HorizontalLineProps) {
     return (
-        <hr className={`${lineWidth} border-1 rounded-3xl border-midnight-navy/70 pointer-events-none select-none`}/>
+        <hr className={`${lineWidth}  border-2 rounded-3xl pointer-events-none select-none`}/>
     )
 }

@@ -83,6 +83,9 @@
     .marquee-item-text {
         @apply text-black;
     }
+    .about-text {
+        @apply py-2 opacity-60;
+    }
 }
 
 @layer utilities {

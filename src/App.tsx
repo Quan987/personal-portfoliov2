@@ -4,7 +4,7 @@ import Home from "@/sections/Home.tsx";
 import About from "@/sections/About.tsx";
 import Project from "@/sections/Project.tsx";
 import Contact from "@/sections/Contact.tsx";
-import Skills from "@/sections/Skills.tsx";
+
 
 
 function App() {
@@ -12,7 +12,6 @@ function App() {
         <DefaultLayout>
             <Home/>
             <About/>
-            <Skills/>
             <Project/>
             <Contact/>
         </DefaultLayout>

@@ -25,7 +25,7 @@ import pinterestLogo from '@/assets/images/svg/logo/pinterest-logo.svg';
 
 
 const data = {
-    heroHeadline: "Welcome to my portfolio, I'm Quan Tran, a software developer focused on building accessible, user-centered web applications. Got a project in mind or just want to chat? I’d love to hear from you.",
+    heroHeadline: "Welcome to my portfolio — I'm Quan Tran, a software developer passionate about building accessible, user-centered web applications that are both intuitive and impactful. Whether you’re planning your next big project, exploring new ideas, or just stopping by out of curiosity, I’d love to connect. Let's build something meaningful together!",
     aboutP1: "Hi! My name is Quan, and I'm a Computer Science graduate from Georgia State University. As an aspiring Full-Stack Developer, I'm driven by the challenge of building scalable, impactful applications that solve real-world problems. I enjoy continuously learning new technologies, and striving to write clean, efficient code.",
     aboutP2: "Beyond the screen, I dedicate time to weightlifting in the gym, which keeps me focused, energized, and mentally sharp. Photography is another creative outlet for me—I enjoy capturing scenic landscapes that inspire reflection and appreciation for the world around me.",
     aboutP3: "I'm seeking opportunities to grow as a developer and help build meaningful products.",

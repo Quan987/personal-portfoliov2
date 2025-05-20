@@ -12,7 +12,7 @@ export default function Home() {
         <section id="home" className="grid grid-cols-2 gap-20 py-35">
             <div className={"justify-items-start"}>
                 <div className="text-pretty h-full">
-                    <h2 className="font-bold text-[2.6rem] xl:text-[4rem] leading-13 xl:leading-18">
+                    <h2 className="font-bold text-[2.6rem] xl:text-[3.5rem] leading-13 xl:leading-16">
                         I Build What You Imagine —{" "}
                         <span className={"text-orange-500"}>Right in the Browser.</span>
                     </h2>
@@ -51,19 +51,3 @@ export default function Home() {
 
 // bg-[url('./assets/images/background/polygon.svg')]
 // shadow-[1.3rem_1.3rem_1.3rem_-0.625rem_rgba(0,0,0,0.2)]
-
-//
-// <figure className="hover-scale w-fit">
-//     <div className={"relative"}>
-//         <img
-//             loading="lazy"
-//             src={data.actionFigure}
-//             alt="actionFigure"
-//             draggable={false}
-//             className="object-contain cursor-pointer block w-xs xl:w-[25rem] rounded-[2rem] shadow-xl"
-//         />
-//         <p className={"tracking-wider absolute bottom-6 left-0 -rotate-90 origin-bottom-left"}>Limited
-//             Edition:
-//             Overthinking Included</p>
-//     </div>
-// </figure>

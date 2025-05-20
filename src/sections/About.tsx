@@ -5,26 +5,56 @@ import ParagraphText from "@/components/ui/ParagraphText.tsx";
 
 export default function About() {
     return (
-        <section id="about" className="py-22 scroll-m-12] bg-cover bg-no-repeat bg-center ">
+        <section id="about" className="py-22 scroll-m-12 border-1 border-black">
             <div className="flex items-center justify-center gap-3">
-                <HorizontalLine lineWidth = {"w-full"}/>
-                <h2 className="text-3xl font-bold text-midnight-navy tracking-wider shrink-0">About Me</h2>
-                <HorizontalLine lineWidth = {"w-full"}/>
+                <HorizontalLine lineWidth={"w-10"}/>
+                <h2 className="uppercase font-bold tracking-wider shrink-0 text-3xl">About Me</h2>
+                <HorizontalLine lineWidth={"w-10"}/>
             </div>
 
             <div className="flex flex-col justify-center items-center">
                 <div className="">
-                    <ParagraphText text={data.aboutP1} className={"py-2 opacity-60"}/>
-                    <ParagraphText text={data.aboutP2} className={"py-2 opacity-60"}/>
-                    <ParagraphText text={data.aboutP3} className={"py-2 opacity-60"}>
-                        Let’s connect—follow me on <EmbeddedLink link={""} title="Linkedin"/> or <EmbeddedLink link={""} title="Instagram"/> to stay in touch!
+                    <ParagraphText text={data.aboutP1} className={"about-text"}/>
+                    <ParagraphText text={data.aboutP2} className={"about-text"}/>
+                    <ParagraphText text={data.aboutP3} className={"about-text"}>
+                        Let’s connect—follow me on <EmbeddedLink link={""} title="Linkedin"/> or <EmbeddedLink link={""}
+                                                                                                               title="Instagram"/> to
+                        stay in touch!
                     </ParagraphText>
                 </div>
-                <figure className="p-8 hover-scale cursor-pointer select-none">
-                    <img loading="lazy" src={data.actionFigure} alt="actionFigure" className=" w-12 inline-block rounded-[2rem] pointer-events-none shadow-[1.3rem_1.3rem_1.3rem_-0.625rem_rgba(0,0,0,0.2)]"/>
+
+
+                <figure className="hover-scale w-fit">
+                    <div className={"relative"}>
+                        <img
+                            loading="lazy"
+                            src={data.actionFigure}
+                            alt="actionFigure"
+                            draggable={false}
+                            className="object-contain cursor-pointer block w-xs xl:w-[25rem] rounded-[2rem] shadow-xl"
+                        />
+                        <p className={"tracking-wider absolute bottom-6 left-0 -rotate-90 origin-bottom-left"}>Limited
+                            Edition:
+                            Overthinking Included</p>
+                    </div>
                 </figure>
+
             </div>
         </section>
     );
 }
 
+// <figure className="hover-scale w-fit">
+//     <div className={"relative"}>
+//         <img
+//             loading="lazy"
+//             src={data.actionFigure}
+//             alt="actionFigure"
+//             draggable={false}
+//             className="object-contain cursor-pointer block w-xs xl:w-[25rem] rounded-[2rem] shadow-xl"
+//         />
+//         <p className={"tracking-wider absolute bottom-6 left-0 -rotate-90 origin-bottom-left"}>Limited
+//             Edition:
+//             Overthinking Included</p>
+//     </div>
+// </figure>
