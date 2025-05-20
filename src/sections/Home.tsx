@@ -11,19 +11,19 @@ export default function Home() {
     return (
         <section id="home" className="grid grid-cols-2 gap-20 py-35">
             <div className={"justify-items-start"}>
-                <div className="text-pretty h-full">
-                    <h2 className="font-bold text-[2.6rem] xl:text-[3.5rem] leading-13 xl:leading-16">
+                <div className="text-pretty h-full flex flex-col">
+                    <h2 className="font-bold text-[2.6rem] 2xl:text-[3.5rem] leading-13 2xl:leading-16">
                         I Build What You Imagine —{" "}
                         <span className={"text-orange-500"}>Right in the Browser.</span>
                     </h2>
-                    <p className={"py-5 xl:py-7 text-black/60 leading-7"}>{data.heroHeadline}</p>
+                    <p className={"2xl:py-6 2xl:pr-30 text-black/60 leading-7"}>{data.heroHeadline}</p>
 
                     <a
                         href={"#"}
                         target="_blank"
                         rel="noopener noreferrer"
                         draggable={false}
-                        className="hover-tilt inline-block uppercase bg-orange-500 text-white border-orange-500 hover:bg-white hover:text-orange-500 text-sm px-10 py-3.5 rounded-md border-1"
+                        className="hover-tilt inline-block uppercase bg-orange-500 text-white border-orange-500 hover:bg-white hover:text-orange-500 text-sm px-10 py-3.5 rounded-md border-1 w-fit mt-auto"
                     >
                         Get In Touch
                     </a>

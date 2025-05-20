@@ -5,7 +5,7 @@ import ParagraphText from "@/components/ui/ParagraphText.tsx";
 
 export default function About() {
     return (
-        <section id="about" className="py-22 scroll-m-12 border-1 border-black">
+        <section id="about" className="py-35 scroll-m-12 border-1 border-black">
             <div className="flex items-center justify-center gap-3">
                 <HorizontalLine lineWidth={"w-10"}/>
                 <h2 className="uppercase font-bold tracking-wider shrink-0 text-3xl">About Me</h2>
@@ -31,7 +31,7 @@ export default function About() {
                             src={data.actionFigure}
                             alt="actionFigure"
                             draggable={false}
-                            className="object-contain cursor-pointer block w-xs xl:w-[25rem] rounded-[2rem] shadow-xl"
+                            className="object-contain cursor-pointer block w-xs 2xl:w-[25rem] rounded-[2rem] shadow-xl"
                         />
                         <p className={"tracking-wider absolute bottom-6 left-0 -rotate-90 origin-bottom-left"}>Limited
                             Edition:
