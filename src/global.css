@@ -84,7 +84,7 @@
         @apply text-black;
     }
     .about-text {
-        @apply py-2 opacity-60;
+        @apply py-2 opacity-70 2xl:text-xl leading-8;
     }
 }
 
