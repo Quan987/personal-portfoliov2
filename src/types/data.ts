@@ -11,3 +11,13 @@ export interface DataSkill {
 export interface DataSkillsList {
     skills: DataSkill[];
 }
+
+export interface ProjectCardProps {
+    data: {
+        isEmpty: boolean;
+        title: string;
+        description: string;
+        stack: string[];
+        link: string;
+    }
+}

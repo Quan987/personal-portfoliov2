@@ -9,7 +9,7 @@ export default function DefaultLayout({children}: LayoutProps) {
     return (
         <>
             <Navbar/>
-            <main className={"px-80"}>{children}</main>
+            <main className={"px-100"}>{children}</main>
             {/*<Footer/>*/}
         </>
     );

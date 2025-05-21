@@ -22,6 +22,8 @@ import instagramLogo from '@/assets/images/svg/logo/instagram-logo.svg';
 import linkedinLogo from '@/assets/images/svg/logo/linkedin-logo.svg';
 import twitterLogo from '@/assets/images/svg/logo/twitter-logo.svg';
 import pinterestLogo from '@/assets/images/svg/logo/pinterest-logo.svg';
+import linkIcon from '@/assets/images/svg/link-icon.svg';
+import stackIcon from '@/assets/images/svg/stack-icon.svg';
 
 
 const data = {
@@ -60,6 +62,7 @@ const data = {
     ],
     projects: [
         {
+            isEmpty: false,
             title: "Password Generator App",
             description: "A secure web application that generates strong, unique passwords and features a personal vault for safely storing and managing them.",
             stack: [
@@ -70,18 +73,20 @@ const data = {
             link: "https://github.com/Quan987/password-generator"
         },
         {
+            isEmpty: false,
             title: "Food Delivery App",
-            description: "A Flutter-based cross-platform mobile app that lets users browse restaurants, place orders, and track deliveries in real-time, with Firebase integration for authentication and live data updates.",
+            description: "A Flutter cross-platform mobile app that lets users browse restaurants, place orders, and track deliveries in real-time, with Firebase integration for authentication and live data updates.",
             stack: [
                 "Dart",
                 "Flutter",
-                "Firebase"
+                "Firebase Cloud"
             ],
             link: "https://github.com/Quan987/restaurant-flutter-app"
         },
         {
+            isEmpty: false,
             title: "OS System Monitor",
-            description: "A Java-based system resource monitor that uses the OSHI library to provide real-time insights into CPU, memory, disk, and network usage by interfacing directly with system hardware and the OS.",
+            description: "A Java-based system resource monitor that uses the OSHI library to provide real-time insights into CPU, memory, disk, and network usage by interfacing directly with the OS.",
             stack: [
                 "Java",
                 "JavaFX/Swing",
@@ -91,20 +96,38 @@ const data = {
             link: "https://github.com/Quan987/os_project"
         },
         {
+            isEmpty: false,
             title: "Real Estate Web",
-            description: "A real estate web platform that streamlines property search and engagement through advanced filtering and optimized database performance for reliable, efficient CRUD operations.",
+            description: "A real estate platform that streamlines property search and engagement through advanced filtering and optimized database performance for reliable, efficient CRUD operations.",
             stack: [
                 "HTML/CSS",
                 "JavaScript",
                 "PHP",
                 "MySQL"
             ],
-            image: "assets/images/logo.png",
             link: "https://github.com/Quan987/real-estate-web"
+        },
+        {
+            isEmpty: false,
+            title: "Anonymous Chat App",
+            description: "A cross-platform chat app enabling real-time messaging and group chat rooms, powered by Firebase for authentication and fast, reliable data sync.",
+            stack: [
+                "Dart",
+                "Flutter",
+                "Firebase Cloud",
+                "Firebase Auth"
+            ],
+            link: "https://github.com/Quan987/Anonymous_Chat_App"
+        },
+        {
+            isEmpty: true,
+            title: "Coming Soon...",
+            description: "New projects currently in development — stay tuned!",
+            stack: ["N/A"],
+            link: "N/A"
         }
     ],
-    actionFigure: actionFigure,
+    actionFigure
 }
-
 
 export default data;
