@@ -5,7 +5,7 @@ import {ProjectCardProps} from "@/types/data";
 export default function ProjectCard({data}: ProjectCardProps) {
     return (
         <a href={data.link} target="_blank" rel="noopener noreferrer"
-            className="hover-scale h-full bg-midnight-navy text-black bg-tangerine rounded-sm shadow-lg p-6 inline-flex flex-col border-2 border-black group-hover:text-white group-hover:cursor-pointer group-hover:border-tangerine">
+            className="hover-scale h-full bg-midnight-navy text-black bg-tangerine rounded-sm shadow-lg p-6 inline-flex flex-col border-1 border-tangerine group-hover:text-white group-hover:cursor-pointer">
             <div>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                      stroke="currentColor"

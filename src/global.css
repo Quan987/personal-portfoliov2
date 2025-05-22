@@ -65,6 +65,9 @@
     button {
         cursor: pointer;
     }
+    input, textarea {
+        @apply inline-block border-1 border-gray-600 rounded-md focus-within:outline-2 focus-within:border-0 w-full px-3 py-2;
+    }
 }
 
 @layer components {
@@ -86,6 +89,9 @@
     }
     .about-text {
         @apply py-2 opacity-60 2xl:text-xl leading-8;
+    }
+    .input-container {
+        @apply flex flex-col justify-center gap-1 w-full;
     }
 }
 
