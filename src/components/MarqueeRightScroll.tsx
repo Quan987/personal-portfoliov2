@@ -8,7 +8,7 @@ export default function MarqueeLeftScroll({skills}: DataSkillsList) {
 
     return (
 
-        <ul className={"marquee-track"}>
+        <ul className={"marquee-track select-none pointer-events-none"} draggable={false}>
             {skills.map((item, index) => {
                 return (
                     <li key={`${index}-${item.name}`}

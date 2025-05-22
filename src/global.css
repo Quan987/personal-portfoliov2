@@ -85,7 +85,7 @@
         @apply text-black;
     }
     .about-text {
-        @apply py-2 opacity-70 2xl:text-xl leading-8;
+        @apply py-2 opacity-60 2xl:text-xl leading-8;
     }
 }
 
@@ -112,6 +112,27 @@
     }
 
     .hover-tilt {
-        @apply transform transition-all duration-200 hover:-translate-y-0.5 hover:translate-x-0.5;
+        @apply transform transition-all duration-200 hover:-translate-y-1 hover:translate-x-1;
     }
+
+    .corner-top-left::before {
+        content: "";
+        @apply absolute top-0 left-0 w-5 h-0.5 bg-tangerine;
+    }
+
+    .corner-top-left::after {
+        content: "";
+        @apply absolute top-0 left-0 w-0.5 h-5 bg-tangerine;
+    }
+
+    .corner-bottom-right::before {
+        content: "";
+        @apply absolute bottom-0 right-0 w-5 h-0.5 bg-tangerine;
+    }
+
+    .corner-bottom-right::after {
+        content: "";
+        @apply absolute bottom-0 right-0 w-0.5 h-5 bg-tangerine;
+    }
+
 }

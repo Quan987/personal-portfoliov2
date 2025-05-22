@@ -10,13 +10,13 @@ export default function Home() {
     
     return (
         <section id="home" className="grid grid-cols-2 gap-20 py-35">
-            <div className={"justify-items-start"}>
+            <div className={"justify-items-start "}>
                 <div className="text-pretty h-full flex flex-col">
                     <h2 className="font-bold text-[2.6rem] 2xl:text-[3.5rem] leading-13 2xl:leading-16">
                         I Build What You Imagine —{" "}
                         <span className={"text-orange-500"}>Right in the Browser.</span>
                     </h2>
-                    <p className={"2xl:py-6 2xl:pr-30 text-black/60 leading-7"}>{data.heroHeadline}</p>
+                    <p className={"2xl:py-6 text-black/60 leading-7"}>{data.heroHeadline}</p>
 
                     <a
                         href={"#"}

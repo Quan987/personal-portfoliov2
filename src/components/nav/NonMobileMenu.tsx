@@ -11,7 +11,7 @@ export default function NonMobileMenu({data}: DataSocialMedia) {
                             <a href={media.link} target="_blank" rel="noopener noreferrer" draggable={false}
                                className={"flex items-center justify-center gap-0 active:text-orange-600"}>
                                     <img src={media.logo} alt={`${media.name.toLowerCase()}-logo`} draggable={false}
-                                         className={"size-8"}/>
+                                         className={"size-7"}/>
 
                             </a>
                         </li>

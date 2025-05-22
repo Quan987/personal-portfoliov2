@@ -22,8 +22,6 @@ import instagramLogo from '@/assets/images/svg/logo/instagram-logo.svg';
 import linkedinLogo from '@/assets/images/svg/logo/linkedin-logo.svg';
 import twitterLogo from '@/assets/images/svg/logo/twitter-logo.svg';
 import pinterestLogo from '@/assets/images/svg/logo/pinterest-logo.svg';
-import linkIcon from '@/assets/images/svg/link-icon.svg';
-import stackIcon from '@/assets/images/svg/stack-icon.svg';
 
 
 const data = {
