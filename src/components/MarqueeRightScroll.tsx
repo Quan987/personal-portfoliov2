@@ -19,7 +19,7 @@ export default function MarqueeLeftScroll({skills}: DataSkillsList) {
                         className={`marquee-item animate-marquee-right-scroll`}
                     >
                         <div className={"marquee-item-img"}>
-                            <img src={item.icon} alt={item.name} className={""}/>
+                            {item.icon}
                         </div>
                         <h5 className={"marquee-item-text"}>{item.name}</h5>
                     </li>

@@ -1,4 +1,4 @@
-import {logo} from "@/data/data-constants.ts";
+import {logo} from "@/data/dataConstants.ts";
 
 export default function Logo() {
     return (

@@ -1,10 +1,12 @@
+import {JSX} from "react";
+
 export interface DataSocialMedia {
-    data: { name: string; link: string; logo: string }[];
+    socialMedia: { name: string; link: string; icon: JSX.Element }[];
 }
 
 export interface DataSkill {
     name: string;
-    icon: string
+    icon: JSX.Element;
 }
 
 

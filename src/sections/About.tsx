@@ -1,4 +1,4 @@
-import data from "@/data/data-constants";
+import data from "@/data/dataConstants.ts";
 import HorizontalLine from "@/components/ui/HorizontalLine";
 import EmbeddedLink from "@/components/ui/EmbeddedLink.tsx";
 import ParagraphText from "@/components/ui/ParagraphText.tsx";

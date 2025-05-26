@@ -3,12 +3,12 @@
 
 @theme {
     --font-roboto: "Roboto", "Verdana", sans-serif;
-    --color-beige: #f1d8b7ff;
-    --color-silver: #f2f5fbff;
+    --color-beige: #f1d8b7;
+    --color-silver: #f2f5fb;
     --color-navy-blue: #0a294c;
     --color-navy-dark-blue: #0e0e55;
-    --color-sky-glow: #7baeecff;
-    --color-blue-flare: #4094faff;
+    --color-sky-glow: #7baeec;
+    --color-blue-flare: #4094fa;
     --color-tangerine: #f2822d;
 
     --animate-slide-in: slide-in 300ms ease-in forwards;
@@ -65,8 +65,14 @@
     button {
         cursor: pointer;
     }
+    section {
+        @apply py-35;
+    }
     input, textarea {
         @apply inline-block border-1 border-gray-600 rounded-md focus-within:outline-2 focus-within:border-0 w-full px-3 py-2;
+    }
+    svg {
+        @apply h-full w-full hover:fill-blue-900 active:fill-blue-900;
     }
 }
 
@@ -76,7 +82,7 @@
     }
     /*py doesnt work, use mx instead */
     .marquee-track {
-        @apply relative h-(--marquee-items-size)  mask-x-from-90% mask-x-to-100% my-1.5;
+        @apply relative h-(--marquee-items-size) my-1.5;
     }
     .marquee-item {
         @apply absolute bg-white  rounded-lg shadow-xs  flex flex-col justify-center items-center gap-3 size-(--marquee-items-size);

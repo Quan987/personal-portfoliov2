@@ -7,7 +7,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 
 export default function Button({children, ...props}: ButtonProps) {
     return (
-        <button {...props} className={"hover-tilt w-fit border-1 border-tangerine bg-tangerine hover:bg-white hover:text-tangerine text-sm rounded-md uppercase px-10 py-3"}>{children}</button>
+        <button {...props} className={"hover-tilt w-fit border-2 text-white border-blue-900 bg-blue-900 hover:bg-white hover:text-blue-900 rounded-md uppercase tracking-wide text-md px-14 py-3.5"}>{children}</button>
     )
 }
 
