@@ -1,20 +1,21 @@
 import './App.css'
-import DefaultLayout from "@/layouts/DefaultLayout";
+import RootLayout from "@/layouts/RootLayout.tsx";
 import Home from "@/sections/Home.tsx";
 import About from "@/sections/About.tsx";
 import Project from "@/sections/Project.tsx";
 import Contact from "@/sections/Contact.tsx";
+import {createBrowserRouter, RouterProvider} from "react-router-dom";
+import {routes} from "@/routes/routes.tsx";
 
 
 
 function App() {
+    const router = createBrowserRouter(routes);
+
     return (
-        <DefaultLayout>
-            <Home/>
-            <About/>
-            <Project/>
-            <Contact/>
-        </DefaultLayout>
+        // <RootLayout>
+        // </RootLayout>
+        <RouterProvider router={router}/>
     )
 }
 
