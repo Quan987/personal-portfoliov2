@@ -8,11 +8,11 @@ const data = {
   heroHeadline:
     "Hey there — welcome to my portfolio! I'm a software developer who builds simple, accessible, and user-centered digital experiences. Have a project in mind or just feel like chatting? Let’s connect!",
   aboutP1:
-    "Hey! My name is Quan, and I'm a Computer Science graduate from Georgia State University. As an aspiring Full-Stack Developer, I'm driven by the challenge of building scalable, impactful applications that solve real-world problems. I enjoy continuously learning new technologies, and striving to write clean, efficient code.",
+    "I create full-stack applications that are fast, functional, and visually refined.",
   aboutP2:
-    "Beyond the screen, I dedicate time to weightlifting in the gym, which keeps me focused, energized, and mentally sharp. Photography is another creative outlet for me—I enjoy capturing scenic landscapes that inspire reflection and appreciation for the world around me.",
+    "As an aspiring Full-Stack Developer, I'm driven by the challenge of building scalable, impactful applications that solve real-world problems. I enjoy continuously learning new technologies and strive to write clean, efficient code. Whether working independently or collaborating in a team, I take pride in writing maintainable code and shipping features that matter.",
   aboutP3:
-    "I'm seeking opportunities to grow as a developer and help build meaningful products.",
+    "Beyond the screen, I pursue weightlifting to stay focused and sharp, and photography to slow down and capture moments that remind me why I build.",
 
   socialMedia: [
     {

@@ -15,7 +15,7 @@ export default function RootLayout() {
   return (
     <>
       <Navbar />
-      <main className="h-svh 2xl:px-40">
+      <main className="h-svh 2xl:px-60 2xl:pt-40">
         <Outlet />
       </main>
     </>

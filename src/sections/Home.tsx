@@ -3,27 +3,30 @@ import Navbutton from "@/components/ui/Navbutton";
 
 export default function Home() {
   return (
-    <section id="home" className="relative size-full">
-      <div className="size-full z-20 absolute grid grid-cols-2 gap-[47rem] 2xl:py-40">
-        <h1 className="self-end 2xl:text-5xl 2xl:leading-15 font-medium">
-          I Build What You Imagine &mdash; Right in the Browser.
-        </h1>
-        <div className="flex flex-col 2xl:gap-8">
-          <p className="text-pretty text-md">{data.heroHeadline}</p>
-          <Navbutton link="/contact" cssClass="2xl:px-6 2xl:py-2.5">
-            Get in Touch
-          </Navbutton>
+    <section id="home" className="relative size-fit">
+      <div className="size-full grid grid-cols-2 2xl:gap-20">
+        <div className="flex flex-col gap-20 2xl:p-10">
+          <h1 className="2xl:text-7xl 2xl:leading-22 font-medium">
+            I Build What You Imagine &mdash; Right in the Browser.
+          </h1>
+          <div className="flex flex-col gap-10 2xl:pr-30">
+            <p className="text-pretty text-lg text-zinc-500">
+              {data.heroHeadline}
+            </p>
+            <Navbutton link="/contact" cssClass="2xl:px-7 2xl:py-3">
+              Get in Touch
+            </Navbutton>
+          </div>
         </div>
-      </div>
-      <div className="h-full">
-        <img
-          src={data.profileImage.image}
-          alt={data.profileImage.alt}
-          draggable={false}
-          loading="lazy"
-          className="block pointer-none select-none size-[52rem] absolute bottom-0 inset-x-0 mx-auto"
-        />
-        <div className="fixed bottom-0 inset-x-0 bg-white/30 backdrop-blur-md mask-t-from-10% h-1/6"></div>
+        <div className="self-center size-[43rem]">
+          <img
+            src={data.dioramaImage.image}
+            alt={data.dioramaImage.alt}
+            draggable={false}
+            loading="lazy"
+            className="animate-float size-full"
+          />
+        </div>
       </div>
     </section>
   );

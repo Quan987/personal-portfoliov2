@@ -51,11 +51,31 @@ import ParagraphText from "@/components/ui/ParagraphText.tsx";
 
 export default function About() {
   return (
-    <section
-      id="about"
-      className="relative size-full border-1 border-amber-600"
-    >
-      <img />
+    <section id="about" className="relative size-fit">
+      <div className="relative size-fit grid grid-cols-2">
+        <h1 className="absolute uppercase tracking-wide font-medium 2xl:text-9xl 2xl:right-70 2xl:top-5">
+          About Me
+        </h1>
+        <div className="pointer-none select-none absolute bottom-0 right-0 bg-black h-3 w-30"></div>
+
+        <figure className=" bg-silver w-fit 2xl:h-[45rem] 2xl:pt-30 2xl:px-15">
+          <img
+            src={data.profileImage.image}
+            alt={data.profileImage.alt}
+            draggable="false"
+            className="block pointer-none select-none h-full"
+          />
+        </figure>
+        <div className="self-center">
+          <div className="2xl:pt-25 2xl:pl-40 text-lg text-zinc-500">
+            <p className="about-paragraph text-2xl text-black font-medium">
+              {data.aboutP1}
+            </p>
+            <p className="about-paragraph">{data.aboutP2}</p>
+            <p className="about-paragraph">{data.aboutP3}</p>
+          </div>
+        </div>
+      </div>
     </section>
   );
 }

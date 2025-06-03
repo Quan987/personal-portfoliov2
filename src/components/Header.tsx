@@ -10,12 +10,9 @@ const menuItems = ["Home", "About", "Projects", "Contact"];
 
 export default function Navbar() {
   return (
-
-    <header className={"absolute inset-x-0  top-0 2xl:py-5 2xl:px-10 z-100"}>
+    <header className={"absolute inset-x-0 top-0 2xl:py-5 2xl:px-10 z-100"}>
       <nav className="flex justify-between items-center">
-        <p className={"font-medium text-black/90 text-xl 2xl:pl-3.5"}>
-          Quan Tran
-        </p>
+        <p className={"font-medium text-black text-xl 2xl:pl-3.5"}>Quan Tran</p>
 
         {/* Navigation internal */}
         <ul className="flex items-center group">
@@ -24,8 +21,9 @@ export default function Navbar() {
               <NavLink
                 to={`/${item === "Home" ? "" : item.toLowerCase()}`}
                 className={({ isActive }) => `
-                inline-block h-fit w-full transition-opacity duration-300 group-hover:opacity-50 hover:opacity-100 2xl:px-3.5 ${isActive ? "opacity-100" : "opacity-50"
-                  }`}
+                inline-block h-fit w-full duration-300 group-hover:text-zinc-500 hover:text-black 2xl:px-3.5 ${
+                  isActive ? "text-black" : "text-zinc-500"
+                }`}
                 draggable={false}
                 end
               >
@@ -44,7 +42,7 @@ export default function Navbar() {
                 target="_blank"
                 rel="noopener noreferrer"
                 draggable={false}
-                className="block transition-opacity duration-300 group-hover:opacity-50 hover:opacity-100 2xl:px-3.5"
+                className="block duration-300 group-hover:text-zinc-500 hover:text-black 2xl:px-3.5"
               >
                 {media.icon}
               </a>
