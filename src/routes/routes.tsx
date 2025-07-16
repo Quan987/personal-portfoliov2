@@ -1,10 +1,10 @@
 import { Navigate, RouteObject } from "react-router-dom";
 import RootLayout from "@/layouts/RootLayout.tsx";
-import Home from "@/sections/Home.tsx";
-import About from "@/sections/About.tsx";
-import Project from "@/sections/Project.tsx";
-import Contact from "@/sections/Contact.tsx";
-import NotFound from "@/pages/NotFound.tsx";
+import Home from "@/pages/HomePage";
+import About from "@/pages/AboutPage";
+import Project from "@/pages/ProjectPage";
+import Contact from "@/pages/ContactPage";
+import NotFound from "@/pages/NotFoundPage";
 
 export const routes: RouteObject[] = [
   {
@@ -28,10 +28,10 @@ export const routes: RouteObject[] = [
         path: "contact",
         element: <Contact />,
       },
-      {
-        path: "*",
-        element: <NotFound />,
-      },
     ],
+  },
+  {
+    path: "*", // for unmatched routes
+    element: <NotFound />,
   },
 ];

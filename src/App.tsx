@@ -1,26 +1,18 @@
-import './App.css'
-import RootLayout from "@/layouts/RootLayout.tsx";
-import Home from "@/sections/Home.tsx";
-import About from "@/sections/About.tsx";
-import Project from "@/sections/Project.tsx";
-import Contact from "@/sections/Contact.tsx";
-import {createBrowserRouter, RouterProvider} from "react-router-dom";
-import {routes} from "@/routes/routes.tsx";
-
-
+// import "./App.css";
+import { routes } from "@routes/routes";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 function App() {
-    const router = createBrowserRouter(routes);
+  const router = createBrowserRouter(routes);
 
-    return (
-        // <RootLayout>
-        // </RootLayout>
-        <RouterProvider router={router}/>
-    )
+  return (
+    // <RootLayout>
+    // </RootLayout>
+    <RouterProvider router={router} />
+  );
 }
 
-export default App
-
+export default App;
 
 // import { useEffect, useState } from "react";
 //
@@ -50,4 +42,3 @@ export default App
 //         </div>
 //     );
 // }
-

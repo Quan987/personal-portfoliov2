@@ -1,0 +1,44 @@
+import emailjs from "@services/emailjs.service";
+import { FormInput } from "@validations/contact.schema";
+
+export interface SendMailResponseType {
+  success: boolean;
+  message: string;
+}
+
+export async function sendEmail(
+  data: FormInput
+): Promise<SendMailResponseType> {
+  const serviceID: string = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+  const templateID: string = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+
+  if (!serviceID || !templateID) {
+    return {
+      success: false,
+      message: "Missing EmailJS configuration. Please try again later.",
+    };
+  }
+
+  try {
+    const response = await emailjs.send(serviceID, templateID, data);
+
+    if (response.status !== 200) {
+      throw new Error("Email service responded with an error.");
+    }
+
+    return {
+      success: true,
+      message: "Inquiry submitted successfully!",
+    };
+  } catch (error) {
+    console.error(error);
+    const msg = // error instanceof Error mean we are the one who throw it
+      error instanceof Error && error.message
+        ? error.message // This becomes: "Email service responded with an error if response.status is not 200"
+        : "Failed to submit request. Please try again later."; // Use for something goes wrong in an unexpected way (e.g., a throw "Oops!" or throw null)
+    return {
+      success: false,
+      message: msg,
+    };
+  }
+}

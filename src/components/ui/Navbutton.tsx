@@ -18,7 +18,7 @@ export default function Navbutton({
       draggable={false}
       end
       className={({}) =>
-        `block w-fit bg-black text-white text-md rounded-lg border-2 border-black transition-all duration-200 hover:-translate-1 hover:bg-white hover:text-black ${cssClass}  `
+        `block w-fit bg-black text-white text-md rounded-md border-2 border-black transition-all duration-200 hover:-translate-1 hover:bg-white hover:text-black ${cssClass}  `
       }
     >
       {children}

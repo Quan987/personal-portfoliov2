@@ -1,10 +1,5 @@
-import Navbar from "@/components/Header";
-import { ReactNode } from "react";
-import Footer from "@/sections/Footer.tsx";
-import Home from "@/sections/Home.tsx";
-import About from "@/sections/About.tsx";
-import Project from "@/sections/Project.tsx";
-import Contact from "@/sections/Contact.tsx";
+import Footer from "@/components/layout/Footer";
+import Header from "@/components/layout/Header";
 import { Outlet } from "react-router-dom";
 
 // interface LayoutProps {
@@ -13,11 +8,12 @@ import { Outlet } from "react-router-dom";
 
 export default function RootLayout() {
   return (
-    <>
-      <Navbar />
-      <main className="h-svh 2xl:px-60 2xl:pt-40">
+    <div className="flex flex-col min-h-screen">
+      <Header />
+      <main className="flex-1 2xl:px-70 2xl:pt-35">
         <Outlet />
       </main>
-    </>
+      <Footer />
+    </div>
   );
 }
