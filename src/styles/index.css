@@ -5,14 +5,22 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme {
-  --font-instrument: "Instrument Sans", "sans-serif";
-  --color-beige: #efd6af;
-  --color-silver: #dcdcde;
+  --font-family-instrument: "Instrument Sans", "sans-serif", serif;
+  --color-primary-dark: #111111;
+  --color-primary-light: #ffffff;
+  --color-secondary-muted: #71717a;
+  --color-secondary-light: #dcdcde;
+  --z-index-header: 10;
+  --z-index-dropdown: 20;
+  --z-index-sidebar: 30;
+  --z-index-modal: 40;
+  --z-index-toast: 50;
+  /* --color-beige: #efd6af;
   --color-navy-blue: #0a294c;
   --color-navy-dark-blue: #0e0e55;
   --color-sky-glow: #7baeec;
   --color-blue-flare: #4094fa;
-  --color-tangerine: #f2822d;
+  --color-tangerine: #f2822d; */
 
   --animate-slide-in: slide-in 300ms ease-in forwards;
   --animate-slide-out: slide-out 250ms ease-out forwards;
@@ -89,8 +97,7 @@
   }
 
   html {
-    font-family: var(--font-instrument), serif;
-    scroll-behavior: smooth;
+    @apply font-family-instrument scroll-smooth;
   }
 
   body {
@@ -98,11 +105,7 @@
   }
 
   button {
-    cursor: pointer;
-  }
-
-  section {
-    @apply relative size-fit;
+    @apply cursor-pointer;
   }
 
   input,
@@ -113,14 +116,15 @@
   path {
     @apply size-full;
   }
+
+  svg {
+    @apply fill-current;
+  }
 }
 
 @layer components {
   .about-paragraph {
     @apply 2xl:my-5;
-  }
-  .header-icon {
-    @apply 2xl:size-6 fill-current;
   }
 
   .hamburger-line {
@@ -177,26 +181,6 @@
 
   .hover-tilt {
     @apply transform transition-all duration-200 hover:-translate-y-1 hover:translate-x-1;
-  }
-
-  .corner-top-left::before {
-    content: "";
-    @apply absolute top-0 left-0 w-5 h-0.5 bg-tangerine;
-  }
-
-  .corner-top-left::after {
-    content: "";
-    @apply absolute top-0 left-0 w-0.5 h-5 bg-tangerine;
-  }
-
-  .corner-bottom-right::before {
-    content: "";
-    @apply absolute bottom-0 right-0 w-5 h-0.5 bg-tangerine;
-  }
-
-  .corner-bottom-right::after {
-    content: "";
-    @apply absolute bottom-0 right-0 w-0.5 h-5 bg-tangerine;
   }
 }
 
