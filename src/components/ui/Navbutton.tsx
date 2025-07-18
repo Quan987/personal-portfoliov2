@@ -1,15 +1,16 @@
+import { cn } from "@/lib/ui-shadcn/utils/utils";
 import { ReactNode } from "react";
 import { NavLink } from "react-router-dom";
 
 interface NavbuttonProps {
   link: string;
-  cssClass?: string;
+  className?: string;
   children?: ReactNode;
 }
 
 export default function Navbutton({
   link = "",
-  cssClass = "",
+  className = "",
   children,
 }: NavbuttonProps) {
   return (
@@ -17,9 +18,10 @@ export default function Navbutton({
       to={link}
       draggable={false}
       end
-      className={({}) =>
-        `block w-fit bg-black text-white text-md rounded-md border-2 border-black transition-all duration-200 hover:-translate-1 hover:bg-white hover:text-black ${cssClass}  `
-      }
+      className={cn(
+        "block w-fit bg-primary-dark text-primary-light rounded-md border-2 border-primary-dark transition-all duration-200 hover:-translate-1 hover:bg-primary-light hover:text-primary-dark",
+        className
+      )}
     >
       {children}
     </NavLink>
