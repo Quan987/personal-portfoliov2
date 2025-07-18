@@ -1,31 +1,12 @@
-// import data from "@/data/dataIndex";
-import Navbutton from "@/components/ui/Navbutton";
-import { HERO } from "@/pages/HomePage/home.constants";
+import HeroBanner from "@/pages/HomePage/components/HeroBanner";
+import HeroContent from "@/pages/HomePage/components/HeroContent";
 
 export default function Home() {
   return (
-    <section id="home" className="2xl:pt-10">
+    <section id="home" className="">
       <div className="size-full grid grid-cols-2 2xl:gap-20">
-        <div className="flex flex-col gap-12 2xl:p-10">
-          <h1 className="2xl:text-7xl 2xl:leading-21 font-medium">
-            {HERO.title}
-          </h1>
-          <div className="flex flex-col gap-10 2xl:pr-30">
-            <p className="text-pretty text-lg text-zinc-500">{HERO.subtitle}</p>
-            <Navbutton link="/contact" cssClass="2xl:px-7 2xl:py-3">
-              Get in Touch
-            </Navbutton>
-          </div>
-        </div>
-        <div className="self-center size-full">
-          <img
-            src={HERO.illustration.image}
-            alt={HERO.illustration.alt}
-            draggable={false}
-            loading="lazy"
-            className="animate-float size-full"
-          />
-        </div>
+        <HeroContent />
+        <HeroBanner />
       </div>
     </section>
   );
