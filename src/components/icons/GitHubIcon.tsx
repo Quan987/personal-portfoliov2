@@ -1,6 +1,6 @@
 import { IconProps } from "@/components/icons/icon.types";
 
-export default function GitHubIcon(props: IconProps) {
+export function GitHubIcon(props: IconProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

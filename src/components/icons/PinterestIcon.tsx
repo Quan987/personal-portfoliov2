@@ -1,6 +1,6 @@
 import { IconProps } from "@/components/icons/icon.types";
 
-export default function PinterestIcon(props: IconProps) {
+export function PinterestIcon(props: IconProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
