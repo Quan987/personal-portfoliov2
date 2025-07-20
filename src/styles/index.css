@@ -29,8 +29,8 @@
   --animate-marquee-right-scroll: horizontal-scroll-right var(--marquee-speed)
     linear infinite;
   --animate-banner: banner-tilt 3s ease-in-out infinite;
-  --animate-float: float 3s ease-in-out infinite;
 
+  --animate-float: float 3s ease-in-out infinite;
   @keyframes float {
     0% {
       transform: translateY(0);
@@ -90,12 +90,6 @@
 }
 
 @layer base {
-  :root {
-    --marquee-speed: 30s;
-    --marquee-items-size: 9rem;
-    --marquee-items-gap: 0.4rem;
-  }
-
   html {
     @apply font-family-instrument scroll-smooth;
   }
@@ -118,43 +112,11 @@
   }
 
   svg {
-    @apply fill-current;
+    @apply fill-current size-full;
   }
 }
 
 @layer components {
-  .about-paragraph {
-    @apply 2xl:my-5;
-  }
-
-  .hamburger-line {
-    @apply w-7 md:w-8 h-1 bg-black rounded-2xl transition-all ease-in-out duration-300 origin-center;
-  }
-
-  /*py doesnt work, use mx instead */
-  .marquee-track {
-    @apply relative h-(--marquee-items-size) my-1.5;
-  }
-
-  .marquee-item {
-    @apply absolute bg-white  rounded-lg shadow-xs  flex flex-col justify-center items-center gap-3 size-(--marquee-items-size);
-  }
-
-  .marquee-item-img {
-    @apply inline-block bg-white p-3 size-6/12;
-  }
-
-  .marquee-item-text {
-    @apply text-black;
-  }
-
-  .about-text {
-    @apply py-2 opacity-60 2xl:text-xl leading-8;
-  }
-
-  .input-container {
-    @apply flex flex-col justify-center gap-1 w-full;
-  }
 }
 
 @layer utilities {
@@ -183,16 +145,3 @@
     @apply transform transition-all duration-200 hover:-translate-y-1 hover:translate-x-1;
   }
 }
-
-/*---break--- */
-
-/*---break--- */
-
-/* @layer base {
-  * {
-    @apply border-border outline-ring/50;
-  }
-  body {
-    @apply bg-background text-foreground;
-  }
-} */
