@@ -21,11 +21,11 @@ export default function AboutContent({
   return (
     <div className="self-center text-md 2xl:pt-30 2xl:pl-45 text-secondary-muted">
       <div className="text-secondary-muted">
-        <p className="font-medium text-xl text-primary-dark my-5">
+        <p className="font-medium text-xl text-primary-dark my-4">
           {subheader1}
         </p>
-        <p className="my-5">{subheader2}</p>
-        <p className="my-5">{subheader3}</p>
+        <p className="my-4">{subheader2}</p>
+        <p className="my-4">{subheader3}</p>
       </div>
 
       <div>
