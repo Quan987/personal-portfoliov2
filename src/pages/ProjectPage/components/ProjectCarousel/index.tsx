@@ -42,13 +42,13 @@ export function ProjectCarousel() {
   return (
     <Carousel
       setApi={setApi}
-      // plugins={[
-      //   Autoplay({
-      //     delay: 3000,
-      //     stopOnMouseEnter: true,
-      //     stopOnInteraction: false,
-      //   }),
-      // ]}
+      plugins={[
+        Autoplay({
+          delay: 3000,
+          stopOnMouseEnter: true,
+          stopOnInteraction: false,
+        }),
+      ]}
       opts={{
         loop: false,
         containScroll: "trimSnaps",
