@@ -3,7 +3,7 @@ import { SOCIAL_LINKS } from "@/config/constants";
 export default function SocialMenu() {
   return (
     <ul className="flex items-center group gap-3">
-      {SOCIAL_LINKS.map(({ id, href, icon: Icon, name }, _) => {
+      {SOCIAL_LINKS.map(({ id, href, icon: Icon }, _) => {
         // Calling the function to produce a react element, essentially this become: createElement(GitHubIcon)
         // const LinkIcon = link.icon;
         return (
@@ -16,7 +16,7 @@ export default function SocialMenu() {
               className="block size-full transition-colors duration-300 group-hover:text-secondary-muted hover:text-primary-dark px-2"
             >
               {/* <LinkIcon className="2xl:size-6.5" /> */}
-              <Icon className="2xl:size-6.5" />
+              <Icon className="2xl:size-6.5 fill-current" />
             </a>
           </li>
         );
