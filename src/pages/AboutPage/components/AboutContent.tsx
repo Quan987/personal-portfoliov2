@@ -34,7 +34,7 @@ export default function AboutContent({
           {skillsIcon.map(({ id, name, icon: Icon }, _) => {
             return (
               <li
-                id={id}
+                key={id}
                 className="flex flex-col justify-center items-center gap-1 size-12"
               >
                 <Icon className="size-6/12" />
