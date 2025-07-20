@@ -8,7 +8,7 @@ export default function ProjectPagination({
   count,
 }: ProjectPaginationProps) {
   return (
-    <div className="text-zinc-500 py-2 text-center text-sm pt-4">
+    <div className="text-secondary-muted text-center text-sm mt-5">
       Page {current} of {count}
     </div>
   );

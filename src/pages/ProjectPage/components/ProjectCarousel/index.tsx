@@ -16,74 +16,79 @@ import ProjectPagination from "@/pages/ProjectPage/components/ProjectCarousel/Pr
 
 export function ProjectCarousel() {
   const [api, setApi] = useState<CarouselApi>();
-  const [current, setCurrent] = useState(0);
-  const [count, setCount] = useState(0);
+  const [pagination, setPagination] = useState({
+    currentPage: 0,
+    totalPages: 0,
+  });
 
   useEffect(() => {
     if (!api) {
       return;
     }
-    setCount(api.scrollSnapList().length);
 
-    setCurrent(api.selectedScrollSnap() + 1);
+    setPagination({
+      totalPages: api.scrollSnapList().length,
+      currentPage: api.selectedScrollSnap() + 1,
+    });
+
     api.on("select", () => {
-      setCurrent(api.selectedScrollSnap() + 1);
+      setPagination((prev) => ({
+        ...prev,
+        currentPage: api.selectedScrollSnap() + 1,
+      }));
     });
   }, [api]);
 
   return (
-    <>
-      {" "}
-      <Carousel
-        setApi={setApi}
-        plugins={[
-          Autoplay({
-            delay: 3000,
-            stopOnMouseEnter: true,
-            stopOnInteraction: false,
-          }),
-        ]}
-        opts={{
-          loop: false,
-          containScroll: "trimSnaps",
-          breakpoints: {
-            "(max-width: 1023px)": {
-              watchDrag: true,
-            },
-            "(min-width: 1024px)": {
-              watchDrag: false,
-            },
+    <Carousel
+      setApi={setApi}
+      // plugins={[
+      //   Autoplay({
+      //     delay: 3000,
+      //     stopOnMouseEnter: true,
+      //     stopOnInteraction: false,
+      //   }),
+      // ]}
+      opts={{
+        loop: false,
+        containScroll: "trimSnaps",
+        breakpoints: {
+          "(max-width: 1023px)": {
+            watchDrag: true,
           },
-        }}
-        id="project-carousel"
-        className="w-full"
-      >
-        <CarouselContent>
-          {PROJECTS.carousel.map((project, _) => (
-            <CarouselItem key={project.id} className="basis-1/3">
-              <ProjectCard backgroundImage={project.illustration.image}>
-                {!project.isEmpty && (
-                  <>
-                    <ProjectCardHeader
-                      type={project.type}
-                      link={project.link}
-                    />
-                    <ProjectCardBody
-                      title={project.title}
-                      description={project.description}
-                      stacks={project.stacks}
-                      link={project.link}
-                    />
-                  </>
-                )}
-              </ProjectCard>
-            </CarouselItem>
-          ))}
-        </CarouselContent>
-        <CarouselPrevious className="bg-black text-white" />
-        <CarouselNext className="bg-black text-white" />
-      </Carousel>
-      <ProjectPagination current={current} count={count} />
-    </>
+          "(min-width: 1024px)": {
+            watchDrag: false,
+          },
+        },
+      }}
+      id="project-carousel"
+      className="w-full"
+    >
+      <CarouselContent>
+        {PROJECTS.carousel.map((project, _) => (
+          <CarouselItem key={project.id} className="basis-1/3">
+            <ProjectCard backgroundImage={project.illustration.image}>
+              {!project.isEmpty && (
+                <>
+                  <ProjectCardHeader type={project.type} link={project.link} />
+                  <ProjectCardBody
+                    title={project.title}
+                    description={project.description}
+                    stacks={project.stacks}
+                    link={project.link}
+                  />
+                </>
+              )}
+            </ProjectCard>
+          </CarouselItem>
+        ))}
+      </CarouselContent>
+      <CarouselPrevious className="bg-primary-dark text-primary-light hover:bg-secondary-light hover:border-1.5 hover:border-primary-dark hover:text-primary-dark" />
+      <CarouselNext className="bg-primary-dark text-primary-light hover:bg-secondary-light hover:border-1.5 hover:border-primary-dark hover:text-primary-dark" />
+      <ProjectPagination
+        current={pagination.currentPage}
+        count={pagination.totalPages}
+      />
+    </Carousel>
   );
 }

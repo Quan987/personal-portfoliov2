@@ -16,7 +16,7 @@ export const PROJECTS = {
       type: "Website",
       title: "Password Generator",
       description:
-        "A secure web application that generates strong, unique passwords and features a personal vault for safely storing and managing them.",
+        "A secure and user-friendly web application that generates strong, unique passwords and features a personal vault for safely storing and managing them.",
       stacks: ["JavaScripts", "PHP", "SQL"],
       link: "https://github.com/Quan987/password-generator",
       illustration: {

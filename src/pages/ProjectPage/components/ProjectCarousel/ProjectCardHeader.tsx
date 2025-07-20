@@ -8,7 +8,7 @@ export default function ProjectCardHeader({
   link,
 }: ProjectCardHeaderProps) {
   return (
-    <div id="card-header" className="flex justify-between 2xl:p-5">
+    <div id="card-header" className="flex justify-between p-5">
       <h4>{type}</h4>
       <a
         href={link}

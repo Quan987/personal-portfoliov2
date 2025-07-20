@@ -14,12 +14,12 @@ export default function ProjectCardBody({
   return (
     <div
       id="card-body"
-      className="flex flex-col 2xl:p-5 backdrop-blur-sm mask-t-from-90% rounded-xl"
+      className="flex flex-col backdrop-blur-sm mask-t-from-90% rounded-xl p-6 h-[18rem]"
     >
-      <div className="flex flex-col gap-3 2xl:pt-5 2xl:pb-10">
-        <div className="2xl:text-2xl">{title}</div>
-        <p className="2xl:text-sm">{description}</p>
-        <ul className="flex gap-3 2xl:text-sm">
+      <div className="flex flex-col gap-3">
+        <div className="text-2xl">{title}</div>
+        <p className="text-sm">{description}</p>
+        <ul className="flex gap-3 text-sm">
           {stacks.map((stack, index) => (
             <li key={`${index}-${stack.toLowerCase()}`}>{stack}</li>
           ))}
@@ -32,7 +32,7 @@ export default function ProjectCardBody({
         draggable="false"
         target="_blank"
         rel="noopener noreferrer"
-        className="flex justify-center gap-2 text-black bg-white border-white border-2 rounded-full mt-auto 2xl:py-2 transition-colors duration-300 hover:bg-white/0 hover:text-white"
+        className="flex justify-center gap-2 text-primary-dark bg-primary-light border-primary-light border-2 rounded-full mt-auto py-2 transition-colors duration-300 hover:bg-primary-light/0 hover:text-primary-light"
       >
         <p>View Project</p>
         <svg
