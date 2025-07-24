@@ -1,3 +1,4 @@
+import { escapeHTML } from "@/utils/sanitize";
 import emailjs from "@services/emailjs.service";
 import { FormInput } from "@validations/contact.schema";
 
@@ -19,8 +20,15 @@ export async function sendEmail(
     };
   }
 
+  const safeData = {
+    firstName: escapeHTML(data.firstName),
+    lastName: escapeHTML(data.lastName),
+    email: escapeHTML(data.email),
+    userMessage: escapeHTML(data.userMessage),
+  };
+
   try {
-    const response = await emailjs.send(serviceID, templateID, data);
+    const response = await emailjs.send(serviceID, templateID, safeData);
     if (response.status !== 200) {
       throw new Error(
         `EmailJS service responded with an error: ${response.text}. Please try again later.`
