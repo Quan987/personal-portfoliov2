@@ -21,9 +21,10 @@ export async function sendEmail(
 
   try {
     const response = await emailjs.send(serviceID, templateID, data);
-
     if (response.status !== 200) {
-      throw new Error("Email service responded with an error.");
+      throw new Error(
+        `EmailJS service responded with an error: ${response.text}. Please try again later.`
+      );
     }
 
     return {
@@ -31,11 +32,10 @@ export async function sendEmail(
       message: "Inquiry submitted successfully!",
     };
   } catch (error) {
-    console.error(error);
-    const msg = // error instanceof Error mean we are the one who throw it
-      error instanceof Error && error.message
+    const msg =
+      error instanceof Error && error.message // error instanceof Error mean we are the one who throw it
         ? error.message // This becomes: "Email service responded with an error if response.status is not 200"
-        : "Failed to submit request. Please try again later."; // Use for something goes wrong in an unexpected way (e.g., a throw "Oops!" or throw null)
+        : "Failed to submit request. Please try again later."; // Use for something goes wrong in an unexpected way like network fail (e.g., a throw "Oops!" or throw null)
     return {
       success: false,
       message: msg,
