@@ -1,6 +1,7 @@
 export default function ContactFormBanner() {
   return (
     <div
+      id="contact-banner"
       className={
         "bg-primary-dark text-foreground-secondary flex flex-col items-center 2xl:p-25"
       }
