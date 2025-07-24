@@ -17,6 +17,7 @@ export default function ContactForm() {
     handleSubmit,
     reset,
     setError,
+    watch,
     // errors: show zod validation error before submit, isSubmit: true while onSubmit function is running, isSubmitSuccessful: true after a successful submit where onSubmit does not throw
     formState: { errors, isSubmitting, isSubmitSuccessful },
   } = useForm<FormInput>({
@@ -74,7 +75,7 @@ export default function ContactForm() {
   }
 
   return (
-    <div className="bg-primary-light h-full px-20 py-10">
+    <div id="contact-form" className="bg-primary-light h-full px-20 py-10">
       <p className="text-3xl text-center pb-10">Contact</p>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className={"grid grid-cols-2 gap-6"}>
@@ -115,7 +116,8 @@ export default function ContactForm() {
         <TextareaField
           id="userMessage"
           rows={6}
-          placeholder="Please enter your message here. Maximum 250 characters."
+          placeholder="Please enter your message here."
+          charCount={(watch("userMessage") || "").length}
           error={errors.userMessage}
           {...register("userMessage")}
         >

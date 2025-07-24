@@ -4,6 +4,8 @@ import { FieldError } from "react-hook-form";
 
 interface InputFieldProps extends TextareaHTMLAttributes<HTMLTextAreaElement> {
   id: string;
+  charCount: number;
+  maxLength?: number;
   error?: FieldError;
   children?: ReactNode;
 }
@@ -11,6 +13,8 @@ interface InputFieldProps extends TextareaHTMLAttributes<HTMLTextAreaElement> {
 export default function TextareaField({
   id,
   error,
+  charCount = 0,
+  maxLength = 250,
   children,
   ...props
 }: InputFieldProps) {
@@ -19,12 +23,18 @@ export default function TextareaField({
       <label htmlFor={id}>{children}</label>
       <textarea
         id={id}
+        maxLength={maxLength}
         className={`contact-form-field resize-none ${
           error && "form-field-error"
         }`}
         {...props}
       />
-      <FormFieldError error={error} />
+      <div className="flex justify-between text-foreground-muted">
+        <FormFieldError error={error} />
+        <span className="text-sm">
+          {maxLength - charCount} characters remaining
+        </span>
+      </div>
     </div>
   );
 }
