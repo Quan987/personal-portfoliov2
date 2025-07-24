@@ -1,4 +1,4 @@
-import FormInputError from "@/pages/ContactPage/components/FormInputError";
+import FormFieldError from "@/pages/ContactPage/components/FormFieldError";
 import { InputHTMLAttributes, ReactNode } from "react";
 import { FieldError } from "react-hook-form";
 
@@ -26,7 +26,7 @@ export default function InputField({
         }`}
         {...props}
       />
-      <FormInputError error={error} />
+      <FormFieldError error={error} />
     </div>
   );
 }
