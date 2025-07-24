@@ -20,7 +20,7 @@ export default function TextareaField({
       <textarea
         id={id}
         className={`contact-form-field resize-none ${
-          error && "border-secondary-red focus-within:outline-secondary-red"
+          error && "form-field-error"
         }`}
         {...props}
       />

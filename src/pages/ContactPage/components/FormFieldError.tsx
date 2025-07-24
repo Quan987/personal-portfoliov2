@@ -5,5 +5,5 @@ interface FormError {
 }
 
 export default function FormFieldError({ error }: FormError) {
-  return <p className="h-8 text-sm text-secondary-red">{error?.message}</p>;
+  return <p className="h-8 text-sm text-status-error">{error?.message}</p>;
 }

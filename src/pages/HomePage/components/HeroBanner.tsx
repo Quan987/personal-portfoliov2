@@ -8,7 +8,7 @@ export default function HeroBanner() {
         alt={HERO.illustration.alt}
         draggable={false}
         loading="lazy"
-        className="animate-float"
+        className="animate-float text-foreground-primary"
       />
     </div>
   );

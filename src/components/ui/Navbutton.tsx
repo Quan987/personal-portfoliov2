@@ -19,7 +19,7 @@ export default function Navbutton({
       draggable={false}
       end
       className={cn(
-        "block w-fit bg-primary-dark text-primary-light rounded-md border-2 border-primary-dark transition-all duration-200 hover:-translate-1 hover:bg-primary-light hover:text-primary-dark",
+        "block w-fit bg-primary-dark text-foreground-secondary rounded-sm border-1 border-primary-dark hover:bg-primary-light hover:text-foreground-primary",
         className
       )}
     >

@@ -14,7 +14,7 @@ export default function ProjectCardBody({
   return (
     <div
       id="card-body"
-      className="flex flex-col backdrop-blur-sm mask-t-from-90% rounded-xl p-6 h-[18rem]"
+      className="text-foreground-secondary flex flex-col backdrop-blur-sm mask-t-from-90% rounded-xl p-6 2xl:h-[17rem]"
     >
       <div className="flex flex-col gap-3">
         <div className="text-2xl">{title}</div>
@@ -32,7 +32,7 @@ export default function ProjectCardBody({
         draggable="false"
         target="_blank"
         rel="noopener noreferrer"
-        className="flex justify-center gap-2 text-primary-dark bg-primary-light border-primary-light border-2 rounded-full mt-auto py-2 transition-colors duration-300 hover:bg-primary-light/0 hover:text-primary-light"
+        className="flex justify-center gap-2 text-foreground-primary bg-primary-light border-primary-light border-1 rounded-full mt-auto py-2.5 transition-colors duration-250 hover:bg-primary-light/0 hover:text-foreground-secondary"
       >
         <p>View Project</p>
         <svg

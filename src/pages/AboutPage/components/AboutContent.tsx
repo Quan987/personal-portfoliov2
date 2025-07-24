@@ -19,9 +19,9 @@ export default function AboutContent({
   skillsIcon,
 }: AboutContentProps) {
   return (
-    <div className="self-center text-md 2xl:pt-30 2xl:pl-45 text-secondary-muted">
+    <div className="self-center text-md 2xl:pt-30 2xl:pl-45 text-foreground-muted">
       <div className="text-secondary-muted">
-        <p className="font-medium text-xl text-primary-dark my-4">
+        <p className="font-medium text-xl text-foreground-primary my-4">
           {subheader1}
         </p>
         <p className="my-4">{subheader2}</p>

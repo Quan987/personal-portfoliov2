@@ -8,14 +8,17 @@ export default function ProjectCardHeader({
   link,
 }: ProjectCardHeaderProps) {
   return (
-    <div id="card-header" className="flex justify-between p-5">
+    <div
+      id="card-header"
+      className="text-foreground-secondary flex justify-between p-5"
+    >
       <h4>{type}</h4>
       <a
         href={link}
         target="_blank"
         draggable="false"
         rel="noopener noreferrer"
-        className="transition duration-200 ease-in-out hover:-translate-y-0.5 hover:translate-x-0.5"
+        className="hover-tilt hover:-translate-y-0.5 hover:translate-x-0.5"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"

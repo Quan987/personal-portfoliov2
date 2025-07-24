@@ -1,6 +1,10 @@
 export default function ContactFormBanner() {
   return (
-    <div className={"text-primary-light flex flex-col items-center 2xl:p-25"}>
+    <div
+      className={
+        "bg-primary-dark text-foreground-secondary flex flex-col items-center 2xl:p-25"
+      }
+    >
       <p className={"text-3xl"}>Let's Connect</p>
       <div className={"text-center"}>
         <p className={"mt-10"}>

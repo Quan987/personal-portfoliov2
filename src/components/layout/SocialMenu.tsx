@@ -4,8 +4,6 @@ export default function SocialMenu() {
   return (
     <ul className="flex items-center group gap-3">
       {SOCIAL_LINKS.map(({ id, href, icon: Icon }, _) => {
-        // Calling the function to produce a react element, essentially this become: createElement(GitHubIcon)
-        // const LinkIcon = link.icon;
         return (
           <li key={id} className="">
             <a
@@ -13,9 +11,8 @@ export default function SocialMenu() {
               target="_blank"
               rel="noopener noreferrer"
               draggable={false}
-              className="block size-full transition-colors duration-300 group-hover:text-secondary-muted hover:text-primary-dark px-2"
+              className="block transition-colors duration-200 text-foreground-primary group-hover:text-foreground-muted hover:text-foreground-primary px-2"
             >
-              {/* <LinkIcon className="2xl:size-6.5" /> */}
               <Icon className="2xl:size-6.5 fill-current" />
             </a>
           </li>

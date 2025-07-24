@@ -12,7 +12,7 @@ export default function ProjectCard({
   return (
     <div
       id="card"
-      className="relative bg-no-repeat bg-cover flex flex-col justify-between text-primary-light rounded-xl 2xl:h-[35rem] "
+      className="relative bg-no-repeat bg-cover flex flex-col justify-between text-foreground-secondary rounded-xl 2xl:h-[35rem]"
       style={{
         backgroundImage: `url(${backgroundImage})`,
       }}

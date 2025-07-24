@@ -21,9 +21,7 @@ export default function InputField({
       </label>
       <input
         id={id}
-        className={`contact-form-field ${
-          error && "border-secondary-red focus-within:outline-secondary-red"
-        }`}
+        className={`contact-form-field ${error && "form-field-error"}`}
         {...props}
       />
       <FormFieldError error={error} />

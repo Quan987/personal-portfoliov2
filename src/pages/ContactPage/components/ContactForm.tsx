@@ -1,13 +1,15 @@
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import FormInputError from "./FormInputError";
-import { useEffect } from "react";
-import FormStatusMessage from "./FormStatusMessage";
+import { useEffect, useState } from "react";
 import { delay } from "@utils/delay";
 import {
   FormInput,
   schema as contactSchema,
 } from "@validations/contact.schema";
+import InputField from "@/pages/ContactPage/components/InputField";
+import TextareaField from "@/pages/ContactPage/components/TextareaField";
+import { sendEmail } from "@/pages/ContactPage/utils/emailjs.utils";
+import StatusModal from "@/components/ui/StatusModal";
 
 export default function ContactForm() {
   const {
@@ -22,164 +24,128 @@ export default function ContactForm() {
     mode: "all",
   });
 
+  const [modalState, setModalState] = useState({
+    open: false,
+    success: false,
+    message: "",
+  });
+
   useEffect(() => {
     if (isSubmitSuccessful) {
-      console.log("SUbmit successful");
-      const timeOut = setTimeout(reset, 20000);
+      const timeOut = setTimeout(reset, 2000);
       return () => clearTimeout(timeOut);
     }
   }, [isSubmitSuccessful]);
 
   async function onSubmit(data: FormInput) {
-    try {
-      await delay(2000);
-      // const result = await sendEmail(data);
-      const result = {
-        success: false,
-        message: "Testing",
-      };
+    await delay(2000);
+    // const result = await sendEmail(data);
+    console.log(data);
+    const result = {
+      success: false,
+      message: "Inquiry submit successful",
+    };
 
-      throw new Error("Testing the exception");
-
-      console.log(data);
-      if (!result.success) {
-        setError("root.exception", {
-          type: "sendEmailError",
-          message: result.message,
-        });
-        return;
-      }
-    } catch (error) {
-      const msg =
-        error instanceof Error ? error.message : "Something went wrong."; //error instanceof Error meaning the Error we throw (ie: throw new Error...)
-      setError("root.exception", {
-        type: "exception",
-        message: msg,
+    if (!result.success) {
+      setError("root.apiError", {
+        // prevents RHF marking successful
+        type: "apiError",
+        message: result.message,
       });
+
+      setModalState({
+        open: true,
+        success: false,
+        message: `Error submitting: ${result.message}`,
+      });
+      return;
     }
+    setModalState({
+      open: true,
+      success: true,
+      message: result.message,
+    });
+  }
+
+  function getButtonLabel(): string {
+    if (isSubmitting) return "Submitting...";
+    if (isSubmitSuccessful) return "Resetting...";
+    return "Send Message";
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <div className={"grid grid-cols-2 gap-6"}>
-        <div className="">
-          <label htmlFor="firstName">First Name</label>
-          <input
+    <div className="bg-primary-light h-full px-20 py-10">
+      <p className="text-3xl text-center pb-10">Contact</p>
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <div className={"grid grid-cols-2 gap-6"}>
+          <InputField
             id="firstName"
             type="text"
             autoComplete="given-name"
             placeholder="John"
+            error={errors.firstName}
             {...register("firstName")}
-            className={
-              errors.firstName
-                ? "focus-within:outline-red-500 border-red-500"
-                : ""
-            }
-          />
-          {errors.firstName && (
-            <FormInputError>{errors.firstName.message}</FormInputError>
-          )}
-        </div>
+          >
+            First Name
+          </InputField>
 
-        <div className="">
-          <label htmlFor="lastName">Last Name</label>
-          <input
+          <InputField
             id="lastName"
             type="text"
             autoComplete="family-name"
             placeholder="Doe"
+            error={errors.lastName}
             {...register("lastName")}
-            className={
-              errors.lastName
-                ? "focus-within:outline-red-500 border-red-500"
-                : ""
-            }
-          />
-          {errors.lastName && (
-            <FormInputError>{errors.lastName.message}</FormInputError>
-          )}
+          >
+            Last Name
+          </InputField>
         </div>
-      </div>
 
-      <div className={errors.email ? "mt-3" : "mt-4"}>
-        <label htmlFor="email">Email Address</label>
-        <input
+        <InputField
           id="email"
+          type="email"
           autoComplete="email"
           placeholder="johndoe@example.com"
+          error={errors.email}
           {...register("email")}
-          className={
-            errors.email ? "focus-within:outline-red-500 border-red-500" : ""
-          }
-        />
-        {errors.email && (
-          <FormInputError>{errors.email.message}</FormInputError>
-        )}
-      </div>
+        >
+          Email Address
+        </InputField>
 
-      <div className={errors.userMessage ? "mt-3" : "mt-4"}>
-        <label htmlFor="userMessage">Message</label>
-        <textarea
+        <TextareaField
           id="userMessage"
           rows={6}
           placeholder="Please enter your message here. Maximum 250 characters."
+          error={errors.userMessage}
           {...register("userMessage")}
-          className={`resize-none ${
-            errors.userMessage
-              ? "focus-within:outline-red-500 border-red-500"
-              : ""
+        >
+          Message
+        </TextareaField>
+
+        <button
+          type="submit"
+          disabled={isSubmitting || isSubmitSuccessful} // isSubmitting false and isSubmitSuccessful true make this a true
+          className={`w-fit bg-primary-dark text-foreground-secondary rounded-md border-1 border-primary-dark hover-tilt hover:-translate-y-1 hover:translate-x-1 hover:bg-primary-light hover:text-foreground-primary text-md mt-5 px-9 py-3 ${
+            (isSubmitting || isSubmitSuccessful) &&
+            "bg-secondary-surface border-secondary-surface pointer-events-none select-none"
           }`}
+        >
+          {getButtonLabel()}
+        </button>
+      </form>
+      {modalState.open && (
+        <StatusModal
+          success={modalState.success}
+          message={modalState.message}
+          onClose={() =>
+            setModalState({
+              open: false,
+              success: false,
+              message: "",
+            })
+          }
         />
-        {errors.userMessage && (
-          <FormInputError>{errors.userMessage.message}</FormInputError>
-        )}
-      </div>
-
-      <button
-        type="submit"
-        // isSubmitting false and isSubmitSuccessful true make this a true
-        disabled={isSubmitting || isSubmitSuccessful}
-        onClick={() => console.log("Clicked")}
-        className="w-fit bg-black text-white text-md rounded-md border-1 border-black transition-all duration-200 hover:-translate-1 hover:bg-white hover:text-black mt-8 2xl:px-10 2xl:py-2.5"
-        style={{
-          backgroundColor: isSubmitting || isSubmitSuccessful ? "#FF0000" : "",
-        }}
-      >
-        {isSubmitting ? "Submitting..." : "Send Message"}
-      </button>
-
-      <FormStatusMessage
-        error={errors.root?.exception.message}
-        success={isSubmitSuccessful}
-      />
-    </form>
+      )}
+    </div>
   );
-}
-
-{
-  /* <input
-            id="firstName"
-            type="text"
-            placeholder="John"
-            {...register("firstName", { 
-              // required: "First name is required.",
-              // maxLength: {
-              //   value: 100,
-              //   message: "First name must not exceed 100 characters.",
-              // },
-              // pattern: {
-              //   value: /^[a-zA-Z\s'-]+$/,
-              //   message:
-              //     "First name can only contain letters, spaces, astrophes, and hyphen",
-              // },
-              // validate: (val) => {
-              //   if (!val.includes("name")) {
-              //     return "Val must return a name";
-              //   }
-              //   return true;
-              // },
-          //   })}
-          //   className={"2xl:my-[0.25rem]"}
-          // />
-          */
 }

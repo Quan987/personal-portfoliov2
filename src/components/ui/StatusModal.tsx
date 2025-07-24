@@ -23,11 +23,11 @@ export default function StatusModal({
   return createPortal(
     <div
       id="modal-container"
-      className="size-full fixed inset-0 flex items-center justify-center z-modal bg-black/50"
+      className="size-full fixed inset-0 flex items-center justify-center z-modal bg-primary-dark/50"
     >
       <div
         id="modal"
-        className="bg-white rounded-sm flex flex-col items-center justify-center h-[18rem] w-[28rem]"
+        className="bg-primary-light rounded-md flex flex-col items-center justify-center h-[18rem] w-[28rem]"
       >
         <div id="modal-banner" className="h-20">
           <img
@@ -54,7 +54,7 @@ export default function StatusModal({
           <button
             type="button"
             onClick={onClose}
-            className={`${statusData.buttonColor} text-foreground-secondary hover:bg-primary-light border-1 rounded-sm transition-colors duration-150 px-4 py-2`}
+            className={`${statusData.buttonColor} text-foreground-secondary hover:bg-primary-light border-1 rounded-sm transition-colors duration-200 px-4 py-2`}
           >
             Close
           </button>

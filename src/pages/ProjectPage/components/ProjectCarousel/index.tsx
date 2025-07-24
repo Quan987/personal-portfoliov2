@@ -83,8 +83,8 @@ export function ProjectCarousel() {
           </CarouselItem>
         ))}
       </CarouselContent>
-      <CarouselPrevious className="bg-primary-dark text-primary-light hover:bg-secondary-light hover:border-1.5 hover:border-primary-dark hover:text-primary-dark" />
-      <CarouselNext className="bg-primary-dark text-primary-light hover:bg-secondary-light hover:border-1.5 hover:border-primary-dark hover:text-primary-dark" />
+      <CarouselPrevious className="carousel-button size-9" />
+      <CarouselNext className="carousel-button size-9" />
       <ProjectPagination
         current={pagination.currentPage}
         count={pagination.totalPages}
