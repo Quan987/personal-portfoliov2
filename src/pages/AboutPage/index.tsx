@@ -4,7 +4,7 @@ import AboutContent from "@/pages/AboutPage/components/AboutContent";
 
 export function About() {
   return (
-    <section id="about" className="">
+    <section id="about">
       <div className="relative size-fit grid grid-cols-2">
         <AboutBanner header={ABOUT.header} illustration={ABOUT.illustration} />
         <AboutContent

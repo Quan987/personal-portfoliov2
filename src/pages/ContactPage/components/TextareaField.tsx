@@ -2,13 +2,13 @@ import FormFieldError from "@/pages/ContactPage/components/FormFieldError";
 import { ReactNode, TextareaHTMLAttributes } from "react";
 import { FieldError } from "react-hook-form";
 
-interface InputFieldProps extends TextareaHTMLAttributes<HTMLTextAreaElement> {
+type InputFieldProps = TextareaHTMLAttributes<HTMLTextAreaElement> & {
   id: string;
   charCount: number;
   maxLength?: number;
   error?: FieldError;
   children?: ReactNode;
-}
+};
 
 export default function TextareaField({
   id,

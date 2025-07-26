@@ -1,11 +1,14 @@
-import { HERO } from "@/pages/HomePage/home.constants";
+type HeroBannerProps = Readonly<{
+  image: string;
+  alt: string;
+}>;
 
-export default function HeroBanner() {
+export default function HeroBanner({ image, alt }: HeroBannerProps) {
   return (
     <div className="size-full p-5">
       <img
-        src={HERO.illustration.image}
-        alt={HERO.illustration.alt}
+        src={image}
+        alt={alt}
         draggable={false}
         loading="lazy"
         className="animate-float text-foreground-primary"

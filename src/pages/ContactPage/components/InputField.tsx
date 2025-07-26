@@ -2,11 +2,11 @@ import FormFieldError from "@/pages/ContactPage/components/FormFieldError";
 import { InputHTMLAttributes, ReactNode } from "react";
 import { FieldError } from "react-hook-form";
 
-interface InputFieldProps extends InputHTMLAttributes<HTMLInputElement> {
+type InputFieldProps = InputHTMLAttributes<HTMLInputElement> & {
   id: string;
   error?: FieldError;
   children?: ReactNode;
-}
+};
 
 export default function InputField({
   id,

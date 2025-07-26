@@ -1,9 +1,9 @@
-interface ProjectPaginationProps {
+type ProjectPaginationProps = Readonly<{
   current: number;
   count: number;
-}
+}>;
 
-export default function ProjectPagination({
+export default function ProjectCardPagination({
   current,
   count,
 }: ProjectPaginationProps) {

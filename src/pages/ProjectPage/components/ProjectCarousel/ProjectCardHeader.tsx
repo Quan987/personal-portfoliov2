@@ -1,7 +1,7 @@
-interface ProjectCardHeaderProps {
+type ProjectCardHeaderProps = Readonly<{
   type: string;
   link: string;
-}
+}>;
 
 export default function ProjectCardHeader({
   type,

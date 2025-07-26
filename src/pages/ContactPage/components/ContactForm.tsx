@@ -9,7 +9,7 @@ import {
 import InputField from "@/pages/ContactPage/components/InputField";
 import TextareaField from "@/pages/ContactPage/components/TextareaField";
 import { sendEmail } from "@/pages/ContactPage/utils/emailjs.utils";
-import StatusModal from "@/components/ui/StatusModal";
+import StatusModal from "@/pages/ContactPage/components/StatusModal";
 
 export default function ContactForm() {
   const {
@@ -43,7 +43,7 @@ export default function ContactForm() {
     // const result = await sendEmail(data);
     console.log(data);
     const result = {
-      success: false,
+      success: true,
       message: "Inquiry submit successful",
     };
 

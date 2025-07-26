@@ -1,4 +1,14 @@
-export default function ContactFormBanner() {
+type ContactFormBannerProps = Readonly<{
+  title: string;
+  subheader1: string;
+  subheader2: string;
+}>;
+
+export default function ContactFormBanner({
+  title,
+  subheader1,
+  subheader2,
+}: ContactFormBannerProps) {
   return (
     <div
       id="contact-banner"
@@ -6,15 +16,10 @@ export default function ContactFormBanner() {
         "bg-primary-dark text-foreground-secondary flex flex-col items-center 2xl:p-25"
       }
     >
-      <p className={"text-3xl"}>Let's Connect</p>
+      <h1 className={"text-3xl"}>{title}</h1>
       <div className={"text-center"}>
-        <p className={"mt-10"}>
-          I'd love to hear from you — whether you have a question, want to
-          collaborate on a project, or just want to say hello. Please take a
-          moment to fill out the contact form, and I'll get back to you as soon
-          as I can.
-        </p>
-        <p className={"mt-10"}>Looking forward to connecting!</p>
+        <p className={"mt-10"}>{subheader1}</p>
+        <p className={"mt-10"}>{subheader2}</p>
       </div>
     </div>
   );

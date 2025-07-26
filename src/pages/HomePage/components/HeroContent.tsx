@@ -1,15 +1,19 @@
 import Navbutton from "@/components/ui/Navbutton";
-import { HERO } from "@/pages/HomePage/home.constants";
 
-export default function HeroContent() {
+type HeroContentProps = Readonly<{
+  title: string;
+  subtitle: string;
+}>;
+
+export default function HeroContent({ title, subtitle }: HeroContentProps) {
   return (
     <div className="flex flex-col gap-15 p-10">
       <h1 className="font-medium 2xl:text-7xl 2xl:leading-21 text-foreground-primary">
-        {HERO.title}
+        {title}
       </h1>
       <div className="flex flex-col gap-10 2xl:pr-30">
         <p className="text-pretty 2xl:text-lg leading-8 text-foreground-muted">
-          {HERO.subtitle}
+          {subtitle}
         </p>
         <Navbutton
           link="/contact"

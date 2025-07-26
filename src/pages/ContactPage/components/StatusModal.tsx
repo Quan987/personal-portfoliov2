@@ -1,11 +1,11 @@
 import { createPortal } from "react-dom";
-import { STATUS_VARIANTS } from "@/pages/ContactPage/contact.constants";
+import { STATUS } from "@/pages/ContactPage/contact.constants";
 
-export interface StatusModalProps {
+type StatusModalProps = {
   success: boolean;
   message: string;
   onClose: () => void;
-}
+};
 
 export default function StatusModal({
   success,
@@ -13,7 +13,7 @@ export default function StatusModal({
   onClose,
 }: StatusModalProps) {
   const statusData = {
-    ...STATUS_VARIANTS[success ? "success" : "error"],
+    ...STATUS[success ? "success" : "error"],
     message,
     buttonColor: success
       ? "bg-status-success hover:border-status-success hover:text-status-success"

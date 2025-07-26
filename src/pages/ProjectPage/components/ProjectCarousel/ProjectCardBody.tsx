@@ -1,9 +1,9 @@
-export interface ProjectCardBodyProps {
+type ProjectCardBodyProps = Readonly<{
   title: string;
   description: string;
-  stacks: readonly string[];
+  stacks: ReadonlyArray<string>;
   link: string;
-}
+}>;
 
 export default function ProjectCardBody({
   title,

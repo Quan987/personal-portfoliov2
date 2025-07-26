@@ -1,16 +1,16 @@
-import { IconProps } from "@/components/icons/icon.types";
 import { ComponentType } from "react";
+import { IconProps } from "@/components/icons/icon.types";
 
-interface AboutContentProps {
+type AboutContentProps = Readonly<{
   subheader1: string;
   subheader2: string;
   subheader3: string;
-  readonly skillsIcon: ReadonlyArray<{
+  skillsIcon: ReadonlyArray<{
     id: string;
     name: string;
     icon: ComponentType<IconProps>;
   }>;
-}
+}>;
 
 export default function AboutContent({
   subheader1,

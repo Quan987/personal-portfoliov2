@@ -1,7 +1,7 @@
-interface ProjectHeaderProps {
+type ProjectHeaderProps = Readonly<{
   header: string;
   subheader: string;
-}
+}>;
 
 export default function ProjectHeader({
   header,

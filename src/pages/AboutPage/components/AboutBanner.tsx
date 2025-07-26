@@ -1,10 +1,10 @@
-interface AboutBannerProps {
+type AboutBannerProps = Readonly<{
   header: string;
-  illustration: {
+  readonly illustration: {
     image: string;
     alt: string;
   };
-}
+}>;
 
 export default function AboutBanner({
   header,

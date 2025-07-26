@@ -2,11 +2,11 @@ import { cn } from "@/lib/ui-shadcn/utils/utils";
 import { ReactNode } from "react";
 import { NavLink } from "react-router-dom";
 
-interface NavbuttonProps {
+type NavbuttonProps = {
   link: string;
   className?: string;
   children?: ReactNode;
-}
+};
 
 export default function Navbutton({
   link = "",
