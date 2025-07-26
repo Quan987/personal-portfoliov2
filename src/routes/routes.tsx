@@ -1,12 +1,11 @@
-import { Navigate, RouteObject } from "react-router-dom";
+import { ComponentType } from "react";
+import { createBrowserRouter } from "react-router-dom";
 import RootLayout from "@/layouts/RootLayout.tsx";
-import Home from "@/pages/HomePage";
-import About from "@/pages/AboutPage";
-import Project from "@/pages/ProjectPage";
-import Contact from "@/pages/ContactPage";
 import NotFound from "@/pages/NotFoundPage";
 
-export const routes: RouteObject[] = [
+type LazyComponentPromise = Promise<ComponentType<{}>>;
+
+export const routes = createBrowserRouter([
   {
     path: "/",
     id: "root",
@@ -14,19 +13,31 @@ export const routes: RouteObject[] = [
     children: [
       {
         index: true,
-        element: <Home />,
+        lazy: {
+          Component: async (): LazyComponentPromise =>
+            (await import("@/pages/HomePage")).Home,
+        },
       },
       {
         path: "about",
-        element: <About />,
+        lazy: {
+          Component: async (): LazyComponentPromise =>
+            (await import("@/pages/AboutPage")).About,
+        },
       },
       {
         path: "projects",
-        element: <Project />,
+        lazy: {
+          Component: async (): LazyComponentPromise =>
+            (await import("@/pages/ProjectPage")).Project,
+        },
       },
       {
         path: "contact",
-        element: <Contact />,
+        lazy: {
+          Component: async (): LazyComponentPromise =>
+            (await import("@/pages/ContactPage")).Contact,
+        },
       },
     ],
   },
@@ -34,4 +45,4 @@ export const routes: RouteObject[] = [
     path: "*", // for unmatched routes
     element: <NotFound />,
   },
-];
+]);

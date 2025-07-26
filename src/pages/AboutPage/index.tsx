@@ -2,7 +2,7 @@ import { ABOUT } from "@/pages/AboutPage/about.constants";
 import AboutBanner from "@/pages/AboutPage/components/AboutBanner";
 import AboutContent from "@/pages/AboutPage/components/AboutContent";
 
-export default function About() {
+export function About() {
   return (
     <section id="about" className="">
       <div className="relative size-fit grid grid-cols-2">
