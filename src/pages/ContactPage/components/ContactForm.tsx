@@ -22,7 +22,9 @@ export default function ContactForm() {
     formState: { errors, isSubmitting, isSubmitSuccessful },
   } = useForm<FormInput>({
     resolver: zodResolver(contactSchema),
-    mode: "all",
+    mode: "onChange",
+    delayError: 500,
+    reValidateMode: "onBlur",
   });
 
   const [modalState, setModalState] = useState({
