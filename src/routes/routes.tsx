@@ -1,7 +1,7 @@
 import { ComponentType } from "react";
 import { createBrowserRouter } from "react-router-dom";
 import RootLayout from "@/layouts/RootLayout.tsx";
-import NotFound from "@/pages/NotFoundPage";
+import ErrorPage from "@/pages/ErrorPage";
 
 type LazyComponentPromise = Promise<ComponentType<{}>>;
 
@@ -9,6 +9,7 @@ export const routes = createBrowserRouter([
   {
     path: "/",
     id: "root",
+    errorElement: <ErrorPage />,
     element: <RootLayout />,
     children: [
       {
@@ -40,9 +41,5 @@ export const routes = createBrowserRouter([
         },
       },
     ],
-  },
-  {
-    path: "*", // for unmatched routes
-    element: <NotFound />,
   },
 ]);
