@@ -10,16 +10,17 @@ export default defineConfig({
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
+      "@assets": path.resolve(__dirname, "src/assets"),
       "@components": path.resolve(__dirname, "src/components"),
+      "@config": path.resolve(__dirname, "src/config"),
       "@layouts": path.resolve(__dirname, "src/layouts"),
+      "@lib": path.resolve(__dirname, "src/lib"),
+      "@pages": path.resolve(__dirname, "src/pages"),
       "@routes": path.resolve(__dirname, "src/routes"),
       "@services": path.resolve(__dirname, "src/services"),
       "@styles": path.resolve(__dirname, "src/styles"),
-      "@pages": path.resolve(__dirname, "src/pages"),
-      "@lib": path.resolve(__dirname, "src/lib"),
       "@utils": path.resolve(__dirname, "src/utils"),
       "@validations": path.resolve(__dirname, "src/validations"),
-      "@assets": path.resolve(__dirname, "src/assets"),
     },
   },
 });
