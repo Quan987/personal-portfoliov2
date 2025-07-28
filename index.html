@@ -1,12 +1,44 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <!-- Character Encoding -->
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+
+    <!-- Viewport for Responsive Design -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Quan Portfolio</title>
+
+    <!-- SEO Metadata -->
+    <meta name="description" content="The personal portfolio of Quan Tran, a full-stack web developer. Showcasing projects, skills, and contact information." />
+    <meta name="author" content="Quan Tran" />
+    <meta name="keywords" content="Quan Tran, web developer, portfolio, frontend, backend, full-stack, React, JavaScript, TypeScript" />
+
+    <!-- Referrer Policy: Balanced Privacy & Functionality -->
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+
+    <!-- Favicon & App Icons -->
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+     <!-- Splash CSS -->
+    <link rel="stylesheet" href="/splash.css" />
+
+    <!-- Page title -->
+    <title>Quan Tran</title>
   </head>
   <body>
+    
+    <div id="splash-screen" class="no-interact">
+      <div class="splash-content">
+        <img src="/splash-logo.png" alt="splash-Logo" class="splash-logo" />
+        <div class="progress-bar-container">
+          <div class="progress-bar"></div>
+        </div>
+      </div>
+    </div>
+
     <div id="modal"></div>
     <div id="root"></div>
     <script type="module" src="./src/main.tsx"></script>
