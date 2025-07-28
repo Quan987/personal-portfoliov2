@@ -1,4 +1,4 @@
-import { SOCIAL_LINKS } from "@/config/constants";
+import { SOCIAL_LINKS } from "@/constants";
 
 export default function SocialMenu() {
   return (

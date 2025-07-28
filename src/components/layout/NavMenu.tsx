@@ -1,4 +1,4 @@
-import { NAV_LINKS } from "@/config/constants";
+import { NAV_LINKS } from "@/constants";
 import { NavLink } from "react-router-dom";
 
 export default function NavMenu() {
