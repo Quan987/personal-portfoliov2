@@ -22,12 +22,12 @@
   --z-index-sidebar: 30;
   --z-index-modal: 40;
   --z-index-toast: 50;
+  --z-index-loading: 60;
 
   --animate-slide-in: slide-in 300ms ease-in forwards;
   --animate-slide-out: slide-out 250ms ease-out forwards;
   --animate-banner: banner-tilt 3s ease-in-out infinite;
 
-  /* using */
   --animate-float: float 3s ease-in-out infinite;
   @keyframes float {
     0% {
@@ -41,6 +41,26 @@
     100% {
       transform: translateY(0);
       filter: drop-shadow(var(--drop-shadow-xl));
+    }
+  }
+
+  --animate-fade-in: fadeIn 200ms ease-in forwards;
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  --animate-fade-out: fadeOut 200ms ease-out forwards;
+  @keyframes fadeOut {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
     }
   }
 
