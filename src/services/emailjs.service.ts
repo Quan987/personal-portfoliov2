@@ -5,7 +5,7 @@ emailjs.init({
   blockHeadless: true,
   limitRate: {
     id: "app",
-    throttle: 20000,
+    throttle: 10000,
   },
 });
 

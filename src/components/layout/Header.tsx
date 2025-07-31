@@ -1,3 +1,5 @@
+import { NAV_LINKS } from "@/constants/nav-links.constants";
+import { SOCIAL_LINKS } from "@/constants/social-links.constants";
 import NavMenu from "@/components/layout/NavMenu";
 import SocialMenu from "@/components/layout/SocialMenu";
 
@@ -9,10 +11,10 @@ export default function Header() {
         <div className={"font-medium text-foreground-primary"}>Quan Tran</div>
 
         {/* Navigation internal */}
-        <NavMenu />
+        <NavMenu links={NAV_LINKS} />
 
         {/* Navigation external */}
-        <SocialMenu />
+        <SocialMenu links={SOCIAL_LINKS} />
       </nav>
     </header>
   );

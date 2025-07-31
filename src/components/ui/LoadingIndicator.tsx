@@ -17,6 +17,7 @@ export default function LoadingIndicator({
       <div className="flex gap-3 justify-center items-center ">
         {Array.from({ length: dotCount }).map((_, index) => (
           <div
+            key={`${index + stagger}-loading-dot`}
             className="size-5 bg-primary-dark rounded-full animate-bounce"
             style={{
               animationDelay: `${index * -stagger}ms`,

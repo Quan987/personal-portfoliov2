@@ -1,21 +1,33 @@
+import { useEffect, useState } from "react";
+import { Outlet, useNavigation } from "react-router-dom";
 import Footer from "@/components/layout/Footer";
 import Header from "@/components/layout/Header";
 import LoadingIndicator from "@/components/ui/LoadingIndicator";
-import { Outlet, useNavigation } from "react-router-dom";
 
 export default function RootLayout() {
-  const navigation = useNavigation();
-  const isLoading = navigation.state === "loading";
+  const { state } = useNavigation();
+  const [isShowingLoader, setIsShowingLoader] = useState(false);
+
+  useEffect(() => {
+    if (state === "loading") {
+      setIsShowingLoader(true);
+    } else {
+      const timeout = setTimeout(() => setIsShowingLoader(false), 1000); // Delay to allow fade-out animation to play
+      return () => clearTimeout(timeout);
+    }
+  }, [state]);
 
   return (
     <div className="relative flex flex-col min-h-screen">
       <Header />
       <main className="grow flex items-center justify-center 2xl:px-60">
-        {isLoading ? (
+        {isShowingLoader ? (
           <LoadingIndicator
             dotCount={3}
             stagger={120}
-            className={isLoading ? "animate-fade-in" : "animate-fade-out"}
+            className={
+              state === "loading" ? "animate-fade-in" : "animate-fade-out"
+            }
           />
         ) : (
           <Outlet />

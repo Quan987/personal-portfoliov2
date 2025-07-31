@@ -24,10 +24,6 @@
   --z-index-toast: 50;
   --z-index-loading: 60;
 
-  --animate-slide-in: slide-in 300ms ease-in forwards;
-  --animate-slide-out: slide-out 250ms ease-out forwards;
-  --animate-banner: banner-tilt 3s ease-in-out infinite;
-
   --animate-float: float 3s ease-in-out infinite;
   @keyframes float {
     0% {
@@ -44,7 +40,7 @@
     }
   }
 
-  --animate-fade-in: fadeIn 200ms ease-in forwards;
+  --animate-fade-in: fadeIn 1000ms ease-in forwards;
   @keyframes fadeIn {
     0% {
       opacity: 0;
@@ -54,7 +50,7 @@
     }
   }
 
-  --animate-fade-out: fadeOut 200ms ease-out forwards;
+  --animate-fade-out: fadeOut 1000ms ease-out forwards;
   @keyframes fadeOut {
     0% {
       opacity: 1;
@@ -64,6 +60,7 @@
     }
   }
 
+  /* --animate-slide-in: slide-in 300ms ease-in forwards;
   @keyframes slide-in {
     0% {
       opacity: 0;
@@ -75,6 +72,7 @@
     }
   }
 
+  --animate-slide-out: slide-out 250ms ease-out forwards;
   @keyframes slide-out {
     0% {
       opacity: 1;
@@ -86,6 +84,7 @@
     }
   }
 
+  --animate-banner: banner-tilt 3s ease-in-out infinite;
   @keyframes banner-tilt {
     0%,
     100% {
@@ -94,7 +93,7 @@
     50% {
       transform: translate(5px, -5px);
     }
-  }
+  } */
 }
 
 @layer base {
@@ -129,27 +128,6 @@
 }
 
 @layer utilities {
-  /* .hover-underline {
-    @apply inline-block relative cursor-pointer;
-
-    &::after {
-      @apply absolute bottom-0 left-0 w-full h-0.5 bg-black/80 rounded-xl;
-      content: "";
-      transform: scaleX(0);
-      transform-origin: bottom right;
-      transition: transform 0.25s ease-out;
-    }
-
-    &:hover::after {
-      transform: scaleX(1);
-      transform-origin: bottom left;
-    }
-  }
-
-  .hover-scale {
-    @apply hover:scale-105 duration-300;
-  }
-*/
   .hover-tilt {
     @apply transition-all duration-200 ease-in-out;
   }

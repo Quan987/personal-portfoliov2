@@ -1,4 +1,4 @@
-import { cn } from "@/lib/ui-shadcn/utils/utils";
+import { cn } from "@/lib/shadcn/utils/utils";
 import { ReactNode } from "react";
 import { NavLink } from "react-router-dom";
 

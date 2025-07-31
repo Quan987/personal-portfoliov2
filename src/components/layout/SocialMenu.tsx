@@ -1,9 +1,9 @@
-import { SOCIAL_LINKS } from "@/constants";
+import { SocialMenuProps } from "@/constants/links.type";
 
-export default function SocialMenu() {
+export default function SocialMenu({ links }: SocialMenuProps) {
   return (
     <ul className="flex items-center group gap-3">
-      {SOCIAL_LINKS.map(({ id, href, icon: Icon }, _) => {
+      {links.map(({ id, href, icon: Icon }, _) => {
         return (
           <li key={id} className="">
             <a

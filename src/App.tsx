@@ -1,10 +1,10 @@
-import { routes } from "@routes/routes";
 import { useEffect } from "react";
+import { routes } from "@routes/routes";
 import { RouterProvider } from "react-router-dom";
 
 function App() {
   useEffect(() => {
-    const splash = document.getElementById("splash-screen");
+    const splash: HTMLElement = document.getElementById("splash-screen")!;
     if (!splash) return;
 
     // Start a 3-second delay before fading out splash
@@ -18,7 +18,7 @@ function App() {
       splash.classList.add("fade-out");
 
       // Set another timer to remove the splash screen after fade duration (help synchronize fade out animation timing & removing splash from screen)
-      const removeTimeOut = setTimeout(splash.remove, fadeOutDuration);
+      const removeTimeOut = setTimeout(() => splash.remove(), fadeOutDuration);
 
       // Cleanup inner timeout
       return () => clearTimeout(removeTimeOut);
