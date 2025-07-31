@@ -1,52 +1,34 @@
-import './App.css'
-import DefaultLayout from "@/layouts/DefaultLayout";
-import Home from "@/sections/Home.tsx";
-import About from "@/sections/About.tsx";
-import Project from "@/sections/Project.tsx";
-import Contact from "@/sections/Contact.tsx";
-
-
+import { useEffect } from "react";
+import { routes } from "@routes/routes";
+import { RouterProvider } from "react-router-dom";
 
 function App() {
-    return (
-        <DefaultLayout>
-            <Home/>
-            <About/>
-            <Project/>
-            <Contact/>
-        </DefaultLayout>
-    )
+  useEffect(() => {
+    const splash: HTMLElement = document.getElementById("splash-screen")!;
+    if (!splash) return;
+
+    // Start a 3-second delay before fading out splash
+    const fadeTimeOut = setTimeout(() => {
+      // Get fade out duration for splash
+      const fadeOutDuration: number = parseFloat(
+        getComputedStyle(splash).getPropertyValue("--splash-fade-duration")
+      );
+
+      // Add the fade-out class to trigger CSS transition
+      splash.classList.add("fade-out");
+
+      // Set another timer to remove the splash screen after fade duration (help synchronize fade out animation timing & removing splash from screen)
+      const removeTimeOut = setTimeout(() => splash.remove(), fadeOutDuration);
+
+      // Cleanup inner timeout
+      return () => clearTimeout(removeTimeOut);
+    }, 3000);
+
+    // Cleanup outer timeout
+    return () => clearTimeout(fadeTimeOut);
+  }, []);
+
+  return <RouterProvider router={routes} />;
 }
 
-export default App
-
-
-// import { useEffect, useState } from "react";
-//
-//
-// export default function App() {
-//     const [isDark, setIsDark] = useState(
-//         () => localStorage.getItem("theme") === "dark"
-//     );
-//
-//     useEffect(() => {
-//         const html = document.documentElement;
-//         html.setAttribute("data-theme", isDark ? "dark" : "light");
-//         localStorage.setItem("theme", isDark ? "dark" : "light");
-//     }, [isDark]);
-//
-//     return (
-//         <div className="min-h-screen flex items-center justify-center flex-col bg-background text-text transition-colors duration-1000">
-//             <h1 className="text-text text-3xl font-bold mb-4">
-//                 Tailwind v4 Dark Mode
-//             </h1>
-//             <button
-//                 onClick={() => setIsDark((prev) => !prev)}
-//                 className="px-4 py-2 rounded bg-primary text-white"
-//             >
-//                 Toggle {isDark ? "Light" : "Dark"} Mode
-//             </button>
-//         </div>
-//     );
-// }
-
+export default App;
