@@ -1,37 +1,35 @@
-import { useEffect, useState } from "react";
-import { Outlet, useNavigation } from "react-router-dom";
+import { Outlet } from "react-router-dom";
+import { useRouteLoadingIndicator } from "@/hooks/useRouteLoadingIndicator";
+import { getRootStyleProperty } from "@/utils/dom-utils";
+import RouteLoadingIndicator from "@/components/ui/RouteLoadingIndicator";
 import Footer from "@/components/layout/Footer";
 import Header from "@/components/layout/Header";
-import LoadingIndicator from "@/components/ui/LoadingIndicator";
+import { useMemo } from "react";
+import { toMilliseconds } from "@/utils/time-utils";
+import { useRemoveSplashScreen } from "@/hooks/useRemoveSplashScreen";
 
 export default function RootLayout() {
-  const { state } = useNavigation();
-  const [isShowingLoader, setIsShowingLoader] = useState(false);
-
-  useEffect(() => {
-    if (state === "loading") {
-      setIsShowingLoader(true);
-    } else {
-      const timeout = setTimeout(() => setIsShowingLoader(false), 1000); // Delay to allow fade-out animation to play
-      return () => clearTimeout(timeout);
-    }
-  }, [state]);
+  useRemoveSplashScreen();
+  const { ref } = useRouteLoadingIndicator();
+  const loaderDot = useMemo(
+    () => ({
+      count: getRootStyleProperty("--loader-dot-count"),
+      dotStagger: getRootStyleProperty("--loader-dot-animation-duration"),
+    }),
+    []
+  );
 
   return (
-    <div className="relative flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen">
       <Header />
-      <main className="grow flex items-center justify-center 2xl:px-60">
-        {isShowingLoader ? (
-          <LoadingIndicator
-            dotCount={3}
-            stagger={120}
-            className={
-              state === "loading" ? "animate-fade-in" : "animate-fade-out"
-            }
-          />
-        ) : (
-          <Outlet />
-        )}
+      <main className="relative flex-center grow px-[clamp(1.25rem,calc(12.5vw_-_2rem),20rem)] py-[clamp(1rem,1vw,3rem)]">
+        <RouteLoadingIndicator
+          ref={ref}
+          dotCount={parseInt(loaderDot.count)}
+          stagger={toMilliseconds(loaderDot.dotStagger)}
+          className="hidden"
+        />
+        <Outlet />
       </main>
       <Footer />
     </div>

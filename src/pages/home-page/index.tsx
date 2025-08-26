@@ -5,7 +5,7 @@ import { HOME } from "@/pages/home-page/home.constants";
 export function Home() {
   return (
     <section id="home">
-      <div className="size-full grid grid-cols-2 2xl:gap-20">
+      <div className="grid gap-[clamp(3.75rem,4.5vw,6.25rem)] lg:grid-cols-2">
         <HeroContent title={HOME.title} subtitle={HOME.subtitle} />
         <HeroBanner
           image={HOME.illustration.image}

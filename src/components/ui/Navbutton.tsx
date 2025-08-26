@@ -18,10 +18,7 @@ export default function Navbutton({
       to={link}
       draggable={false}
       end
-      className={cn(
-        "block w-fit bg-primary-dark text-foreground-secondary rounded-sm border-1 border-primary-dark hover:bg-primary-light hover:text-foreground-primary",
-        className
-      )}
+      className={cn("btn-primary hover-tilt", className)}
     >
       {children}
     </NavLink>

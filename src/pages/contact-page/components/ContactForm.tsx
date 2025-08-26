@@ -1,15 +1,14 @@
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useEffect, useState } from "react";
-import { delay } from "@utils/delay";
+import { useState } from "react";
 import {
-  FormInput,
-  schema as contactSchema,
-} from "@validations/contact.schema";
-import InputField from "@/pages/contact-page/components/InputField";
-import StatusModal from "@/pages/contact-page/components/StatusModal";
-import TextareaField from "@/pages/contact-page/components/TextareaField";
-import { sendEmail } from "@/pages/contact-page/utils/emailjs.utils";
+  contactFormSchema,
+  type ContactFormValues,
+} from "@/validations/contact.schema";
+import { sendEmail } from "@/pages/contact-page/utils/email-utils";
+import InputField from "@/pages/contact-page/components/ui/InputField";
+import StatusModal from "@/pages/contact-page/components/ui/StatusModal";
+import TextareaField from "@/pages/contact-page/components/ui/TextareaField";
+import { SubmitButton } from "@/pages/contact-page/components/ui/SubmitButton";
+import { useContactForm } from "@/pages/contact-page/hooks/useContactForm";
 
 export default function ContactForm() {
   const {
@@ -20,12 +19,7 @@ export default function ContactForm() {
     watch,
     // errors: show zod validation error before submit, isSubmit: true while onSubmit function is running, isSubmitSuccessful: true after a successful submit where onSubmit does not throw
     formState: { errors, isSubmitting, isSubmitSuccessful },
-  } = useForm<FormInput>({
-    resolver: zodResolver(contactSchema),
-    mode: "onChange",
-    delayError: 500,
-    reValidateMode: "onBlur",
-  });
+  } = useContactForm(contactFormSchema);
 
   const [modalState, setModalState] = useState({
     open: false,
@@ -33,54 +27,46 @@ export default function ContactForm() {
     message: "",
   });
 
-  useEffect(() => {
-    if (isSubmitSuccessful) {
-      const timeOut = setTimeout(reset, 2000);
-      return () => clearTimeout(timeOut);
-    }
-  }, [isSubmitSuccessful]);
+  async function onSubmit(data: ContactFormValues) {
+    // await delay(2000);
+    // console.log(sanitizeData<ContactFormValues>(data));
+    // const result = {
+    //   success: false,
+    //   text: "Inquiry submit successful",
+    // };
 
-  async function onSubmit(data: FormInput) {
-    await delay(2000);
-    // const result = await sendEmail(data);
-
-    const result = {
-      success: true,
-      message: "Inquiry submit successful",
-    };
-
+    const result = await sendEmail(data);
     if (!result.success) {
       setError("root.apiError", {
-        // prevents RHF marking successful
+        // prevents RHF marking form submission successful
         type: "apiError",
-        message: result.message,
+        message: result.text,
       });
 
       setModalState({
         open: true,
         success: false,
-        message: `Error submitting: ${result.message}`,
+        message: `Error submitting: ${result.text}`,
       });
       return;
     }
     setModalState({
       open: true,
       success: true,
-      message: result.message,
+      message: result.text,
     });
   }
 
-  function getButtonLabel(): string {
-    if (isSubmitting) return "Submitting...";
-    if (isSubmitSuccessful) return "Resetting...";
-    return "Send Message";
-  }
-
   return (
-    <div id="contact-form" className="bg-primary-light h-full px-20 py-10">
-      <p className="text-3xl text-center pb-10">Contact</p>
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <div className={"grid grid-cols-2 gap-6"}>
+    <div
+      id="contact-form"
+      className="bg-light rounded-xl px-[clamp(2rem,calc(5vw_-_1rem),6.25rem)] py-[clamp(1.25rem,2vw,3.75rem)]"
+    >
+      <p className="text-center text-[clamp(1.125rem,1.5vw,2.5rem)] pb-[clamp(0.625rem,1.25vw,3rem)]">
+        Contact
+      </p>
+      <form onSubmit={handleSubmit(onSubmit)} className="">
+        <div className={"md:grid md:grid-cols-2 md:gap-6 4xl:gap-8"}>
           <InputField
             id="firstName"
             type="text"
@@ -126,17 +112,12 @@ export default function ContactForm() {
           Message
         </TextareaField>
 
-        <button
-          type="submit"
-          disabled={isSubmitting || isSubmitSuccessful} // isSubmitting false and isSubmitSuccessful true make this a true
-          className={`w-fit bg-primary-dark text-foreground-secondary rounded-md border-1 border-primary-dark hover-tilt hover:-translate-y-1 hover:translate-x-1 hover:bg-primary-light hover:text-foreground-primary text-md mt-5 px-9 py-3 ${
-            (isSubmitting || isSubmitSuccessful) &&
-            "bg-secondary-surface border-secondary-surface pointer-events-none select-none"
-          }`}
-        >
-          {getButtonLabel()}
-        </button>
+        <SubmitButton
+          isSubmitting={isSubmitting}
+          isSubmitSuccessful={isSubmitSuccessful}
+        />
       </form>
+
       {modalState.open && (
         <StatusModal
           success={modalState.success}
@@ -148,6 +129,7 @@ export default function ContactForm() {
               message: "",
             })
           }
+          onSuccessClose={reset}
         />
       )}
     </div>
