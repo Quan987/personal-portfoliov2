@@ -1,7 +1,13 @@
+import { HTTP_STATUS } from "@/constants/http.constants";
 import ErrorLayout from "@/layouts/ErrorLayout";
+import { getElement } from "@/utils/dom-utils";
 import { useRouteError, isRouteErrorResponse } from "react-router-dom";
 
 export default function ErrorPage() {
+  if (typeof window !== "undefined") {
+    const splash = getElement("splash-screen");
+    if (splash) splash.remove();
+  }
   const error = useRouteError();
 
   let statusCode = "Error";
@@ -11,17 +17,26 @@ export default function ErrorPage() {
   if (isRouteErrorResponse(error)) {
     statusCode = error.status.toString();
     switch (error.status) {
-      case 401:
+      case HTTP_STATUS.BAD_REQUEST:
+        title = "Bad Request";
+        message =
+          "The request was invalid. Please check your input and try again.";
+        break;
+      case HTTP_STATUS.UNAUTHORIZED:
         title = "Unauthorized";
         message = "You are not authorized to view this page.";
         break;
-      case 403:
+      case HTTP_STATUS.FORBIDDEN:
         title = "Forbidden";
         message = "You don't have permission to access this resource.";
         break;
-      case 404:
-        title = "Not Found";
+      case HTTP_STATUS.NOT_FOUND:
+        title = "Page Not Found";
         message = "We couldn't find the resource or page you requested.";
+        break;
+      case HTTP_STATUS.INTERNAL_ERROR:
+        title = "Server Error";
+        message = "Something went wrong on our end. Please try again later.";
         break;
       default:
         title = `Error ${error.status}`;

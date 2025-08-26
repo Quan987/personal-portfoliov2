@@ -22,16 +22,6 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true
-
-    /* Add path alias */
-    // "baseUrl": "src",
-    // "paths": {
-    //   "@/*": ["*"]
-    // }
-    // "baseUrl": ".",
-    // "paths": {
-    //   "@/*": ["./src/*"]
-    // }
   },
   "include": ["src", "vite-env.d.ts"]
 }

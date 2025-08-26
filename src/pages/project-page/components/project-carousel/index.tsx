@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import Autoplay from "embla-carousel-autoplay";
 import {
   CarouselApi,
@@ -6,32 +6,53 @@ import {
   CarouselPrevious,
   CarouselNext,
 } from "@/lib/shadcn/components/ui/carousel";
-import { type ProjectCarouselProps } from "@/pages/project-page/components/project-carousel/project-carousel.types";
+import { type ProjectCarouselProps } from "@/pages/project-page/types/project-carousel.types";
 import ProjectCard from "@/pages/project-page/components/project-carousel/ProjectCard";
 import ProjectCardPagination from "@/pages/project-page/components/project-carousel/ProjectCardPagination";
+import { BREAKPOINT } from "@/constants/screen-breakpoint.constants";
+import { useIsMobile } from "@/hooks/useIsMobile";
+
+const CAROUSEL_AUTO_PLAY_DURATION: number = 3000 as const;
 
 export default function ProjectCarousel({ projects }: ProjectCarouselProps) {
+  const isMobile = useIsMobile(BREAKPOINT.LG);
   const [api, setApi] = useState<CarouselApi>();
   const [pagination, setPagination] = useState({
     currentPage: 0,
     totalPages: 0,
   });
 
+  const scrollToPage = useCallback(
+    (page: number) => api?.scrollTo(page),
+    [api]
+  );
+
   useEffect(() => {
     if (!api) {
       return;
     }
-    setPagination({
-      totalPages: api.scrollSnapList().length,
-      currentPage: api.selectedScrollSnap() + 1,
-    });
 
-    api.on("select", () => {
-      setPagination((prev) => ({
-        ...prev,
-        currentPage: api.selectedScrollSnap() + 1,
-      }));
-    });
+    const updatePagination = () => {
+      setPagination({
+        totalPages: api.scrollSnapList().length,
+        currentPage: api.selectedScrollSnap(),
+      });
+    };
+
+    updatePagination();
+
+    api.on("select", updatePagination);
+
+    const handleResize = () => {
+      api.reInit();
+      updatePagination();
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => {
+      api.off("select", updatePagination);
+      window.removeEventListener("resize", handleResize);
+    };
   }, [api]);
 
   return (
@@ -39,19 +60,34 @@ export default function ProjectCarousel({ projects }: ProjectCarouselProps) {
       setApi={setApi}
       plugins={[
         Autoplay({
-          delay: 3000,
+          delay: CAROUSEL_AUTO_PLAY_DURATION,
           stopOnMouseEnter: true,
           stopOnInteraction: true,
+          // stopOnFocusIn: true,
+          breakpoints: {
+            "(orientation: portrait)": {
+              active: false, // disable autoplay in portrait
+            },
+          },
         }),
       ]}
       opts={{
+        align: "start",
         loop: false,
+        slidesToScroll: 1,
         containScroll: "trimSnaps",
         breakpoints: {
-          "(max-width: 1023px)": {
-            watchDrag: true,
+          [`(min-width: ${BREAKPOINT.SM}px)`]: {
+            slidesToScroll: 2,
           },
-          "(min-width: 1024px)": {
+          [`(min-width: ${BREAKPOINT.MD}px)`]: {
+            slidesToScroll: 1,
+          },
+          [`(min-width: ${BREAKPOINT.LG}px)`]: {
+            slidesToScroll: 2,
+          },
+          [`(min-width: ${BREAKPOINT.XL}px)`]: {
+            slidesToScroll: 1,
             watchDrag: false,
           },
         },
@@ -60,12 +96,20 @@ export default function ProjectCarousel({ projects }: ProjectCarouselProps) {
       className="w-full"
     >
       <ProjectCard projects={projects} />
-      <CarouselPrevious className="carousel-button size-9" />
-      <CarouselNext className="carousel-button size-9" />
+      {!isMobile && (
+        <>
+          {" "}
+          <CarouselPrevious className="carousel-button interactive-transition size-[clamp(1.75rem,2vw,3.25rem)] 3xl:-left-15 4xl:-left-23" />
+          <CarouselNext className="carousel-button interactive-transition size-[clamp(1.75rem,2vw,3.25rem)] 3xl:-right-15 4xl:-right-23" />
+        </>
+      )}
       <ProjectCardPagination
         current={pagination.currentPage}
         count={pagination.totalPages}
+        onPageChange={scrollToPage}
       />
     </Carousel>
   );
 }
+
+// Continue with tablet screen

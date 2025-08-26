@@ -1,4 +1,4 @@
-import { type ProjectCardHeaderProps } from "@/pages/project-page/components/project-carousel/project-carousel.types";
+import { type ProjectCardHeaderProps } from "@/pages/project-page/types/project-carousel.types";
 
 export default function ProjectCardHeader({
   type,
@@ -7,15 +7,15 @@ export default function ProjectCardHeader({
   return (
     <div
       id="card-header"
-      className="text-foreground-secondary flex justify-between p-5"
+      className="absolute inset-x-0 top-0 text-secondary flex justify-between items-center py-3.5 px-[clamp(1rem,1.5vw,2rem)]"
     >
-      <h4>{type}</h4>
+      <h4 className="text-[clamp(0.75rem,1.1vw,1.5rem)]">{type}</h4>
       <a
         href={link}
         target="_blank"
         draggable="false"
         rel="noopener noreferrer"
-        className="hover-tilt hover:-translate-y-0.5 hover:translate-x-0.5"
+        className={"hover-tilt"}
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -23,7 +23,8 @@ export default function ProjectCardHeader({
           viewBox="0 0 24 24"
           strokeWidth={1.5}
           stroke="currentColor"
-          className="size-6"
+          className="size-[clamp(1rem,1.5vw,2.25rem)]
+"
         >
           <path
             strokeLinecap="round"

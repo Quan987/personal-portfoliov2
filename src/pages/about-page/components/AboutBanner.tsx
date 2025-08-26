@@ -1,3 +1,6 @@
+import LoadingIcon from "@/components/icons/LoadingIcon";
+import { useState } from "react";
+
 type AboutBannerProps = Readonly<{
   header: string;
   readonly illustration: {
@@ -10,21 +13,28 @@ export default function AboutBanner({
   header,
   illustration,
 }: AboutBannerProps) {
+  const [loaded, setLoaded] = useState(false);
+
   return (
-    <div className="text-foreground-primary">
-      <h1 className="absolute w-fit uppercase tracking-wide font-medium 2xl:text-9xl 2xl:right-70 2xl:top-5">
+    <figure className="text-primary relative w-fit xl:h-[32rem] 2xl:h-[38rem] 3xl:h-[44rem] 4xl:h-[58rem]">
+      <h1 className="w-fit z-header uppercase tracking-wide whitespace-nowrap font-medium leading-none text-[clamp(2.5rem,6.50vw,11rem)] xl:absolute xl:top-5 xl:left-86 2xl:left-101 3xl:left-114.5 4xl:top-10 4xl:left-150">
         {header}
       </h1>
-      <div className="bg-primary-dark pointer-none select-none absolute bottom-0 right-0 h-3 w-30"></div>
-
-      <figure className="bg-secondary-surface w-fit 2xl:h-[45rem] 2xl:pt-30 2xl:px-15">
-        <img
-          src={illustration.image}
-          alt={illustration.alt}
-          draggable="false"
-          className="block pointer-none select-none h-full text-foreground-primary"
-        />
-      </figure>
-    </div>
+      {!loaded && (
+        <div className="absolute inset-0 flex-center z-lazy-loading">
+          <LoadingIcon className="size-[clamp(2.5rem,6vw,6.25rem)] text-surface animate-spin fill-info" />
+        </div>
+      )}
+      <img
+        src={illustration.image}
+        alt={illustration.alt}
+        draggable="false"
+        className={`block no-interact size-full my-5 xl:my-0  ${
+          !loaded && "blur-lg"
+        }`}
+        loading="lazy"
+        onLoad={() => setLoaded(true)}
+      />
+    </figure>
   );
 }

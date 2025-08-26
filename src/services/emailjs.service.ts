@@ -5,8 +5,9 @@ emailjs.init({
   blockHeadless: true,
   limitRate: {
     id: "app",
-    throttle: 10000,
+    throttle: Number(import.meta.env.VITE_EMAILJS_THROTTLE_TIME),
   },
+  origin: import.meta.env.VITE_EMAILJS_ORIGIN,
 });
 
 export default emailjs;

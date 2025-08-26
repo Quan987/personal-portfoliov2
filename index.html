@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <!-- Character Encoding -->
@@ -8,9 +8,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- SEO Metadata -->
-    <meta name="description" content="The personal portfolio of Quan Tran, a full-stack web developer. Showcasing projects, skills, and contact information." />
+    <meta
+      name="description"
+      content="The personal portfolio of Quan Tran, a full-stack web developer. Showcasing projects, skills, and contact information."
+    />
     <meta name="author" content="Quan Tran" />
-    <meta name="keywords" content="Quan Tran, web developer, portfolio, frontend, backend, full-stack, React, JavaScript, TypeScript" />
+    <meta
+      name="keywords"
+      content="Quan Tran, web developer, portfolio, frontend, backend, full-stack, React, JavaScript, TypeScript"
+    />
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="" />
+
+  <!-- Robots Meta Tag -->
+  <meta name="robots" content="index, follow" />
 
     <!-- Referrer Policy: Balanced Privacy & Functionality -->
     <meta name="referrer" content="strict-origin-when-cross-origin" />
@@ -22,20 +34,19 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
 
-     <!-- Splash CSS -->
-    <link rel="stylesheet" href="/splash.css" />
+    <!-- Splash CSS for development mode only -->
+    <!-- <link rel="stylesheet" href="/index.css" /> -->
 
     <!-- Page title -->
     <title>Quan Tran</title>
   </head>
   <body>
-    
-    <div id="splash-screen" class="no-interact">
-      <div class="splash-content">
-        <img src="/splash-logo.png" alt="splash-Logo" class="splash-logo" />
-        <div class="progress-bar-container">
-          <div class="progress-bar"></div>
-        </div>
+    <div id="splash-screen" class="flex-center splash-screen">
+      <div class="flex-col-center splash-content animate-fade-in" style="animation-duration: var(--fade-duration);">        
+          <img src="/splash-logo.png" alt="splash-logo" class="splash-logo" />
+          <div id="loading-bar-container" class="progress-bar-container">
+            <div id="loading-bar" class="progress-bar animate-loading-bar" style="animation-duration: var(--loading-bar-animation-duration);"></div>
+          </div>
       </div>
     </div>
 
