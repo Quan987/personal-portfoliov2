@@ -5,14 +5,18 @@ export default function ProjectCardBody({
   description,
   stacks,
   link,
+  isVisible,
 }: ProjectCardBodyProps) {
   return (
     <div
       id="card-body"
-      className="absolute inset-x-0 bottom-0 text-secondary flex flex-col backdrop-blur-sm mask-t-from-90% rounded-xl p-[clamp(1rem,1.5vw,2rem)] h-[12rem] xl:h-[13rem] 2xl:h-[16rem] 3xl:h-[20rem] 4xl:h-[27rem]"
+      className={`slide-fade ${
+        isVisible ? "slide-fade-in" : "slide-fade-down"
+      } z-20 absolute inset-x-0 bottom-0 text-secondary flex flex-col backdrop-blur-sm mask-t-from-90% rounded-xl p-[clamp(1rem,1.5vw,2rem)] h-[12rem] xl:h-[13rem] 2xl:h-[16rem] 3xl:h-[20rem] 4xl:h-[27rem] `}
+      onClick={(e) => e.stopPropagation()}
     >
       <div className="flex flex-col gap-[clamp(0.25rem,0.75vw,1rem)]">
-        <h3 className="leading-tight text-[clamp(1rem,1.45vw,2.5rem)]">
+        <h3 className="cursor-default leading-tight text-[clamp(1rem,1.45vw,2.5rem)]">
           {title}
         </h3>
 

@@ -6,7 +6,7 @@ export function Project() {
   return (
     <section
       id="projects"
-      className="lg:px-[clamp(0rem,calc(5rem_-_5vw),1.25rem)] xl:py-10 2xl:py-0"
+      className="lg:px-[clamp(0rem,calc(5rem_-_5vw),1.25rem)] xl:py-0 2xl:py-0"
     >
       <ProjectHeader header={PROJECTS.header} subheader={PROJECTS.subheader} />
       <ProjectCarousel projects={PROJECTS.carousel} />

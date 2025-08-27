@@ -3,11 +3,15 @@ import { type ProjectCardHeaderProps } from "@/pages/project-page/types/project-
 export default function ProjectCardHeader({
   type,
   link,
+  isVisible,
 }: ProjectCardHeaderProps) {
   return (
     <div
       id="card-header"
-      className="absolute inset-x-0 top-0 text-secondary flex justify-between items-center py-3.5 px-[clamp(1rem,1.5vw,2rem)]"
+      className={`slide-fade ${
+        isVisible ? "slide-fade-in" : "slide-fade-up"
+      } z-20 absolute inset-x-0 top-0 text-secondary flex justify-between items-center py-3.5 px-[clamp(1rem,1.5vw,2rem)]`}
+      onClick={(e) => e.stopPropagation()}
     >
       <h4 className="text-[clamp(0.75rem,1.1vw,1.5rem)]">{type}</h4>
       <a

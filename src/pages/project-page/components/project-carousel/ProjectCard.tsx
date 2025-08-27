@@ -5,7 +5,7 @@ import {
 import { type ProjectCarouselProps } from "@/pages/project-page/types/project-carousel.types";
 import ProjectCardBody from "@/pages/project-page/components/project-carousel/ProjectCardBody";
 import ProjectCardHeader from "@/pages/project-page/components/project-carousel/ProjectCardHeader";
-import { memo } from "react";
+import { memo, useState } from "react";
 
 function ProjectCard({ projects }: ProjectCarouselProps) {
   return (
@@ -21,6 +21,7 @@ function ProjectCard({ projects }: ProjectCarouselProps) {
           link,
           illustration,
         }) => {
+          const [showContent, setShowContent] = useState<boolean>(true);
           return (
             <CarouselItem
               key={id}
@@ -28,12 +29,30 @@ function ProjectCard({ projects }: ProjectCarouselProps) {
             >
               <div
                 id="card"
-                className={`relative bg-no-repeat bg-cover text-secondary rounded-xl flex flex-col justify-between w-full overflow-hidden h-[23rem] md:h-[35rem] lg:h-[28rem] 2xl:h-[32rem] 3xl:h-[38rem] 4xl:h-[51rem]`}
+                className={`cursor-pointer relative bg-no-repeat bg-cover text-secondary rounded-3xl flex flex-col justify-between w-full overflow-hidden h-[25rem] md:h-[35rem] lg:h-[30rem] 2xl:h-[32.5rem] 3xl:h-[40rem] 4xl:h-[51rem]`}
                 style={{
                   backgroundImage: `url(${illustration.image})`,
                 }}
+                onClick={() => setShowContent((prev) => !prev)}
               >
                 {!isEmpty && (
+                  <div>
+                    <ProjectCardHeader
+                      type={type}
+                      link={link}
+                      isVisible={showContent}
+                    />
+                    <ProjectCardBody
+                      title={title}
+                      description={description}
+                      stacks={stacks}
+                      link={link}
+                      isVisible={showContent}
+                    />
+                  </div>
+                )}
+
+                {/* {!isEmpty && (
                   <>
                     <ProjectCardHeader type={type} link={link} />
                     <ProjectCardBody
@@ -43,7 +62,7 @@ function ProjectCard({ projects }: ProjectCarouselProps) {
                       link={link}
                     />
                   </>
-                )}
+                )} */}
               </div>
             </CarouselItem>
           );

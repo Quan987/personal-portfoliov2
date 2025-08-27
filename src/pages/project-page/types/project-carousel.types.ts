@@ -5,12 +5,16 @@ export type ProjectCarouselProps = {
 };
 
 // Subcomponent props derived from base types
-export type ProjectCardHeaderProps = Pick<Project, "type" | "link">;
+export type ProjectCardHeaderProps = Pick<Project, "type" | "link"> & {
+  isVisible?: boolean;
+};
 
 export type ProjectCardBodyProps = Pick<
   Project,
   "title" | "description" | "stacks" | "link"
->;
+> & {
+  isVisible?: boolean;
+};
 
 export type ProjectPaginationProps = Readonly<{
   current: number;

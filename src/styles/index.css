@@ -108,7 +108,7 @@
     }
   }
 
-  --animate-slide-out: slide-out ease-out forwards;
+  --animate-slide-out: slide-out 250ms ease-out forwards;
   @keyframes slide-out {
     0% {
       opacity: 1;
@@ -157,6 +157,7 @@
     --hamburger-menu-animation-duration: 250ms;
     --menu-transition-duration: 250ms;
     --menu-dropdown-duration: 500ms;
+    --slide-fade-duration: 350ms;
   }
 
   html {
@@ -246,6 +247,18 @@
   }
   .interact {
     @apply pointer-events-auto select-auto;
+  }
+  .slide-fade {
+    @apply transition-all duration-[var(--slide-fade-duration)];
+  }
+  .slide-fade-up {
+    @apply -translate-y-10 opacity-0;
+  }
+  .slide-fade-down {
+    @apply translate-y-10 opacity-0;
+  }
+  .slide-fade-in {
+    @apply translate-y-0 opacity-100;
   }
   .status-success {
     @apply bg-success border-success hover:text-success active:text-success;
