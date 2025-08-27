@@ -9,6 +9,8 @@ import StatusModal from "@/pages/contact-page/components/ui/StatusModal";
 import TextareaField from "@/pages/contact-page/components/ui/TextareaField";
 import { SubmitButton } from "@/pages/contact-page/components/ui/SubmitButton";
 import { useContactForm } from "@/pages/contact-page/hooks/useContactForm";
+import { EMAIL_INITIAL_DELAY_MS } from "@/pages/contact-page/constants/contact.config.constants";
+import { delay } from "@/utils/time-utils";
 
 export default function ContactForm() {
   const {
@@ -35,6 +37,7 @@ export default function ContactForm() {
     //   text: "Inquiry submit successful",
     // };
 
+    await delay(EMAIL_INITIAL_DELAY_MS);
     const result = await sendEmail(data);
     if (!result.success) {
       setError("root.apiError", {

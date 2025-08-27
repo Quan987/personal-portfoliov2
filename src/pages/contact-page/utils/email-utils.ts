@@ -1,14 +1,7 @@
 import { sanitizeData } from "@/pages/contact-page/utils/form-utils";
-import { delay } from "@/utils/time-utils";
 import emailjs from "@services/emailjs.service";
 import { type EmailJSResponseStatus } from "@emailjs/browser";
 import { type ContactFormValues } from "@validations/contact.schema";
-
-import {
-  EMAIL_INITIAL_DELAY_MS,
-  EMAIL_RETRY_COUNT,
-  EMAIL_RETRY_DELAY_MS,
-} from "@/pages/contact-page/constants/contact.config.constants";
 import { HTTP_STATUS } from "@/constants/http.constants";
 
 type SendMailResponseType = {
@@ -16,26 +9,26 @@ type SendMailResponseType = {
   text: string;
 };
 
-async function retry<T>(
-  fn: () => Promise<T>,
-  retries: number = EMAIL_RETRY_COUNT,
-  delayMs: number = EMAIL_RETRY_DELAY_MS
-): Promise<T> {
-  let attempt = 0;
-  while (attempt <= retries) {
-    try {
-      return await fn();
-    } catch (error) {
-      if (attempt === retries)
-        throw new Error("Exceeds attempt limit. All retries failed.");
-      await delay(delayMs);
-      delayMs *= 2;
-      attempt++;
-    }
-  }
-  // unreachable, but satisfies TypeScript promise resolve
-  throw new Error("Retry failed unexpectedly");
-}
+// async function retry<T>(
+//   fn: () => Promise<T>,
+//   retries: number = EMAIL_RETRY_COUNT,
+//   delayMs: number = EMAIL_RETRY_DELAY_MS
+// ): Promise<T> {
+//   let attempt = 0;
+//   while (attempt <= retries) {
+//     try {
+//       return await fn();
+//     } catch (error) {
+//       if (attempt === retries)
+//         throw new Error("Exceeds attempt limit. All retries failed.");
+//       await delay(delayMs);
+//       delayMs *= 2;
+//       attempt++;
+//     }
+//   }
+
+//   throw new Error("Retry failed unexpectedly");
+// }
 
 export async function sendEmail(
   data: ContactFormValues
@@ -50,12 +43,13 @@ export async function sendEmail(
     };
   }
 
-  await delay(EMAIL_INITIAL_DELAY_MS);
   const sanitizedData = sanitizeData<ContactFormValues>(data);
 
   try {
-    const response = await retry<EmailJSResponseStatus>(() =>
-      emailjs.send(serviceID, templateID, sanitizedData)
+    const response: EmailJSResponseStatus = await emailjs.send(
+      serviceID,
+      templateID,
+      sanitizedData
     );
     if (response.status !== HTTP_STATUS.OK) {
       throw new Error(
