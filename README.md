@@ -69,7 +69,24 @@ This ensures the splash screen and critical styles load instantly in development
 - Node.js (v16 or newer)
 - npm (or yarn)
 
-### Installation
+### EmailJS Setup (Required for Contact Form)
+
+To enable the contact form, you must create a free account at [EmailJS](https://www.emailjs.com/) and set up your service, template, and public key:
+
+1. Sign up at [EmailJS](https://www.emailjs.com/) and create a new email service.
+2. Create an email template and note its ID.
+3. Get your public key from the EmailJS dashboard.
+4. Add the following environment variables to your `.env` file that locate at root of project:
+
+```env
+VITE_EMAILJS_PUBLIC_KEY=your_public_key_here
+VITE_EMAILJS_SERVICE_ID=your_service_id_here
+VITE_EMAILJS_TEMPLATE_ID=your_template_id_here
+VITE_EMAILJS_THROTTLE_TIME=your_throttle_time_here (default 10000)
+VITE_EMAILJS_ORIGIN=
+```
+
+If these variables are not set, the contact form will not work.
 
 Clone the repository and install dependencies:
 
