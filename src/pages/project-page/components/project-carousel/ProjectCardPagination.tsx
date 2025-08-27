@@ -27,7 +27,7 @@ export default function ProjectCardPagination({
       })}
     </div>
   ) : (
-    <div className="text-muted-text text-center text-[clamp(0.875rem,1vw,1.5rem)] mt-[clamp(1rem,1vw,2rem)]">
+    <div className="text-muted-text text-center text-[clamp(0.875rem,1vw,1.5rem)] mt-[clamp(1rem,0.85vw,2rem)]">
       Page {current + 1} of {count}
     </div>
   );
