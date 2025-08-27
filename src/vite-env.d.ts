@@ -6,6 +6,7 @@ interface ImportMetaEnv {
   readonly VITE_EMAILJS_TEMPLATE_ID: string;
   readonly VITE_EMAILJS_THROTTLE_TIME: number;
   readonly VITE_EMAILJS_ORIGIN: string;
+  readonly VITE_LOCAL_ORIGIN: string;
 }
 
 interface ImportMeta {
