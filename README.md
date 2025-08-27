@@ -76,7 +76,8 @@ To enable the contact form, you must create a free account at [EmailJS](https://
 1. Sign up at [EmailJS](https://www.emailjs.com/) and create a new email service.
 2. Create an email template and note its ID.
 3. Get your public key from the EmailJS dashboard.
-4. Add the following environment variables to your `.env` file that locate at root of project:
+4. Create a new `.env` file at project root.
+5. Add the following environment variables to your `.env` file:
 
 ```env
 VITE_EMAILJS_PUBLIC_KEY=your_public_key_here
