@@ -7,8 +7,8 @@ import Header from "@/components/layout/Header";
 import { useMemo } from "react";
 import { toMilliseconds } from "@/utils/time-utils";
 import { useRemoveSplashScreen } from "@/hooks/useRemoveSplashScreen";
-import { Analytics } from "@vercel/analytics/next";
-import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 
 export default function RootLayout() {
   useRemoveSplashScreen();
