@@ -3,13 +3,28 @@ import foodDelivery from "@/assets/images/projects/project-food-delivery.png";
 import osMonitor from "@/assets/images/projects/project-os-monitor.png";
 import realEstate from "@/assets/images/projects/project-real-estate.png";
 import chatApp from "@/assets/images/projects/project-chat-app.png";
-import comingSoon from "@/assets/images/projects/project-coming-soon.png";
+// import comingSoon from "@/assets/images/projects/project-coming-soon.png";
+import portfolio from "@assets/images/projects/project-portfolio.png";
 
 export const PROJECTS = {
   header: "Selected Projects",
   subheader:
     "My creative sandbox — a mix of individual experiments and group collaborations.",
   carousel: [
+    {
+      id: "personal-portfolio-project",
+      isEmpty: false,
+      type: "Website",
+      title: "Personal Portfolio",
+      description:
+        "A modern, responsive portfolio website built with React, Vite, and Tailwind CSS. Showcases my projects, skills, and contact information with custom UI components and smooth navigation.",
+      stacks: ["React", "TypeScript", "Vite", "Tailwind CSS"],
+      link: "https://github.com/Quan987/personal-portfoliov2",
+      illustration: {
+        image: portfolio,
+        alt: "personal-portfolio-alt",
+      },
+    },
     {
       id: "food-delivery-app-project",
       isEmpty: false,
@@ -80,18 +95,18 @@ export const PROJECTS = {
         alt: "chat-app-alt",
       },
     },
-    {
-      id: "empty-project",
-      isEmpty: true,
-      type: "N/A",
-      title: "",
-      description: "New projects currently in development — stay tuned!",
-      stacks: ["N/A"],
-      link: "N/A",
-      illustration: {
-        image: comingSoon,
-        alt: "coming-soon-alt",
-      },
-    },
+    // {
+    //   id: "empty-project",
+    //   isEmpty: true,
+    //   type: "N/A",
+    //   title: "",
+    //   description: "New projects currently in development — stay tuned!",
+    //   stacks: ["N/A"],
+    //   link: "N/A",
+    //   illustration: {
+    //     image: comingSoon,
+    //     alt: "coming-soon-alt",
+    //   },
+    // },
   ],
 } as const;
