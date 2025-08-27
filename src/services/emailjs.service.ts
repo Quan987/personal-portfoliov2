@@ -7,7 +7,7 @@ emailjs.init({
     id: "app",
     throttle: Number(import.meta.env.VITE_EMAILJS_THROTTLE_TIME),
   },
-  origin: import.meta.env.VITE_EMAILJS_ORIGIN,
+  // origin: import.meta.env.VITE_EMAILJS_ORIGIN,
 });
 
 export default emailjs;
