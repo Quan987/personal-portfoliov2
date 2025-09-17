@@ -1,4 +1,4 @@
-import { cn } from "@/lib/shadcn/utils/utils";
+import clsx from "clsx";
 import { ReactNode } from "react";
 import { NavLink } from "react-router-dom";
 
@@ -18,7 +18,7 @@ export default function Navbutton({
       to={link}
       draggable={false}
       end
-      className={cn("btn-primary hover-tilt", className)}
+      className={clsx("btn-primary hover-tilt", className)}
     >
       {children}
     </NavLink>

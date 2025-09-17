@@ -1,5 +1,5 @@
+import { useBurgerMenu } from "@/components/menus/burger-menu/BurgerMenuContext";
 import { forwardRef } from "react";
-import { useBurgerMenu } from "@/components/ui/burger-menu/BurgerMenuContext";
 
 const Burger = forwardRef<HTMLButtonElement>((_, ref) => {
   const { isOpen, toggleMenu } = useBurgerMenu();

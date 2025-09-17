@@ -16,7 +16,7 @@ export const routes = createBrowserRouter([
         index: true,
         lazy: {
           Component: async (): LazyComponentPromise =>
-            (await import("@/pages/home-page")).Home,
+            (await import("@/pages/home-page")).default,
         },
       },
       {

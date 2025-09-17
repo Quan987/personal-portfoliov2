@@ -25,6 +25,7 @@ export default function NavMenu({ links, onClick }: NavMenuProps) {
                 isActive && "text-primary font-medium"
               }`
             }
+            prefetch="render"
             draggable={false}
             end
           >
