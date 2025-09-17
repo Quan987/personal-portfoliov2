@@ -1,4 +1,3 @@
-import { JSX } from "react";
 import { createBrowserRouter } from "react-router-dom";
 import RootLayout from "@/layouts/RootLayout.tsx";
 import ErrorPage from "@/pages/error-page";
@@ -7,7 +6,7 @@ import About from "@/pages/about-page";
 import Project from "@/pages/project-page";
 import Contact from "@/pages/contact-page";
 
-type LazyComponentPromise = Promise<() => JSX.Element>;
+// type LazyComponentPromise = Promise<() => JSX.Element>;
 
 // export const routes = createBrowserRouter([
 //   {
