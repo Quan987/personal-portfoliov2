@@ -1,4 +1,4 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, useNavigation } from "react-router-dom";
 import { useRouteLoadingIndicator } from "@/hooks/useRouteLoadingIndicator";
 import { getRootStyleProperty } from "@/utils/dom-utils";
 import RouteLoadingIndicator from "@/components/ui/RouteLoadingIndicator";
@@ -10,7 +10,7 @@ import { useRemoveSplashScreen } from "@/hooks/useRemoveSplashScreen";
 
 export default function RootLayout() {
   useRemoveSplashScreen();
-  const { ref } = useRouteLoadingIndicator();
+  // const { ref } = useRouteLoadingIndicator();
   const loaderDot = useMemo(
     () => ({
       count: getRootStyleProperty("--loader-dot-count"),
@@ -18,17 +18,21 @@ export default function RootLayout() {
     }),
     []
   );
+  const navigation = useNavigation();
+  const isNavigating = Boolean(navigation.location);
 
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
       <main className="relative flex-center grow px-[clamp(1.25rem,calc(12.5vw_-_2rem),20rem)] py-[clamp(1rem,1vw,3rem)]">
-        <RouteLoadingIndicator
-          ref={ref}
-          dotCount={parseInt(loaderDot.count)}
-          stagger={toMilliseconds(loaderDot.dotStagger)}
-          className="hidden"
-        />
+        {isNavigating && (
+          <RouteLoadingIndicator
+            // ref={ref}
+            dotCount={parseInt(loaderDot.count)}
+            stagger={toMilliseconds(loaderDot.dotStagger)}
+            className=""
+          />
+        )}
         <Outlet />
       </main>
       <Footer />
