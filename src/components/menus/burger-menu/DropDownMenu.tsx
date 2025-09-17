@@ -1,9 +1,9 @@
 import { forwardRef } from "react";
 import NavMenu from "@/components/menus/NavMenu";
 import SocialMenu from "@/components/menus/SocialMenu";
-import { useBurgerMenu } from "@/components/ui/burger-menu/BurgerMenuContext";
 import { NAV_LINKS } from "@/constants/nav-links.constants";
 import { SOCIAL_LINKS } from "@/constants/social-links.constants";
+import { useBurgerMenu } from "@/components/menus/burger-menu/BurgerMenuContext";
 
 const DropDownMenu = forwardRef<HTMLDivElement>((_, ref) => {
   const { isOpen, toggleMenu } = useBurgerMenu();

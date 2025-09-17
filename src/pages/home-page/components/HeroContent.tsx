@@ -19,7 +19,7 @@ export default function HeroContent({ title, subtitle }: HeroContentProps) {
 
         <Navbutton
           link="/contact"
-          className="text-[clamp(0.75rem,1vw,3rem)] px-[clamp(1.25rem,2vw,3.5rem)] py-[clamp(0.625rem,0.85vw,1.5rem)]"
+          className="text-[clamp(0.75rem,1vw,3rem)] px-[clamp(1.25rem,1.75vw,3.5rem)] py-[clamp(0.625rem,calc(0.85vw_-_0.15rem),1.5rem)]"
         >
           Get in Touch
         </Navbutton>

@@ -1,7 +1,7 @@
+import Burger from "@/components/menus/burger-menu/Burger";
+import { useBurgerMenu } from "@/components/menus/burger-menu/BurgerMenuContext";
+import DropDownMenu from "@/components/menus/burger-menu/DropDownMenu";
 import { useRef, useEffect } from "react";
-import { useBurgerMenu } from "@/components/ui/burger-menu/BurgerMenuContext";
-import Burger from "@/components/ui/burger-menu/Burger";
-import DropDownMenu from "@/components/ui/burger-menu/DropDownMenu";
 
 export default function HamburgerMenuContent() {
   const burgerRef = useRef<HTMLButtonElement | null>(null);

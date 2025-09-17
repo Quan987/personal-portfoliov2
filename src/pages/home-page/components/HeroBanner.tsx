@@ -23,9 +23,6 @@ export default function HeroBanner({ image, alt }: HeroBannerProps) {
         className={`size-full text-primary ${
           loaded ? "animate-float" : "blur-lg"
         }`}
-        style={{
-          animationDuration: `var(--float-duration)`,
-        }}
         loading="lazy"
         onLoad={() => setLoaded(true)}
       />
