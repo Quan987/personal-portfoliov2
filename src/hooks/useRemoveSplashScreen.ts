@@ -19,15 +19,15 @@ export function useRemoveSplashScreen({
     const loadingBarEl = getElement<HTMLDivElement>(loadingBarId);
 
     const splashDurations = {
-      none: getRootStyleProperty("--duration-none"),
-      visible: getRootStyleProperty("--splash-visible-duration"),
-      fade: getRootStyleProperty("--fade-duration"),
+      none: getRootStyleProperty("--none"),
+      visible: getRootStyleProperty("--splash-visible"),
+      fade: getRootStyleProperty("--fade"),
     };
 
     // Hide loading bar and start fade out after splash duration
     const splashVisibleTimeout = setTimeout(() => {
       loadingBarEl.style.animationDuration = splashDurations.none;
-      startFadeOut(splashScreenEl, splashDurations.fade, "animate-fade-in");
+      startFadeOut(splashScreenEl, "animate-fade-in");
 
       splashFadeTimeout.current = setTimeout(() => {
         finishFadeOut(splashScreenEl, true);

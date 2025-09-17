@@ -1,8 +1,8 @@
 import ContactForm from "@/pages/contact-page/components/ContactForm";
 import ContactFormBanner from "@/pages/contact-page/components/ContactFormBanner";
-import { CONTACT } from "@/pages/contact-page/constants/contact.constants";
+import { CONTACT } from "@/constants/contact.constants";
 
-export function Contact() {
+export default function Contact() {
   return (
     <section
       id="contact"

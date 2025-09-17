@@ -1,5 +1,4 @@
 import { useCallback, useEffect, useState } from "react";
-import Autoplay from "embla-carousel-autoplay";
 import {
   CarouselApi,
   Carousel,
@@ -11,8 +10,6 @@ import ProjectCard from "@/pages/project-page/components/project-carousel/Projec
 import ProjectCardPagination from "@/pages/project-page/components/project-carousel/ProjectCardPagination";
 import { BREAKPOINT } from "@/constants/screen-breakpoint.constants";
 import { useIsMobile } from "@/hooks/useIsMobile";
-
-const CAROUSEL_AUTO_PLAY_DURATION: number = 3000 as const;
 
 export default function ProjectCarousel({ projects }: ProjectCarouselProps) {
   const isMobile = useIsMobile(BREAKPOINT.LG);
@@ -58,19 +55,19 @@ export default function ProjectCarousel({ projects }: ProjectCarouselProps) {
   return (
     <Carousel
       setApi={setApi}
-      plugins={[
-        Autoplay({
-          delay: CAROUSEL_AUTO_PLAY_DURATION,
-          stopOnMouseEnter: true,
-          stopOnInteraction: true,
-          // stopOnFocusIn: true,
-          breakpoints: {
-            "(orientation: portrait)": {
-              active: false, // disable autoplay in portrait
-            },
-          },
-        }),
-      ]}
+      // plugins={[
+      //   Autoplay({
+      //     delay: CAROUSEL_AUTO_PLAY_DURATION,
+      //     stopOnMouseEnter: true,
+      //     stopOnInteraction: true,
+      //     // stopOnFocusIn: true,
+      //     breakpoints: {
+      //       "(orientation: portrait)": {
+      //         active: false, // disable autoplay in portrait
+      //       },
+      //     },
+      //   }),
+      // ]}
       opts={{
         align: "start",
         loop: false,
@@ -88,7 +85,6 @@ export default function ProjectCarousel({ projects }: ProjectCarouselProps) {
           },
           [`(min-width: ${BREAKPOINT.XL}px)`]: {
             slidesToScroll: 1,
-            watchDrag: false,
           },
         },
       }}
@@ -111,5 +107,3 @@ export default function ProjectCarousel({ projects }: ProjectCarouselProps) {
     </Carousel>
   );
 }
-
-// Continue with tablet screen

@@ -80,7 +80,7 @@
     }
   }
 
-  --animate-loading-bar: loadingBar linear infinite;
+  --animate-loading-bar: loadingBar var(--loading-bar) linear infinite;
   @keyframes loadingBar {
     0% {
       transform: translateX(-100%);
@@ -90,7 +90,7 @@
     }
   }
 
-  --animate-fade-in: fadeIn ease-in forwards;
+  --animate-fade-in: fadeIn var(--fade) ease-in forwards;
   @keyframes fadeIn {
     0% {
       opacity: 0;
@@ -100,7 +100,7 @@
     }
   }
 
-  --animate-fade-out: fadeOut ease-out forwards;
+  --animate-fade-out: fadeOut var(--fade) ease-out forwards;
   @keyframes fadeOut {
     0% {
       opacity: 1;
@@ -110,7 +110,7 @@
     }
   }
 
-  --animate-bounce-fade: bounce-fade infinite;
+  --animate-bounce-fade: bounce-fade var(--bounce-fade) infinite;
   @keyframes bounce-fade {
     0% {
       transform: translateY(-50%);
@@ -134,7 +134,8 @@
 
 @layer base {
   :root {
-    --duration-none: 0ms;
+    --loader-dot-count: 4;
+    /* --duration-none: 0ms;
     --fade-duration: 1000ms;
     --float-duration: 3000ms;
     --splash-visible-duration: 3000ms;
@@ -142,12 +143,11 @@
     --route-loading-indicator-duration: 1000ms;
     --loader-dot-animation-duration: 120ms;
     --bounce-fade-animation-duration: 1500ms;
-    --loader-dot-count: 4;
     --tilt-hover-animation-duration: 200ms;
     --hamburger-menu-animation-duration: 250ms;
     --menu-transition-duration: 250ms;
     --menu-dropdown-duration: 500ms;
-    --slide-fade-duration: 350ms;
+    --slide-fade-duration: 350ms; */
   }
 
   html {
@@ -205,7 +205,7 @@
     @apply block w-full rounded-md border border-dark focus:outline-none focus:ring-2 focus:ring-info focus:border-transparent px-2 py-1.5 md:px-3 md:py-2 4xl:px-3.5 4xl:py-2.5;
   }
   .btn-primary {
-    @apply block w-fit rounded-full shadow-md border-2 border-dark bg-dark text-secondary hover:bg-light hover:text-primary active:bg-light active:text-primary;
+    @apply block w-fit rounded-full overflow-hidden border-1 border-dark bg-dark text-secondary hover:bg-light hover:text-primary active:bg-light active:text-primary;
   }
 }
 
@@ -217,7 +217,7 @@
     @apply flex flex-col items-center justify-center;
   }
   .hover-tilt {
-    @apply transition-all duration-(--none) ease-in-out hover:-translate-1 active:-translate-1;
+    @apply transition-all duration-(--tilt-hover) ease-in-out hover:translate-x-1 hover:-translate-y-1 active:translate-x-1 active:-translate-y-1;
   }
   .interactive-transition {
     @apply transition-colors duration-(--menu-transition);

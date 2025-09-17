@@ -23,21 +23,21 @@ export const routes = createBrowserRouter([
         path: "about",
         lazy: {
           Component: async (): LazyComponentPromise =>
-            (await import("@/pages/about-page")).About,
+            (await import("@/pages/about-page")).default,
         },
       },
       {
         path: "projects",
         lazy: {
           Component: async (): LazyComponentPromise =>
-            (await import("@/pages/project-page")).Project,
+            (await import("@/pages/project-page")).default,
         },
       },
       {
         path: "contact",
         lazy: {
           Component: async (): LazyComponentPromise =>
-            (await import("@/pages/contact-page")).Contact,
+            (await import("@/pages/contact-page")).default,
         },
       },
     ],

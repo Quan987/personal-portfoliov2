@@ -1,8 +1,8 @@
 import ProjectCarousel from "@/pages/project-page/components/project-carousel";
 import ProjectHeader from "@/pages/project-page/components/ProjectHeader";
-import { PROJECTS } from "@/pages/project-page/project-carousel.constants";
+import { PROJECTS } from "@/constants/project-carousel.constants";
 
-export function Project() {
+export default function Project() {
   return (
     <section
       id="projects"

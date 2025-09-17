@@ -8,16 +8,15 @@ import { toMilliseconds } from "@/utils/time-utils";
 import { useRemoveSplashScreen } from "@/hooks/useRemoveSplashScreen";
 
 export default function RootLayout() {
-  // useRemoveSplashScreen();
+  useRemoveSplashScreen();
   const loaderDot = useMemo(
     () => ({
       count: getRootStyleProperty("--loader-dot-count"),
-      dotStagger: getRootStyleProperty("--loader-dot-animation-duration"),
+      dotStagger: getRootStyleProperty("--loader-dot"),
     }),
     []
   );
-  const navigation = useNavigation();
-  const isNavigating = Boolean(navigation.location);
+  const isNavigating = Boolean(useNavigation().location);
 
   return (
     <div className="flex flex-col min-h-screen">
