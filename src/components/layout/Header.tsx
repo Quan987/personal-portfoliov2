@@ -1,8 +1,8 @@
 import Logo from "@/components/layout/Logo";
+import HamburgerMenuContent from "@/components/menus/burger-menu";
+import { BurgerMenuProvider } from "@/components/menus/burger-menu/BurgerMenuContext";
 import NavMenu from "@/components/menus/NavMenu";
 import SocialMenu from "@/components/menus/SocialMenu";
-import HamburgerMenuContent from "@/components/ui/burger-menu";
-import { BurgerMenuProvider } from "@/components/ui/burger-menu/BurgerMenuContext";
 import { NAV_LINKS } from "@/constants/nav-links.constants";
 import { BREAKPOINT } from "@/constants/screen-breakpoint.constants";
 import { SOCIAL_LINKS } from "@/constants/social-links.constants";

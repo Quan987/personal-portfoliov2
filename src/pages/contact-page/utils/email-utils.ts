@@ -8,7 +8,7 @@ import {
   EMAIL_INITIAL_DELAY_MS,
   EMAIL_RETRY_COUNT,
   EMAIL_RETRY_DELAY_MS,
-} from "@/pages/contact-page/constants/contact.config.constants";
+} from "@/pages/contact-page/configs/contact.config.constants";
 import { HTTP_STATUS } from "@/constants/http.constants";
 
 type SendMailResponseType = {

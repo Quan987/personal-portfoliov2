@@ -1,8 +1,8 @@
-import { ABOUT } from "@/pages/about-page/about.constants";
+import { ABOUT } from "@/constants/about.constants";
 import AboutBanner from "@/pages/about-page/components/AboutBanner";
 import AboutContent from "@/pages/about-page/components/AboutContent";
 
-export function About() {
+export default function About() {
   return (
     <section id="about">
       <div className="lg:grid lg:grid-cols-2">

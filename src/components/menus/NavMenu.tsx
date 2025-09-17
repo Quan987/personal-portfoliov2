@@ -22,7 +22,7 @@ export default function NavMenu({ links, onClick }: NavMenuProps) {
             onClick={onClick}
             className={({ isActive }) =>
               `interactive-transition flex-center gap-[clamp(0.25rem,0.5vw,0.5rem)] text-muted-text menu-transition group-hover:text-muted-text/50 group-hover:font-normal hover:text-dark ${
-                isActive && "text-primary font-medium"
+                isActive && "text-primary"
               }`
             }
             prefetch="render"

@@ -7,8 +7,8 @@ export default function Shadcn(props: IconProps) {
       <path
         fill="none"
         stroke="currentColor"
-        stroke-width="25"
-        stroke-linecap="round"
+        strokeWidth="25"
+        strokeLinecap="round"
         d="M208 128l-80 80M192 40L40 192"
       />
     </svg>

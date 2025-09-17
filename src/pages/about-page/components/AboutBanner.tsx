@@ -29,7 +29,7 @@ export default function AboutBanner({
         src={illustration.image}
         alt={illustration.alt}
         draggable="false"
-        className={`block no-interact size-full my-5 xl:my-0  ${
+        className={`block no-interact size-full my-5 xl:my-0 ${
           !loaded && "blur-lg"
         }`}
         loading="lazy"

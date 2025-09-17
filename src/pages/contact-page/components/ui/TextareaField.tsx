@@ -1,5 +1,5 @@
 import FormFieldError from "@/pages/contact-page/components/ui/FormFieldError";
-import { TEXTAREA_MAX_LENGTH } from "@/pages/contact-page/constants/contact.config.constants";
+import { TEXTAREA_MAX_LENGTH } from "@/pages/contact-page/configs/contact.config.constants";
 import { ReactNode, TextareaHTMLAttributes } from "react";
 import { FieldError } from "react-hook-form";
 

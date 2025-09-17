@@ -22,7 +22,6 @@ export default function RouteLoadingIndicator({
               key={`${index + stagger}-loading-dot`}
               className="bg-dark rounded-full animate-bounce-fade  size-[clamp(0.75rem,1.25vw,2rem)]"
               style={{
-                animationDuration: `var(--bounce-fade-animation-duration)`,
                 animationDelay: `${index * stagger}ms`,
               }}
             ></div>

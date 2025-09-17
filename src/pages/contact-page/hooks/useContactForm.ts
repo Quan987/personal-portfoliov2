@@ -1,4 +1,4 @@
-import { FORM_ERROR_DELAY_MS } from "@/pages/contact-page/constants/contact.config.constants";
+import { FORM_ERROR_DELAY_MS } from "@/pages/contact-page/configs/contact.config.constants";
 import {
   type ContactFormSchema,
   type ContactFormValues,

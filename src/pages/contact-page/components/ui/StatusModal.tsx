@@ -1,4 +1,4 @@
-import { STATUS } from "@/pages/contact-page/constants/status.constants";
+import { STATUS } from "@/constants/status.constants";
 import { getElement } from "@/utils/dom-utils";
 import { createPortal } from "react-dom";
 
