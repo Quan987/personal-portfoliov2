@@ -11,12 +11,12 @@ export default function RouteLoadingIndicator({
   stagger,
   dotCount,
   className,
-  ref,
-}: RouteLoadingIndicatorProps) {
+}: // ref,
+RouteLoadingIndicatorProps) {
   return (
     <div
       id="loading-indicator-screen"
-      ref={ref}
+      // ref={ref}
       className={`size-full z-loading bg-light absolute inset-0 ${className}`}
     >
       <div className="h-full flex-col-center gap-[clamp(0.75rem,2vw,3rem)]">
