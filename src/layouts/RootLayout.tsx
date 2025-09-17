@@ -16,7 +16,8 @@ export default function RootLayout() {
     }),
     []
   );
-  const isNavigating = Boolean(useNavigation().location);
+  const navigation = useNavigation();
+  const isNavigating = Boolean(navigation.location);
 
   return (
     <div className="flex flex-col min-h-screen">
