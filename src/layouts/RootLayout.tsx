@@ -16,6 +16,7 @@ export default function RootLayout() {
     }),
     []
   );
+
   const navigation = useNavigation();
   const isNavigating = Boolean(navigation.location);
 
